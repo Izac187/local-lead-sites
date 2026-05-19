@@ -1,6 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { siteConfig } from "@/lib/config";
+import { servicePages } from "@/lib/servicePages";
+import { cities } from "@/lib/cities";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -14,11 +17,11 @@ export default function Footer() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
             gap: 40,
           }}
         >
-          {/* Brand column */}
+          {/* Brand + NAP column */}
           <div>
             <p
               className="font-display"
@@ -33,11 +36,11 @@ export default function Footer() {
                 fontSize: "0.875rem",
                 lineHeight: 1.6,
                 fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
-                marginBottom: 16,
+                marginBottom: 12,
               }}
             >
-              Licensed and insured roofing in Merced County. Free estimates,
-              fast callbacks.
+              Licensed and insured roofing in Merced County.
+              Free estimates, fast callbacks.
             </p>
             <a
               href={siteConfig.phoneHref}
@@ -47,10 +50,22 @@ export default function Footer() {
                 color: "#FFFFFF",
                 textDecoration: "none",
                 letterSpacing: "0.01em",
+                display: "block",
+                marginBottom: 6,
               }}
             >
               {siteConfig.phone}
             </a>
+            <p
+              style={{
+                color: "rgba(245,236,215,0.4)",
+                fontSize: "0.8125rem",
+                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+              }}
+            >
+              {siteConfig.address.city}, {siteConfig.address.state}{" "}
+              {siteConfig.address.zip}
+            </p>
           </div>
 
           {/* Services column */}
@@ -69,10 +84,10 @@ export default function Footer() {
               Services
             </p>
             <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
-              {siteConfig.services.map((s) => (
-                <li key={s.title}>
-                  <a
-                    href="#services"
+              {servicePages.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    href={`/services/${s.slug}`}
                     style={{
                       color: "rgba(245,236,215,0.6)",
                       fontSize: "0.875rem",
@@ -84,13 +99,50 @@ export default function Footer() {
                     onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,236,215,0.6)")}
                   >
                     {s.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Hours + area column */}
+          {/* Service Areas column */}
+          <div>
+            <p
+              style={{
+                color: "#FFFFFF",
+                fontWeight: 700,
+                fontSize: "0.8125rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                marginBottom: 16,
+              }}
+            >
+              Service Areas
+            </p>
+            <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+              {cities.map((city) => (
+                <li key={city.citySlug}>
+                  <Link
+                    href={`/locations/${city.citySlug}`}
+                    style={{
+                      color: "rgba(245,236,215,0.6)",
+                      fontSize: "0.875rem",
+                      fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                      textDecoration: "none",
+                      transition: "color 150ms ease",
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "#F5ECD7")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,236,215,0.6)")}
+                  >
+                    {city.cityName}, CA
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Hours + Compliance column */}
           <div>
             <p
               style={{
@@ -136,16 +188,23 @@ export default function Footer() {
                 marginBottom: 10,
               }}
             >
-              Service Area
+              Licensing
             </p>
             <p
               style={{
                 color: "rgba(245,236,215,0.5)",
                 fontSize: "0.8125rem",
                 fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                lineHeight: 1.7,
               }}
             >
-              {siteConfig.serviceArea.join(" · ")}
+              CA CSLB C-39 Roofing License
+              <br />
+              General Liability + Workers&apos; Comp
+              <br />
+              Cool Roof Rating Council (CRRC) compliant
+              <br />
+              California Title 24, Part 6 materials
             </p>
           </div>
         </div>
@@ -181,7 +240,7 @@ export default function Footer() {
             fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
           }}
         >
-          Serving Merced County since 2018
+          Services fulfilled by licensed C-39 partner contractors &middot; Serving Merced County
         </p>
       </div>
     </footer>

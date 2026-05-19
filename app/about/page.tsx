@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: `About Us | ${siteConfig.siteName}`,
-  description: `Licensed and insured roofing contractor serving Merced, CA. Free estimates, same-day response.`,
+  title: `About Merced Roofing Pros | Licensed C-39 Contractor Merced CA`,
+  description: `Merced Roofing Pros is a licensed, insured C-39 roofing contractor serving Merced County, CA. Roof repair, replacement & gutters. Free estimates — (209) 259-0978.`,
 };
 
 export default function AboutPage() {
