@@ -1,44 +1,86 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
 import { siteConfig } from "@/lib/config";
+import { servicePages } from "@/lib/servicePages";
 
 export const metadata: Metadata = {
-  title: `Roofing Services — ${siteConfig.city}, CA`,
-  description: `Complete roofing services in ${siteConfig.city}, CA: repairs, replacement, inspection, and gutters. Licensed & insured.`,
+  title: `Roofing Services Merced CA | Repair, Replacement & More | ${siteConfig.siteName}`,
+  description: `Complete roofing services in Merced, CA: emergency repair, roof replacement, metal roofing, flat TPO, storm damage, and more. Licensed C-39 contractor. Free estimates.`,
 };
 
 export default function ServicesPage() {
   return (
     <div className="px-4 py-12 bg-white min-h-screen">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-extrabold text-gray-900 mb-2" style={{ fontFamily: "var(--font-barlow-condensed), sans-serif" }}>
+        <nav className="text-sm text-gray-400 mb-6" aria-label="Breadcrumb">
+          <ol className="flex items-center gap-2">
+            <li><Link href="/" className="hover:text-gray-600">Home</Link></li>
+            <li aria-hidden>/</li>
+            <li className="text-gray-600">Services</li>
+          </ol>
+        </nav>
+
+        <h1
+          className="text-gray-900 mb-2"
+          style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "0.02em" }}
+        >
           Roofing Services in {siteConfig.city}, CA
         </h1>
         <p className="text-gray-600 mb-10">
-          Licensed and insured. Serving {siteConfig.city} and {siteConfig.serviceArea.slice(1).join(", ")}.
+          Licensed C-39 contractor. Serving {siteConfig.city} and {siteConfig.serviceArea.slice(1).join(", ")}.
+          Mon–Sat, 7am–8pm.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {siteConfig.services.map((s, i) => (
-            <div key={s.title} className="rounded-xl border border-gray-100 p-6 shadow-sm">
-              <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2 mb-3">
-                <span style={{ color: "var(--ember)", fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "1.5rem" }}>0{i + 1}</span> {s.title}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          {servicePages.map((s, i) => (
+            <Link
+              key={s.slug}
+              href={`/services/${s.slug}`}
+              className="group rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md hover:border-orange-200 transition-all"
+            >
+              <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2 mb-2">
+                <span style={{ color: "var(--ember)", fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "1.5rem" }}>
+                  0{i + 1}
+                </span>{" "}
+                {s.title}
+                {s.urgency === "emergency" && (
+                  <span className="ml-auto text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: "var(--ember)" }}>
+                    Emergency
+                  </span>
+                )}
               </h2>
-              <p className="text-gray-600 text-sm leading-relaxed">{s.description}</p>
-              <a
-                href="/#form"
-                className="inline-block mt-4 text-sm font-semibold underline"
-                style={{ color: "var(--ember)" }}
-              >
-                Get a free estimate →
-              </a>
-            </div>
+              <p className="text-gray-600 text-sm leading-relaxed mb-2">{s.summary.substring(0, 120)}…</p>
+              <p className="text-xs text-gray-400 mb-3">Est. cost: {s.estimateRange}</p>
+              <span className="text-sm font-semibold text-orange-500 group-hover:underline">
+                Learn more →
+              </span>
+            </Link>
           ))}
+        </div>
+
+        {/* Location cross-links */}
+        <div className="rounded-xl border border-gray-100 bg-gray-50 p-6 mb-10">
+          <h2 className="text-base font-bold text-gray-900 mb-3">Service Coverage</h2>
+          <p className="text-sm text-gray-600 mb-4">
+            All services available across Merced County and surrounding communities.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {siteConfig.serviceArea.map((city) => (
+              <Link
+                key={city}
+                href={`/locations/${city.toLowerCase().replace(/\s+/g, "-")}`}
+                className="rounded-full border border-gray-200 px-3 py-1 text-xs text-gray-600 hover:border-orange-300 hover:text-orange-600 transition-colors"
+              >
+                {city}, CA
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className="bg-gray-50 rounded-2xl p-8 max-w-lg mx-auto">
           <h2 className="text-lg font-bold text-gray-900 mb-1">Ready to get started?</h2>
-          <p className="text-sm text-gray-500 mb-5">Free estimates. We call you back within 2 hours.</p>
+          <p className="text-sm text-gray-500 mb-5">Free written estimates. Callbacks within 30 minutes, Mon–Sat 7am–8pm.</p>
           <LeadForm source="services" />
         </div>
       </div>
