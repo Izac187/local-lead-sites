@@ -8,6 +8,7 @@ export interface BlogPost {
   category: "how-to" | "local" | "cost" | "materials" | "maintenance";
   excerpt: string;
   readingMinutes: number;
+  keyTakeaways: string[];
   body: string; // HTML string for inline rendering
   faqs: { q: string; a: string }[];
   relatedPosts?: string[]; // slugs
@@ -25,6 +26,12 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Most Merced homeowners are back under a finished roof in one to three days. Here's exactly what determines that timeline and how to plan around it.",
     readingMinutes: 5,
+    keyTakeaways: [
+      "Standard 2,000 sq ft Merced re-roof: 2 days for asphalt shingles.",
+      "Steep pitch, two existing layers, or rotted decking can add half a day each.",
+      "Merced City permits issue in 24–48 hours; we pull them for you.",
+      "Summer 105°F+ days add 2–3 hours per job for heat-safe nailing.",
+    ],
     body: `
 <p>Most Merced roof replacements finish in <strong>one to three days</strong>. A standard 2,000 sq ft single-story home with asphalt shingles: two days. Larger two-story homes or complex rooflines may push to three.</p>
 
@@ -82,43 +89,49 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "A Merced roof replacement runs $8,500–$22,000 for most homes depending on material and size. Here's the 2026 price breakdown and what actually drives cost.",
     readingMinutes: 6,
+    keyTakeaways: [
+      "Most Merced homes: $8,500–$22,000 fully installed in 2026.",
+      "Architectural shingles ($6–$9/sq ft) are the sweet spot for cost vs. lifespan.",
+      "Title 24 cool-roof products add 10–15% but qualify for utility rebates.",
+      "Merced City permits run $185–$350 — included in our quotes.",
+    ],
     body: `
 <p>Based on jobs we've completed across Merced County, expect to pay <strong>$8,500–$22,000</strong> for a full residential roof replacement in 2026. Here's how that breaks down.</p>
 
 <h2>Price by Material (Merced, CA 2026)</h2>
-<table style="width:100%;border-collapse:collapse;">
+<table>
   <thead>
-    <tr style="background:#f5f5f5;">
-      <th style="padding:8px;text-align:left;border:1px solid #ddd;">Material</th>
-      <th style="padding:8px;text-align:left;border:1px solid #ddd;">Cost per sq ft (installed)</th>
-      <th style="padding:8px;text-align:left;border:1px solid #ddd;">Lifespan</th>
+    <tr>
+      <th>Material</th>
+      <th>Cost per sq ft (installed)</th>
+      <th>Lifespan</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="padding:8px;border:1px solid #ddd;">Asphalt 3-tab</td>
-      <td style="padding:8px;border:1px solid #ddd;">$4.50–$6.00</td>
-      <td style="padding:8px;border:1px solid #ddd;">15–20 years</td>
-    </tr>
-    <tr style="background:#f9f9f9;">
-      <td style="padding:8px;border:1px solid #ddd;">Architectural shingles</td>
-      <td style="padding:8px;border:1px solid #ddd;">$6.00–$9.00</td>
-      <td style="padding:8px;border:1px solid #ddd;">25–30 years</td>
+      <td>Asphalt 3-tab</td>
+      <td>$4.50–$6.00</td>
+      <td>15–20 years</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid #ddd;">Metal (standing seam)</td>
-      <td style="padding:8px;border:1px solid #ddd;">$10.00–$18.00</td>
-      <td style="padding:8px;border:1px solid #ddd;">40–70 years</td>
-    </tr>
-    <tr style="background:#f9f9f9;">
-      <td style="padding:8px;border:1px solid #ddd;">Tile (concrete)</td>
-      <td style="padding:8px;border:1px solid #ddd;">$12.00–$20.00</td>
-      <td style="padding:8px;border:1px solid #ddd;">40–50 years</td>
+      <td>Architectural shingles</td>
+      <td>$6.00–$9.00</td>
+      <td>25–30 years</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid #ddd;">TPO flat roof</td>
-      <td style="padding:8px;border:1px solid #ddd;">$6.00–$10.00</td>
-      <td style="padding:8px;border:1px solid #ddd;">20–30 years</td>
+      <td>Metal (standing seam)</td>
+      <td>$10.00–$18.00</td>
+      <td>40–70 years</td>
+    </tr>
+    <tr>
+      <td>Tile (concrete)</td>
+      <td>$12.00–$20.00</td>
+      <td>40–50 years</td>
+    </tr>
+    <tr>
+      <td>TPO flat roof</td>
+      <td>$6.00–$10.00</td>
+      <td>20–30 years</td>
     </tr>
   </tbody>
 </table>
@@ -164,6 +177,12 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "When your roof sees 110°F summers, material choice determines whether you replace it in 15 years or 50. Here's what we recommend for Central Valley homes and why.",
     readingMinutes: 7,
+    keyTakeaways: [
+      "Architectural asphalt in light colors: best value for most Merced homes.",
+      "Standing seam metal lasts 40–70 years and pairs cleanly with solar.",
+      "Concrete tile still dominates 1990s–2000s tract homes — repair beats reroof.",
+      "Avoid 3-tab dark asphalt and cedar shake in Merced fire zones.",
+    ],
     body: `
 <p>Merced County's climate is punishing: 105–112°F summers, UV index that exceeds the national average by 35%, and delta moisture swings that stress flashings and sealants. We've replaced thousands of roofs in this valley and the materials that hold up long-term share three characteristics: Class A fire rating, cool-roof certification (CRRC), and thermal flexibility to handle 90°F daily temperature swings.</p>
 
@@ -218,6 +237,12 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Most Merced homeowners wait too long — and a $500 repair becomes a $15,000 replacement. Here are the 7 signs that mean your roof needs attention now.",
     readingMinutes: 5,
+    keyTakeaways: [
+      "Shingles over 20 years old in Merced are past expected lifespan.",
+      "Granule loss in gutters means the UV shield is failing.",
+      "Daylight through the attic is a same-week repair, not a wait-and-see.",
+      "2+ warning signs at once usually means replace, not repair.",
+    ],
     body: `
 <p>Central Valley heat accelerates every roofing failure mode. A shingle that might limp along 5 more years in Seattle fails in 2 in Merced. These are the signals we see most often on homes that waited too long.</p>
 
