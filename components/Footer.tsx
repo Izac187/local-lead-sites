@@ -68,6 +68,49 @@ export default function Footer() {
             </p>
           </div>
 
+          {/* Quick links column */}
+          <div>
+            <p
+              style={{
+                color: "#FFFFFF",
+                fontWeight: 700,
+                fontSize: "0.8125rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                marginBottom: 16,
+              }}
+            >
+              Quick Links
+            </p>
+            <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+              {[
+                { href: "/calculator", label: "Cost Calculator" },
+                { href: "/services", label: "All Services" },
+                { href: "/locations", label: "Service Areas" },
+                { href: "/about", label: "About Us" },
+                { href: "/contact", label: "Contact" },
+              ].map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    style={{
+                      color: "rgba(245,236,215,0.6)",
+                      fontSize: "0.875rem",
+                      fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                      textDecoration: "none",
+                      transition: "color 150ms ease",
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "#F5ECD7")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,236,215,0.6)")}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Services column */}
           <div>
             <p
