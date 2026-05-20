@@ -21,8 +21,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!city) return {};
 
   return {
-    title: `Roofing Contractor ${city.cityName}, CA | Free Estimates | ${siteConfig.siteName}`,
+    title: { absolute: `Roofing Contractor ${city.cityName}, CA | Free Estimates | ${siteConfig.siteName}` },
     description: `Licensed roofing contractor in ${city.cityName}, CA. Roof replacement, repair, and emergency leak response. Serving ${city.zipCodes.join(", ")}. Call (209) 259-0978.`,
+    alternates: { canonical: `https://${siteConfig.domain}/locations/${city.citySlug}` },
     openGraph: {
       title: `Roofing Contractor in ${city.cityName}, CA`,
       description: `Expert roof repair and replacement in ${city.cityName}, CA. Same-day emergency response. Licensed & insured. Free estimates.`,

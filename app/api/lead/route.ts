@@ -4,11 +4,15 @@ import { z } from "zod";
 import { siteConfig } from "@/lib/config";
 
 const schema = z.object({
-  name: z.string().min(2),
-  phone: z.string().min(10),
-  service: z.string().optional(),
-  source: z.string().optional(),
-  city: z.string().optional(), // city slug from location pages e.g. "atwater"
+  name: z.string().min(2).max(100),
+  phone: z
+    .string()
+    .min(10)
+    .max(20)
+    .regex(/^[+]?1?[-.\s]?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4}$/, "Invalid phone"),
+  service: z.string().max(100).optional(),
+  source: z.string().max(100).optional(),
+  city: z.string().max(50).optional(),
 });
 
 /** Route lead email by city slug — add contractor emails to data/cities.csv */

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllCitySlugs } from "@/lib/cities";
 import { getAllServiceSlugs } from "@/lib/servicePages";
+import { getAllBlogSlugs } from "@/lib/blogPosts";
 import { siteConfig } from "@/lib/config";
 
 const BASE = `https://${siteConfig.domain}`;
@@ -8,6 +9,7 @@ const BASE = `https://${siteConfig.domain}`;
 export default function sitemap(): MetadataRoute.Sitemap {
   const citySlugs = getAllCitySlugs();
   const serviceSlugs = getAllServiceSlugs();
+  const blogSlugs = getAllBlogSlugs();
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -46,6 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    {
+      url: `${BASE}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
   ];
 
   const locationRoutes: MetadataRoute.Sitemap = citySlugs.map((slug) => ({
@@ -62,5 +70,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...locationRoutes, ...serviceRoutes];
+  const blogRoutes: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
+    url: `${BASE}/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+  }));
+
+  return [...staticRoutes, ...locationRoutes, ...serviceRoutes, ...blogRoutes];
 }

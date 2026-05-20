@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/config";
 import LeadForm from "@/components/LeadForm";
 
 export const metadata: Metadata = {
-  title: `Roofing Service Areas — Merced County & Central Valley | ${siteConfig.siteName}`,
+  title: { absolute: `Roofing Service Areas — Merced County & Central Valley | ${siteConfig.siteName}` },
   description:
     "Merced Roofing Pros serves Merced, Atwater, Los Banos, Livingston, Chowchilla, and surrounding Central Valley communities. Licensed C-39 contractor. Free estimates.",
 };
