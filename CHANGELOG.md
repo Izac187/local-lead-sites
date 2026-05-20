@@ -6,6 +6,20 @@ Format: `## [X.Y.Z.W] - YYYY-MM-DD`
 
 ---
 
+## [0.3.0.2] - 2026-05-19
+
+### Changed
+- Blog post presentation overhauled to match DESIGN.md
+  - H2/H3 in body now render in Bebas Neue with ember underline; body links and list markers use ember
+  - Cost-comparison table restyled with tar-black header, zebra rows, and mobile horizontal-scroll wrapper
+  - Category pills on the blog index recolored to ember-on-tar-black — no more rainbow palette
+- Trust strip added under the H1 of every post: `Merced Roofing Pros • Licensed C-39 • Updated <date> • <N> min read`
+- FAQ section converted from flat cards to a native `<details>` accordion with ember `+` icon and ember left border when open
+
+### Added
+- "Key Takeaways" ember-bordered box at the top of every post (4 scannable bullets per post) — boosts AI citation extractability and reader scanability
+- New `keyTakeaways: string[]` field on `BlogPost` interface, populated for all 4 existing posts
+
 ## [0.3.0.1] - 2026-05-19
 
 ### Added

@@ -92,6 +92,14 @@ export default async function BlogPostPage({ params }: Props) {
     day: "numeric",
   });
 
+  const updatedFormatted = post.updatedDate
+    ? new Date(post.updatedDate).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : null;
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
@@ -119,11 +127,17 @@ export default async function BlogPostPage({ params }: Props) {
             >
               {post.title}
             </h1>
-            <div className="flex items-center gap-4 text-sm text-gray-400">
-              <span>{siteConfig.siteName}</span>
-              <span>·</span>
-              <time dateTime={post.publishDate}>{publishFormatted}</time>
-              <span>·</span>
+            <div className="flex items-center gap-x-3 gap-y-1 text-xs sm:text-sm text-gray-400 flex-wrap">
+              <span className="font-semibold text-gray-200">{siteConfig.siteName}</span>
+              <span style={{ color: "var(--ember)" }} aria-hidden>•</span>
+              <span>Licensed C-39 Contractor</span>
+              <span style={{ color: "var(--ember)" }} aria-hidden>•</span>
+              {updatedFormatted ? (
+                <time dateTime={post.updatedDate}>Updated {updatedFormatted}</time>
+              ) : (
+                <time dateTime={post.publishDate}>{publishFormatted}</time>
+              )}
+              <span style={{ color: "var(--ember)" }} aria-hidden>•</span>
               <span>{post.readingMinutes} min read</span>
             </div>
           </div>
@@ -136,14 +150,21 @@ export default async function BlogPostPage({ params }: Props) {
             {post.excerpt}
           </p>
 
+          {/* Key Takeaways */}
+          {post.keyTakeaways.length > 0 && (
+            <aside className="blog-takeaways" aria-label="Key takeaways">
+              <div className="blog-takeaways-label">Key Takeaways</div>
+              <ul>
+                {post.keyTakeaways.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </aside>
+          )}
+
           {/* Body */}
           <div
-            className="prose prose-gray max-w-none mb-12"
-            style={{
-              fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
-              lineHeight: 1.75,
-              color: "var(--text)",
-            }}
+            className="blog-body mb-12"
             dangerouslySetInnerHTML={{ __html: post.body }}
           />
 
@@ -156,12 +177,14 @@ export default async function BlogPostPage({ params }: Props) {
               >
                 Frequently Asked Questions
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {post.faqs.map((faq) => (
-                  <div key={faq.q} className="rounded-xl border border-gray-100 p-5">
-                    <h3 className="font-semibold text-gray-900 mb-2">{faq.q}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{faq.a}</p>
-                  </div>
+                  <details key={faq.q} className="faq-item">
+                    <summary>
+                      <span>{faq.q}</span>
+                    </summary>
+                    <div className="faq-answer">{faq.a}</div>
+                  </details>
                 ))}
               </div>
             </div>
