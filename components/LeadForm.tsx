@@ -21,6 +21,7 @@ interface LeadFormProps {
   compact?: boolean;
   prefillService?: string;
   source?: string;
+  city?: string; // city slug for lead routing e.g. "atwater"
 }
 
 const inputStyle = {
@@ -45,7 +46,7 @@ const labelStyle = {
   fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
 };
 
-export default function LeadForm({ compact = false, prefillService, source }: LeadFormProps) {
+export default function LeadForm({ compact = false, prefillService, source, city }: LeadFormProps) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const {
@@ -63,7 +64,7 @@ export default function LeadForm({ compact = false, prefillService, source }: Le
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, source: source ?? "form" }),
+        body: JSON.stringify({ ...data, source: source ?? "form", city }),
       });
       if (!res.ok) throw new Error("Send failed");
       setStatus("sent");
