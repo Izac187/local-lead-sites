@@ -6,6 +6,13 @@ Format: `## [X.Y.Z.W] - YYYY-MM-DD`
 
 ---
 
+## [0.2.0.1] - 2026-05-19
+
+### Added
+- Vercel Web Analytics wired into root layout via `@vercel/analytics/next`
+
+---
+
 ## [0.2.0.0] - 2026-05-14
 
 ### Added
