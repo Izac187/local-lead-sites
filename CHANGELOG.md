@@ -6,6 +6,36 @@ Format: `## [X.Y.Z.W] - YYYY-MM-DD`
 
 ---
 
+## [0.3.0.0] - 2026-05-19
+
+### Added
+- Blog infrastructure: `/blog` hub + `/blog/[slug]` SSG post pages with Article, FAQPage, and BreadcrumbList schema
+- 4 SEO-optimized blog posts targeting Merced roofing keywords (timeline, cost, materials, maintenance)
+- 6 city location pages (`/locations/[citySlug]`) with RoofingContractor schema, geo-nearest city linking, local POI chips, and per-city FAQ
+- 6 service silo pages (`/services/[service]`) with Service schema, cost ranges, FAQ, and emergency banners
+- `/locations` hub page listing all 6 service areas
+- pSEO pipeline: `lib/cities.ts`, `lib/servicePages.ts`, `lib/blogPosts.ts`, `lib/geo.ts` (Haversine distance)
+- `data/cities.csv` as single source of truth for city data
+- `scripts/generate-content.mjs` — Claude Haiku API weekly content generation
+- GitHub Actions `pseo-weekly.yml` cron workflow for automated city content refresh
+- Twilio SMS auto-responder on lead submissions (fire-and-forget, gated on env vars)
+- City-based lead email routing via `LEAD_EMAIL_{CITY}` env vars
+- `app/sitemap.ts` — programmatic sitemap (35 URLs) replacing static `next-sitemap`
+- `app/robots.ts` — dynamic robots.txt with correct production domain
+- `ROADMAP.md` — 90-day week-by-week SEO execution plan with GBP, citations, backlinks, and revenue projections
+
+### Changed
+- Footer expanded to 5 columns with full service and city links, CSLB/CRRC compliance copy
+- Lead API (`app/api/lead/route.ts`) adds city routing, SMS auto-responder, server-side phone regex validation, and string max-length guards
+- All page titles use `{ absolute: "..." }` to prevent layout template doubling
+- Canonical tags added to all dynamic pages (city, service, blog post, `/merced-roofing`)
+- Blog post publish dates corrected to May 2026
+
+### Fixed
+- Deleted `public/sitemap.xml` and `public/sitemap-0.xml` static files that overrode the dynamic `app/sitemap.ts` (Google was seeing 6 URLs instead of 35)
+- Deleted `public/robots.txt` that had the wrong domain (`merced-roofing-pros.com`)
+- `/merced-roofing` canonical now points to `/locations/merced` to consolidate authority
+
 ## [0.2.0.0] - 2026-05-14
 
 ### Added
