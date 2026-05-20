@@ -4,7 +4,7 @@ import { blogPosts } from "@/lib/blogPosts";
 import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: `Roofing Tips & Guides for Merced, CA | ${siteConfig.siteName}`,
+  title: { absolute: `Roofing Tips & Guides for Merced, CA | ${siteConfig.siteName}` },
   description:
     "Roofing cost guides, material recommendations, and maintenance tips for Central Valley homeowners. Written by licensed C-39 contractors serving Merced County.",
   openGraph: {

@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
     metaTitle: "How Long Does a Roof Replacement Take? | Merced Roofing Pros",
     metaDescription:
       "Most Merced roof replacements take 1–3 days. Learn what affects the timeline — size, pitch, materials, and Central Valley weather windows.",
-    publishDate: "2026-06-02",
+    publishDate: "2026-05-12",
     category: "how-to",
     excerpt:
       "Most Merced homeowners are back under a finished roof in one to three days. Here's exactly what determines that timeline and how to plan around it.",
@@ -77,7 +77,7 @@ export const blogPosts: BlogPost[] = [
     metaTitle: "Roof Replacement Cost Merced CA 2026 | Merced Roofing Pros",
     metaDescription:
       "Merced roof replacement costs $8,500–$22,000 for most homes. Breakdown by material, size, and what drives price in Central Valley in 2026.",
-    publishDate: "2026-06-09",
+    publishDate: "2026-05-13",
     category: "cost",
     excerpt:
       "A Merced roof replacement runs $8,500–$22,000 for most homes depending on material and size. Here's the 2026 price breakdown and what actually drives cost.",
@@ -159,7 +159,7 @@ export const blogPosts: BlogPost[] = [
     metaTitle: "Best Roofing Materials for Central Valley Heat | Merced Roofing Pros",
     metaDescription:
       "Central Valley summers hit 110°F+. We rank the best roofing materials for Merced, Atwater, and Los Banos homes by heat performance, cost, and California compliance.",
-    publishDate: "2026-06-16",
+    publishDate: "2026-05-14",
     category: "materials",
     excerpt:
       "When your roof sees 110°F summers, material choice determines whether you replace it in 15 years or 50. Here's what we recommend for Central Valley homes and why.",
@@ -213,7 +213,7 @@ export const blogPosts: BlogPost[] = [
     metaTitle: "7 Signs You Need a New Roof in Merced CA | Merced Roofing Pros",
     metaDescription:
       "Curling shingles, granule loss, daylight through the attic — learn the 7 warning signs that mean a Merced home needs roof replacement, not repair.",
-    publishDate: "2026-06-23",
+    publishDate: "2026-05-15",
     category: "maintenance",
     excerpt:
       "Most Merced homeowners wait too long — and a $500 repair becomes a $15,000 replacement. Here are the 7 signs that mean your roof needs attention now.",

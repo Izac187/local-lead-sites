@@ -6,7 +6,7 @@ import CalculatorSection from "@/components/CalculatorSection";
 import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: `${siteConfig.siteName} | Roofing Contractor Merced CA`,
+  title: { absolute: `${siteConfig.siteName} | Roofing Contractor Merced CA` },
   description: siteConfig.description,
 };
 

@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/config";
 import { servicePages } from "@/lib/servicePages";
 
 export const metadata: Metadata = {
-  title: `Roofing Services Merced CA | Repair, Replacement & More | ${siteConfig.siteName}`,
+  title: { absolute: `Roofing Services Merced CA | Repair, Replacement & More | ${siteConfig.siteName}` },
   description: `Complete roofing services in Merced, CA: emergency repair, roof replacement, metal roofing, flat TPO, storm damage, and more. Licensed C-39 contractor. Free estimates.`,
 };
 

@@ -19,8 +19,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!page) return {};
 
   return {
-    title: page.metaTitle,
+    title: { absolute: page.metaTitle },
     description: page.metaDescription,
+    alternates: { canonical: `https://${siteConfig.domain}/services/${page.slug}` },
     openGraph: {
       title: page.h1,
       description: page.metaDescription,
