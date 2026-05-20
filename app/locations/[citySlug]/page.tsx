@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { cities, getCityBySlug, getAllCitySlugs } from "@/lib/cities";
+import { getCityBySlug, getAllCitySlugs } from "@/lib/cities";
+import { getNearestCities } from "@/lib/geo";
 import { servicePages } from "@/lib/servicePages";
 import { siteConfig } from "@/lib/config";
 import LeadForm from "@/components/LeadForm";
@@ -117,9 +118,7 @@ export default async function LocationPage({ params }: Props) {
     ],
   };
 
-  const nearbyOtherCities = cities.filter(
-    (c) => c.citySlug !== city.citySlug && c.citySlug !== "merced"
-  ).slice(0, 3);
+  const nearbyOtherCities = getNearestCities(city.citySlug, 3);
 
   return (
     <>
@@ -273,7 +272,7 @@ export default async function LocationPage({ params }: Props) {
               A licensed roofing specialist will call you back within 30 minutes during business hours
               (Mon–Sat, 7am–8pm).
             </p>
-            <LeadForm source={`location-${city.citySlug}`} />
+            <LeadForm source={`location-${city.citySlug}`} city={city.citySlug} />
           </div>
         </div>
       </div>
