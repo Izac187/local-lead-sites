@@ -6,6 +6,11 @@ Format: `## [X.Y.Z.W] - YYYY-MM-DD`
 
 ---
 
+## [0.3.0.1] - 2026-05-19
+
+### Added
+- Vercel Web Analytics (`@vercel/analytics`) added to root layout — tracks pageviews and Web Vitals without cookies
+
 ## [0.3.0.0] - 2026-05-19
 
 ### Added
