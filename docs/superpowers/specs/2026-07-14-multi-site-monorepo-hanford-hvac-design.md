@@ -6,7 +6,20 @@
 
 ## Context
 
-Site 1 (Merced Roofing Pros, `mercedroofingpro.com`) is live and earning: deploy pipeline, Resend lead email, custom domain, and sitemap all verified. The original plan assumed each new site was "only a `lib/config.ts` change." That assumption is false — ~12 files hardcode roofing/Merced copy, and the calculator is hardwired to roofing's 3-dimension estimate model. This spec fixes the foundation so new sites are genuinely config-driven, and validates it with a second, structurally different niche (HVAC).
+Site 1 (Merced Roofing Pros, `mercedroofingpro.com`) is live and earning: deploy pipeline, Resend lead email, custom domain, and sitemap all verified. The original plan assumed each new site was "only a `lib/config.ts` change." That assumption is false. Verified against origin/main, the template is a full local-SEO site:
+
+- `lib/config.ts` (132 lines) — brand, contact, services summary, calculator, SEO.
+- `lib/servicePages.ts` (234 lines) — **6 full service pages** (`ServicePageData[]`) + `getServiceBySlug`/`getAllServiceSlugs`, driving `/services/[service]`.
+- `lib/cities.ts` (122 lines) — **6 city location pages** (`CityData[]`) + `getCityBySlug`/`getAllCitySlugs`, driving `/locations/[citySlug]`.
+- `lib/blogPosts.ts` (275 lines) — **6 blog posts**, driving `/blog/[slug]`.
+- `lib/geo.ts` (30 lines) — Haversine `getNearestCities`, reads `cities`.
+- ~12 component/page files with hardcoded hero, FAQ, footer, and location-landing copy.
+
+**351 hardcoded** roof/Merced/shingle/CSLB references across `app/`, `components/`, `lib/`. Build currently passes (baseline captured). This spec fixes the foundation so new sites are genuinely config-driven, and validates it with a second, structurally different niche (HVAC) at **full content parity**.
+
+### Low-risk refactor strategy (keep public module APIs stable)
+
+The data modules (`@/lib/config`, `@/lib/cities`, `@/lib/servicePages`, `@/lib/geo`, `@/lib/blogPosts`) are imported across many components. To protect Merced parity, the refactor keeps each module's **public exports identical** (same names, types, helper functions) and changes only their **data source**: from a hardcoded const to a per-site data module selected by `NEXT_PUBLIC_SITE`. Component files that only consume data do not change during the data-layer move. Only the ~12 files with hardcoded *copy strings* change, and only to read new `siteConfig` fields.
 
 **Sites in the eventual portfolio:** Merced Roofing (live), Hanford HVAC (this spec), then Madera Plumbing, Tulare Tree Service, Madera Fence, Hanford Welding.
 
@@ -14,7 +27,7 @@ Site 1 (Merced Roofing Pros, `mercedroofingpro.com`) is live and earning: deploy
 
 1. **Architecture:** One monorepo, config-per-site (not clone-per-repo, not multi-domain middleware).
 2. **Calculator:** Per-niche calculators via a config-driven engine (not a generic quote form).
-3. **This plan's scope:** Refactor + first new site (Hanford HVAC). Not the full 5-site rollout; not refactor-only.
+3. **This plan's scope:** Full monorepo refactor + Hanford HVAC at **full content parity** (6 services, 6 cities, 6 blog posts). Not the remaining 4 sites. (Revised from "lean launch" after discovering the template's full content layer.)
 
 ## Architecture
 
@@ -67,13 +80,16 @@ Build time: Vercel sets `NEXT_PUBLIC_SITE` → `lib/config.ts` resolves the site
 - Lead-form end-to-end on Hanford (submit → email received at `LEAD_EMAIL`).
 - Both site configs type-check against `SiteConfig`.
 
-## Hanford HVAC site
+## Hanford HVAC site (full parity)
 
-New `config/sites/hanford-hvac.ts`:
+New `config/sites/hanford-hvac/` mirroring Merced's content depth:
 - Niche HVAC; city Hanford / Kings County, CA.
-- Services: AC install/repair, furnace, ductwork, maintenance plans.
-- Calculator: `formula` kind — home sq-ft × system type × job → range.
-- FAQ, hero, SEO keywords, colors/fonts, domain, phone, lead email.
+- `site.ts` — brand, contact, hero, FAQ, SEO, colors, schema, HVAC calculator (`formula` kind: home sq-ft × system type × job → range).
+- `services.ts` — **6 HVAC service pages** (`ServicePageData[]`): AC installation, AC repair, furnace/heating, ductwork, HVAC maintenance, emergency HVAC repair. Full metaTitle/metaDescription/summary/bullets/faqs/estimateRange per service.
+- `cities.ts` — **6 Kings County-area cities** (`CityData[]`): Hanford, Lemoore, Corcoran, Armona, Hardwick/Kings-area, Visalia-adjacent — each with HVAC-specific `uniqueNote`, zips, coords, POIs.
+- `blog.ts` — **6 HVAC blog posts** matching the blogPosts shape.
+
+Content is niche- and geo-accurate (Central Valley HVAC facts, Kings County permit offices, real climate load figures). DESIGN.md rules apply (no emoji, business hours everywhere the callback is mentioned).
 
 Launch: new Vercel project → `NEXT_PUBLIC_SITE=hanford-hvac` → domain + Resend env → verify lead flow end-to-end (same checklist that launched Merced).
 
