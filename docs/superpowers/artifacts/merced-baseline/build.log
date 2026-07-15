@@ -1,0 +1,56 @@
+
+> merced-roofing@0.3.0.1 build
+> next build
+
+  [1m[38;2;173;127;168m▲ Next.js 14.2.35[39m[22m
+
+ [37m[1m [22m[39m Creating an optimized production build ...
+ [32m[1m✓[22m[39m Compiled successfully
+ [37m[1m [22m[39m Linting and checking validity of types ...
+ [37m[1m [22m[39m Collecting page data ...
+ [37m[1m [22m[39m Generating static pages (0/31) ...
+ [37m[1m [22m[39m Generating static pages (7/31) 
+ [37m[1m [22m[39m Generating static pages (15/31) 
+ [37m[1m [22m[39m Generating static pages (23/31) 
+ [32m[1m✓[22m[39m Generating static pages (31/31)
+ [37m[1m [22m[39m Finalizing page optimization ...
+ [37m[1m [22m[39m Collecting build traces ...
+
+[4mRoute (app)[24m                                                [4mSize[24m     [4mFirst Load JS[24m
+┌ ○ /                                                      3.29 kB         [37m[1m120 kB[22m[39m
+├ ○ /_not-found                                            874 B          [37m[1m88.2 kB[22m[39m
+├ ○ /about                                                 137 B          [37m[1m87.5 kB[22m[39m
+├ ƒ /api/lead                                              0 B                [37m[1m0 B[22m[39m
+├ ○ /blog                                                  176 B          [37m[1m96.2 kB[22m[39m
+├ ● /blog/[slug]                                           200 B           [37m[1m125 kB[22m[39m
+├   ├ /blog/how-long-does-roof-replacement-take-merced-ca
+├   ├ /blog/cost-of-roof-replacement-merced-ca-2026
+├   ├ /blog/best-roofing-materials-central-valley-heat
+├   └ /blog/signs-you-need-a-new-roof-merced
+├ ○ /calculator                                            1.13 kB         [37m[1m117 kB[22m[39m
+├ ○ /contact                                               179 B           [37m[1m116 kB[22m[39m
+├ ○ /locations                                             200 B           [37m[1m125 kB[22m[39m
+├ ● /locations/[citySlug]                                  200 B           [37m[1m125 kB[22m[39m
+├   ├ /locations/merced
+├   ├ /locations/atwater
+├   ├ /locations/los-banos
+├   └ [+3 more paths]
+├ ○ /merced-roofing                                        179 B           [37m[1m116 kB[22m[39m
+├ ○ /robots.txt                                            0 B                [37m[1m0 B[22m[39m
+├ ○ /services                                              200 B           [37m[1m125 kB[22m[39m
+├ ● /services/[service]                                    200 B           [37m[1m125 kB[22m[39m
+├   ├ /services/roof-replacement
+├   ├ /services/roof-repair
+├   ├ /services/emergency-roof-repair
+├   └ [+3 more paths]
+└ ○ /sitemap.xml                                           0 B                [37m[1m0 B[22m[39m
++ First Load JS shared by all                              [37m[1m87.3 kB[22m[39m
+  ├ chunks/146-64492a4486969249.js                         31.7 kB
+  ├ chunks/b6261da7-f5eba4bc5c82ba40.js                    53.7 kB
+  └ other shared chunks (total)                            1.94 kB
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses [36mgetStaticProps[39m)
+ƒ  (Dynamic)  server-rendered on demand
+
