@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import LeadForm from "@/components/LeadForm";
 import { siteConfig } from "@/lib/config";
 
@@ -40,7 +41,7 @@ export default function SplitHero() {
             {/* Eyebrow */}
             <div className="eyebrow" style={{ marginBottom: 20 }}>
               <span className="eyebrow-line" />
-              <span className="eyebrow-text">Merced County Roofing</span>
+              <span className="eyebrow-text">{siteConfig.hero.eyebrow}</span>
             </div>
 
             <h1
@@ -52,11 +53,13 @@ export default function SplitHero() {
                 marginBottom: 24,
               }}
             >
-              YOUR ROOF,
-              <br />
-              FIXED RIGHT.
-              <br />
-              <span style={{ color: "var(--ember)" }}>FREE ESTIMATE.</span>
+              {siteConfig.hero.headlineLines.map((line) => (
+                <Fragment key={line}>
+                  {line}
+                  <br />
+                </Fragment>
+              ))}
+              <span style={{ color: "var(--ember)" }}>{siteConfig.hero.emberLine}</span>
             </h1>
 
             <p
@@ -69,19 +72,12 @@ export default function SplitHero() {
                 maxWidth: "52ch",
               }}
             >
-              Licensed and insured roofing in Merced County. Call back in 30
-              minutes or less — Mon&ndash;Sat, 7am&ndash;8pm. Know what your
-              roof costs before you commit to anyone.
+              {siteConfig.hero.subcopy}
             </p>
 
             {/* Bullet points — CSS circles, no emoji */}
             <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 12, marginBottom: 32 }}>
-              {[
-                "Licensed & Insured in California",
-                "Free written estimate — no obligation",
-                "Storm damage, leaks, full replacements",
-                "Serving Merced, Atwater, Livingston & more",
-              ].map((item) => (
+              {siteConfig.hero.bullets.map((item) => (
                 <li
                   key={item}
                   style={{
@@ -143,14 +139,14 @@ export default function SplitHero() {
           >
             <div className="eyebrow" style={{ marginBottom: 8 }}>
               <span className="eyebrow-line" />
-              <span className="eyebrow-text">Mon–Sat, 7am–8pm</span>
+              <span className="eyebrow-text">{siteConfig.hero.formEyebrow}</span>
             </div>
 
             <h2
               className="font-display"
               style={{ fontSize: "1.75rem", color: "var(--text)", marginBottom: 4 }}
             >
-              Get a Free Estimate
+              {siteConfig.hero.formHeading}
             </h2>
             <p
               style={{
@@ -160,7 +156,7 @@ export default function SplitHero() {
                 marginBottom: 20,
               }}
             >
-              We call back in 30 minutes or less.
+              {siteConfig.hero.formSubcopy}
             </p>
 
             <LeadForm source="hero" />

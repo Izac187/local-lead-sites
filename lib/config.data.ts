@@ -45,6 +45,23 @@ export const siteConfig = {
     },
   ],
 
+  hero: {
+    eyebrow: "Merced County Roofing",
+    headlineLines: ["YOUR ROOF,", "FIXED RIGHT."],
+    emberLine: "FREE ESTIMATE.",
+    subcopy:
+      "Licensed and insured roofing in Merced County. Call back in 30 minutes or less — Mon–Sat, 7am–8pm. Know what your roof costs before you commit to anyone.",
+    bullets: [
+      "Licensed & Insured in California",
+      "Free written estimate — no obligation",
+      "Storm damage, leaks, full replacements",
+      "Serving Merced, Atwater, Livingston & more",
+    ],
+    formEyebrow: "Mon–Sat, 7am–8pm",
+    formHeading: "Get a Free Estimate",
+    formSubcopy: "We call back in 30 minutes or less.",
+  },
+
   colors: {
     base: "oklch(32% 0.09 38)",
     primary: "oklch(58% 0.15 38)",
