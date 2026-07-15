@@ -1,20 +1,19 @@
 #!/usr/bin/env bash
-# Rebuild Merced and diff rendered HTML against the captured baseline.
-# Normalizes per-build tokens (asset hashes, build IDs incl. escaped RSC payload,
-# next/font class hashes) so only real content changes show. Exit 0 = parity holds.
+# Rebuild Merced and compare the rendered DOM (+ JSON-LD) against the baseline.
+# Ignores build-internal churn: strips the __next_f RSC hydration payload (webpack
+# module IDs), async chunk-loader <script> tags, and normalizes asset/font hashes.
+# A real content or layout change still shows as a diff. Exit 0 = parity holds.
 set -euo pipefail
 BASE="docs/superpowers/artifacts/merced-baseline/html"
 NEXT_PUBLIC_SITE=merced npm run build > /tmp/parity-build.log 2>&1 || { echo "BUILD FAILED"; tail -20 /tmp/parity-build.log; exit 2; }
 
 norm() {
+  perl -0777 -pe 's#self\.__next_f\.push\(.*?\)</script>#__NEXTF__</script>#gs' "$1" | \
   sed -E \
-    -e 's#/_next/static/[A-Za-z0-9_./-]+#/_next/static/X#g' \
+    -e 's#/_next/static/[^"]*#/_next/static/X#g' \
+    -e 's#<script src="/_next/static/X"[^>]*></script>##g' \
     -e 's#__variable_[A-Za-z0-9]+#__variable_X#g' \
-    -e 's#"buildId":"[^"]*"#"buildId":"X"#g' \
-    -e 's#buildId\\":\\"[A-Za-z0-9_-]+#buildId\\":\\"X#g' \
-    -e 's#nonce="[^"]*"#nonce="X"#g' \
-    -e 's#[0-9a-f]{16,}#HASH#g' \
-    "$1"
+    -e 's#nonce="[^"]*"#nonce="X"#g'
 }
 
 diffs=0
@@ -31,4 +30,4 @@ while IFS= read -r b; do
 done < <(find "$BASE" -name '*.html')
 rm -rf "$tmpd"
 total=$(find "$BASE" -name '*.html' | wc -l | tr -d ' ')
-if [ "$diffs" -eq 0 ]; then echo "PARITY: PASS ($total pages identical)"; else echo "PARITY: FAIL ($diffs changed)"; exit 1; fi
+if [ "$diffs" -eq 0 ]; then echo "PARITY: PASS ($total DOM pages identical)"; else echo "PARITY: FAIL ($diffs changed)"; exit 1; fi

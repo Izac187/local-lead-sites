@@ -47,7 +47,7 @@ export default function LocationsPage() {
                 {city.cityName}, CA
               </h2>
               <p className="text-sm text-gray-500 mb-3">
-                ZIP: {city.zipCodes.join(", ")} · ~{city.driveFromMerced} from Merced
+                ZIP: {city.zipCodes.join(", ")} · ~{city.driveFromHub} from Merced
               </p>
               <p className="text-sm text-gray-600 line-clamp-2">{city.uniqueNote}</p>
               <span className="inline-block mt-4 text-sm font-semibold text-orange-500">

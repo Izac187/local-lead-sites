@@ -20,3 +20,5 @@ Build log: `build.log` (BUILD: PASS).
 ## Parity gate results
 
 - (to be appended by Tasks 7, 15, 22)
+
+- Phase 1 (data-layer split) parity: PASS — 25 DOM pages identical (2026-07-14)

@@ -105,7 +105,7 @@ export default async function LocationPage({ params }: Props) {
         name: `How quickly can you respond to a roof emergency in ${city.cityName}?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `For active leaks in ${city.cityName}, we target same-day response during business hours (Mon–Sat, 7am–8pm). ${city.cityName} is approximately ${city.driveFromMerced} from our Merced base.`,
+          text: `For active leaks in ${city.cityName}, we target same-day response during business hours (Mon–Sat, 7am–8pm). ${city.cityName} is approximately ${city.driveFromHub} from our Merced base.`,
         },
       },
       {
