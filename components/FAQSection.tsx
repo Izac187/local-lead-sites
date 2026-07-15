@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { siteConfig } from "@/lib/config";
 
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
@@ -69,33 +70,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   );
 }
 
-const faqs = [
-  {
-    q: "How much does a roof replacement cost in Merced?",
-    a: "A typical asphalt shingle replacement in Merced runs $7,500–$15,000 for a 2,000 sq ft home. Metal and tile cost more. Merced labor rates run about 10% below Bay Area averages. Use our estimator above for a personalized range.",
-  },
-  {
-    q: "How long does a roof replacement take?",
-    a: "Most residential replacements take 1–2 days. Larger homes or tile roofs may take 3–4 days. We schedule around Merced's forecast — no unfinished roofs left overnight during rain season.",
-  },
-  {
-    q: "Do you offer free inspections?",
-    a: "Yes. Free visual inspections with a written report for any Merced area homeowner. Post-storm inspections are typically same or next day.",
-  },
-  {
-    q: "Are you licensed and insured in California?",
-    a: "Yes. California Contractors State License Board (CSLB) licensed, with general liability and workers' compensation. Certificate of insurance available on request.",
-  },
-  {
-    q: "What happens if I call after business hours?",
-    a: "Leave a message or submit the form — we call back first thing the next business day. Our callback promise is Mon–Sat, 7am–8pm. After-hours submissions get priority in the morning queue.",
-  },
-];
-
 export default function FAQSection() {
   return (
     <>
-      {faqs.map(({ q, a }) => (
+      {siteConfig.faqs.map(({ q, a }) => (
         <FAQItem key={q} q={q} a={a} />
       ))}
     </>
