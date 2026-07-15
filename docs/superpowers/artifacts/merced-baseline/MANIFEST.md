@@ -22,3 +22,9 @@ Build log: `build.log` (BUILD: PASS).
 - (to be appended by Tasks 7, 15, 22)
 
 - Phase 1 (data-layer split) parity: PASS — 25 DOM pages identical (2026-07-14)
+
+- Phase 2 (calculator engine) parity: PASS with 1 INTENTIONAL delta on index.html —
+  homepage calculator section is now config-driven: DOM id calc-roof-size->calc-roofSize,
+  placeholder "Select size/condition"->"Select roof size/roof condition", label
+  "Condition"->"Roof Condition" (now consistent with /calculator + config). No estimate
+  values, styles, or structure changed. index.html baseline updated to new output.

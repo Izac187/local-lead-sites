@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { siteConfig } from "@/lib/config";
+import { computeEstimate, type CalculatorConfig } from "@/lib/calculator";
+
+const calculator = siteConfig.calculator as unknown as CalculatorConfig;
 
 const selectStyle = {
   width: "100%",
@@ -28,14 +31,11 @@ const labelStyle = {
 const fmt = (n: number) => "$" + n.toLocaleString("en-US");
 
 export default function CalculatorSection() {
-  const [roofSize, setRoofSize] = useState("");
-  const [material, setMaterial] = useState("");
-  const [condition, setCondition] = useState("");
+  const [values, setValues] = useState<Record<string, string>>({});
+  const handleChange = (id: string, value: string) =>
+    setValues((prev) => ({ ...prev, [id]: value }));
 
-  const estimate = (() => {
-    if (!roofSize || !material || !condition) return null;
-    return siteConfig.calculator.estimates[roofSize]?.[material]?.[condition] ?? null;
-  })();
+  const estimate = computeEstimate(calculator, values);
 
   return (
     <div
@@ -47,33 +47,37 @@ export default function CalculatorSection() {
       }}
     >
       <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-        <div>
-          <label htmlFor="calc-roof-size" style={labelStyle}>Roof Size</label>
-          <select id="calc-roof-size" value={roofSize} onChange={(e) => setRoofSize(e.target.value)} style={selectStyle}>
-            <option value="">Select size</option>
-            {siteConfig.calculator.inputs[0].options.map((o) => (
-              <option key={o.value} value={o.value}>{o.label}</option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="calc-material" style={labelStyle}>Material</label>
-          <select id="calc-material" value={material} onChange={(e) => setMaterial(e.target.value)} style={selectStyle}>
-            <option value="">Select material</option>
-            {siteConfig.calculator.inputs[1].options.map((o) => (
-              <option key={o.value} value={o.value}>{o.label}</option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="calc-condition" style={labelStyle}>Condition</label>
-          <select id="calc-condition" value={condition} onChange={(e) => setCondition(e.target.value)} style={selectStyle}>
-            <option value="">Select condition</option>
-            {siteConfig.calculator.inputs[2].options.map((o) => (
-              <option key={o.value} value={o.value}>{o.label}</option>
-            ))}
-          </select>
-        </div>
+        {calculator.inputs.map((input) => (
+          <div key={input.id}>
+            <label htmlFor={`calc-${input.id}`} style={labelStyle}>{input.label}</label>
+            {input.type === "select" ? (
+              <select
+                id={`calc-${input.id}`}
+                value={values[input.id] ?? ""}
+                onChange={(e) => handleChange(input.id, e.target.value)}
+                style={selectStyle}
+              >
+                <option value="">Select {input.label.toLowerCase()}</option>
+                {input.options.map((o) => (
+                  <option key={o.value} value={o.value}>{o.label}</option>
+                ))}
+              </select>
+            ) : (
+              <input
+                id={`calc-${input.id}`}
+                type="number"
+                inputMode="numeric"
+                min={input.min}
+                max={input.max}
+                step={input.step}
+                placeholder={input.unitLabel}
+                value={values[input.id] ?? ""}
+                onChange={(e) => handleChange(input.id, e.target.value)}
+                style={selectStyle}
+              />
+            )}
+          </div>
+        ))}
 
         {estimate ? (
           <div
@@ -86,7 +90,7 @@ export default function CalculatorSection() {
             }}
           >
             <p style={{ color: "rgba(245,236,215,0.7)", fontSize: "0.8125rem", fontFamily: "var(--font-dm-sans), system-ui, sans-serif", marginBottom: 6 }}>
-              Estimated range (Merced County)
+              Estimated range ({siteConfig.county})
             </p>
             <p className="font-display" style={{ fontSize: "2.25rem", color: "#FFFFFF", lineHeight: 1, marginBottom: 6 }}>
               {fmt(estimate[0])} &ndash; {fmt(estimate[1])}

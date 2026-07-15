@@ -2,33 +2,20 @@
 
 import { useState } from "react";
 import { siteConfig } from "@/lib/config";
+import { computeEstimate, type CalculatorConfig } from "@/lib/calculator";
 import LeadForm from "@/components/LeadForm";
 
-type EstimateKey = keyof typeof siteConfig.calculator.estimates;
+const calculator = siteConfig.calculator as unknown as CalculatorConfig;
 
 function formatMoney(n: number) {
   return "$" + n.toLocaleString("en-US");
 }
 
 export default function Calculator() {
-  const inputs = siteConfig.calculator.inputs;
+  const inputs = calculator.inputs;
   const [values, setValues] = useState<Record<string, string>>({});
 
-  const allSelected = inputs.every((i) => values[i.id]);
-
-  let estimate: [number, number] | null = null;
-  if (allSelected) {
-    const { roofSize, material, condition } = values as {
-      roofSize: EstimateKey;
-      material: string;
-      condition: string;
-    };
-    try {
-      estimate = siteConfig.calculator.estimates[roofSize]?.[material]?.[condition] ?? null;
-    } catch {
-      estimate = null;
-    }
-  }
+  const estimate = computeEstimate(calculator, values);
 
   function handleChange(id: string, value: string) {
     setValues((prev) => ({ ...prev, [id]: value }));
@@ -46,19 +33,34 @@ export default function Calculator() {
             >
               {input.label}
             </label>
-            <select
-              id={input.id}
-              value={values[input.id] ?? ""}
-              onChange={(e) => handleChange(input.id, e.target.value)}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
-            >
-              <option value="">— Select —</option>
-              {input.options.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
+            {input.type === "select" ? (
+              <select
+                id={input.id}
+                value={values[input.id] ?? ""}
+                onChange={(e) => handleChange(input.id, e.target.value)}
+                className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
+              >
+                <option value="">— Select —</option>
+                {input.options.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              <input
+                id={input.id}
+                type="number"
+                inputMode="numeric"
+                min={input.min}
+                max={input.max}
+                step={input.step}
+                placeholder={input.unitLabel}
+                value={values[input.id] ?? ""}
+                onChange={(e) => handleChange(input.id, e.target.value)}
+                className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
+              />
+            )}
           </div>
         ))}
       </div>
