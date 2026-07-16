@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 import { siteConfig } from "@/lib/config";
+import { cities } from "@/lib/cities";
 
 const schema = z.object({
   name: z.string().min(2).max(100),
@@ -15,22 +16,20 @@ const schema = z.object({
   city: z.string().max(50).optional(),
 });
 
-/** Route lead email by city slug — add contractor emails to data/cities.csv */
+/**
+ * Route lead email by city slug. Per-city overrides come from env vars named
+ * LEAD_EMAIL_<SLUG> (slug uppercased, dashes -> underscores), derived from the
+ * active site's cities. Falls back to LEAD_EMAIL, then the site email.
+ */
 function routeEmail(citySlug?: string): string {
   const defaultEmail = process.env.LEAD_EMAIL ?? siteConfig.email;
   if (!citySlug) return defaultEmail;
 
-  // City-specific overrides — can be extended as you add contractor partners
-  const routing: Record<string, string> = {
-    merced: process.env.LEAD_EMAIL_MERCED ?? defaultEmail,
-    atwater: process.env.LEAD_EMAIL_ATWATER ?? defaultEmail,
-    "los-banos": process.env.LEAD_EMAIL_LOS_BANOS ?? defaultEmail,
-    livingston: process.env.LEAD_EMAIL_LIVINGSTON ?? defaultEmail,
-    chowchilla: process.env.LEAD_EMAIL_CHOWCHILLA ?? defaultEmail,
-    winton: process.env.LEAD_EMAIL_WINTON ?? defaultEmail,
-  };
+  const known = cities.some((c) => c.citySlug === citySlug);
+  if (!known) return defaultEmail;
 
-  return routing[citySlug] ?? defaultEmail;
+  const envKey = "LEAD_EMAIL_" + citySlug.toUpperCase().replace(/-/g, "_");
+  return process.env[envKey] ?? defaultEmail;
 }
 
 /** Send Twilio SMS auto-responder to the lead's phone number */
@@ -45,7 +44,7 @@ async function sendSmsAutoresponder(phone: string, name: string): Promise<void> 
   const digits = phone.replace(/\D/g, "");
   const e164 = digits.length === 10 ? `+1${digits}` : `+${digits}`;
 
-  const body = `Hi ${name.split(" ")[0]}, thanks for contacting Merced Roofing Pros! A licensed contractor will reach out within 15 minutes (Mon–Sat, 7am–8pm). Questions? Call us at ${siteConfig.phone}.`;
+  const body = `Hi ${name.split(" ")[0]}, thanks for contacting ${siteConfig.siteName}! A licensed contractor will reach out within 15 minutes (Mon–Sat, 7am–8pm). Questions? Call us at ${siteConfig.phone}.`;
 
   const params = new URLSearchParams({ To: e164, From: from, Body: body });
 
@@ -95,7 +94,7 @@ export async function POST(req: NextRequest) {
     : null;
 
   const { error } = await resend.emails.send({
-    from: `${siteConfig.siteName} <noreply@mercedroofingpro.com>`,
+    from: `${siteConfig.siteName} <noreply@${siteConfig.domain}>`,
     to: [toEmail],
     subject: `New Lead: ${name}${cityLabel ? ` — ${cityLabel}` : ""} | ${siteConfig.siteName}`,
     text: [
