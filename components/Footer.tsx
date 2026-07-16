@@ -89,7 +89,7 @@ export default function Footer() {
                 { href: "/calculator", label: "Cost Calculator" },
                 { href: "/services", label: "All Services" },
                 { href: "/locations", label: "Service Areas" },
-                { href: "/blog", label: "Roofing Blog" },
+                { href: "/blog", label: `${siteConfig.niche} Blog` },
                 { href: "/about", label: "About Us" },
                 { href: "/contact", label: "Contact" },
               ].map(({ href, label }) => (

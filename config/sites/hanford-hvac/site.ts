@@ -173,8 +173,8 @@ const hanfordHvacConfig = {
       base: 2000,
       terms: [
         { inputId: "homeSqFt", perUnit: 3 },
-        { inputId: "jobType", multipliers: { repair: 0.3, replace: 1.0, install: 1.4 } },
-        { inputId: "systemType", multipliers: { central: 1.0, heatpump: 1.25, minisplit: 1.15, furnace: 0.7 } },
+        { inputId: "jobType", multipliers: { repair: 0.3, replace: 1.0, install: 1.4 } as Record<string, number> },
+        { inputId: "systemType", multipliers: { central: 1.0, heatpump: 1.25, minisplit: 1.15, furnace: 0.7 } as Record<string, number> },
       ],
     },
     laborNote:
@@ -201,6 +201,77 @@ const hanfordHvacConfig = {
 
   metaSuffix: "Licensed HVAC Contractor",
   googleVerification: "TODO_OWNER_INPUT", // TODO(owner-input): set after GSC verify
+
+  nicheLower: "HVAC",
+  licenseClass: "C-20",
+
+  templates: {
+    callbackSub:
+      "A licensed HVAC specialist will call you back within 30 minutes during business hours (Mon–Sat, 7am–8pm).",
+    locationsHub: {
+      metaTitle: "HVAC Service Areas — Kings County & Central Valley | Hanford HVAC Pros",
+      metaDescription:
+        "Hanford HVAC Pros serves Hanford, Lemoore, Corcoran, Armona, Stratford, and surrounding Kings County communities. Licensed C-20 contractor. Free estimates.",
+      heading: "HVAC Service Areas — Kings County",
+      blurb:
+        "Licensed and insured HVAC crews serving Hanford and surrounding Kings County communities. Same-day service for no-cooling emergencies. Free estimates — Mon–Sat, 7am–8pm.",
+      ctaHeading: "Need HVAC service in your area?",
+    },
+    blogIndex: {
+      metaTitle: "HVAC Tips & Guides for Hanford, CA | Hanford HVAC Pros",
+      metaDescription:
+        "HVAC cost guides, efficiency tips, and maintenance advice for Central Valley homeowners. Written by licensed C-20 contractors serving Kings County.",
+      ogTitle: "Hanford HVAC Blog — Tips, Costs & Guides",
+      ogDescription:
+        "Expert HVAC advice for Kings County homeowners. Cost breakdowns, efficiency guides, and maintenance tips from licensed local contractors.",
+      jsonLdName: "Hanford HVAC Pros — HVAC Tips & Guides",
+      jsonLdDescription: "Expert HVAC advice for Kings County homeowners.",
+      breadcrumbLabel: "HVAC Blog",
+      headingPrefix: "HVAC Tips & Guides for",
+      headingHighlight: "Kings County",
+      blurb:
+        "Cost breakdowns, efficiency guides, and maintenance advice from the licensed C-20 contractors who service these systems every week.",
+      ctaHeading: "Ready to talk to a real HVAC tech?",
+      ctaSub: "Free estimates, same-day service. Licensed C-20, insured.",
+    },
+    blogPost: {
+      formHeading: "Get a Free Estimate — No Pressure",
+    },
+    servicePage: {
+      coverageNoteSuffix: "surrounding Kings County communities. Mon–Sat, 7am–8pm.",
+    },
+    locationPage: {
+      metaTitle: "HVAC Contractor {city}, CA | Free Estimates | Hanford HVAC Pros",
+      metaDescription:
+        "Licensed HVAC contractor in {city}, CA. AC installation, repair, heating, and ductwork. Serving {zips}. Call (559) 585-4000.",
+      ogTitle: "HVAC Contractor in {city}, CA",
+      ogDescription:
+        "Expert AC installation and repair in {city}, CA. Same-day service. Licensed & insured. Free estimates.",
+      offerCatalogName: "HVAC Services in {city}",
+      heroTitlePrefix: "Professional HVAC Contractor in",
+      heroBlurb:
+        "Serving {city} (ZIP: {zips}) and {county}. Licensed C-20 HVAC contractor. Free estimates — same-day service, Mon–Sat 7am–8pm.",
+      climateHeading: "HVAC in {city} — What You Need to Know",
+      climateSentence:
+        "Summer highs in {city} regularly reach {temp}°F, running air conditioners near-continuously for months. That sustained load wears compressors early and packs condenser coils with valley ag dust. We size and install systems built for Kings County heat, with Title 24-compliant equipment.",
+      servicesHeading: "HVAC Services in {city}",
+      faqHeading: "Frequently Asked — {city} HVAC",
+      faqs: [
+        {
+          q: "Do you offer HVAC services in {city}, CA?",
+          a: "Yes. Hanford HVAC Pros serves {city} (ZIP {zips}) for AC installation, repair, furnace and heating, ductwork, and maintenance. Mon–Sat, 7am–8pm.",
+        },
+        {
+          q: "How quickly can you respond to a no-cooling call in {city}?",
+          a: "During cooling season we target same-day service in {city} for no-cooling calls (Mon–Sat, 7am–8pm). {city} is approximately {drive} from our {hub} base.",
+        },
+        {
+          q: "What HVAC system do you recommend for {city}'s climate?",
+          a: "{note} We recommend right-sized, SEER2-compliant systems that meet California Title 24 energy standards and hold up to sustained Central Valley heat.",
+        },
+      ],
+    },
+  },
 
   pages: {
     home: {
@@ -260,11 +331,13 @@ const hanfordHvacConfig = {
         "Get a localized HVAC cost estimate for Hanford, CA. Prices reflect Kings County labor and equipment rates.",
       heading: "HVAC Cost Estimator — Hanford, CA",
       subcopy: "Estimates based on local Kings County labor and equipment prices. Results update instantly.",
+      leadNote: "Estimates vary by ductwork, electrical, and system choice. A local technician will give you an exact number.",
     },
   },
 
   locationLanding: {
     slug: "hanford-hvac",
+    leadSource: "hanford-location",
     metaTitle: "HVAC Contractor Hanford CA | Hanford HVAC Pros",
     metaDescription:
       "Local HVAC contractor serving Hanford, CA. AC installation, repair, furnace, and ductwork. Free estimates, same-day service. Licensed & insured.",

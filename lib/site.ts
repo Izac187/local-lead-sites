@@ -4,6 +4,7 @@ import type { CityData } from "@/lib/cities.data";
 import type { ServicePageData } from "@/lib/servicePages.data";
 import type { BlogPost } from "@/lib/blogPosts.data";
 import mercedBundle from "@/config/sites/merced";
+import hanfordBundle from "@/config/sites/hanford-hvac";
 
 export type SiteBundle = {
   config: SiteConfig;
@@ -29,7 +30,8 @@ export function getActiveSite(): SiteBundle {
   switch (slug) {
     case "merced":
       return mercedBundle;
-    // case "hanford-hvac": added in Task 20
+    case "hanford-hvac":
+      return hanfordBundle;
     default:
       return mercedBundle;
   }

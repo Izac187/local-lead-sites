@@ -5,7 +5,25 @@ import { getCityBySlug, getAllCitySlugs } from "@/lib/cities";
 import { getNearestCities } from "@/lib/geo";
 import { servicePages } from "@/lib/servicePages";
 import { siteConfig } from "@/lib/config";
+import { interpolate } from "@/lib/interpolate";
 import LeadForm from "@/components/LeadForm";
+import type { CityData } from "@/lib/cities";
+
+const T = siteConfig.templates.locationPage;
+
+function cityVars(city: CityData): Record<string, string | number> {
+  return {
+    city: city.cityName,
+    zips: city.zipCodes.join(", "),
+    county: city.county,
+    temp: city.weatherMaxTemp,
+    drive: city.driveFromHub,
+    hub: siteConfig.city,
+    note: city.uniqueNote,
+    siteName: siteConfig.siteName,
+    phone: siteConfig.phone,
+  };
+}
 
 interface Props {
   params: Promise<{ citySlug: string }>;
@@ -20,13 +38,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = getCityBySlug(citySlug);
   if (!city) return {};
 
+  const v = cityVars(city);
   return {
-    title: { absolute: `Roofing Contractor ${city.cityName}, CA | Free Estimates | ${siteConfig.siteName}` },
-    description: `Licensed roofing contractor in ${city.cityName}, CA. Roof replacement, repair, and emergency leak response. Serving ${city.zipCodes.join(", ")}. Call (209) 259-0978.`,
+    title: { absolute: interpolate(T.metaTitle, v) },
+    description: interpolate(T.metaDescription, v),
     alternates: { canonical: `https://${siteConfig.domain}/locations/${city.citySlug}` },
     openGraph: {
-      title: `Roofing Contractor in ${city.cityName}, CA`,
-      description: `Expert roof repair and replacement in ${city.cityName}, CA. Same-day emergency response. Licensed & insured. Free estimates.`,
+      title: interpolate(T.ogTitle, v),
+      description: interpolate(T.ogDescription, v),
     },
   };
 }
@@ -35,10 +54,11 @@ export default async function LocationPage({ params }: Props) {
   const { citySlug } = await params;
   const city = getCityBySlug(citySlug);
   if (!city) notFound();
+  const v = cityVars(city);
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "RoofingContractor",
+    "@type": siteConfig.schema.type,
     "@id": `https://${siteConfig.domain}/locations/${city.citySlug}/#business`,
     name: siteConfig.siteName,
     telephone: siteConfig.phone,
@@ -70,7 +90,7 @@ export default async function LocationPage({ params }: Props) {
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: `Roofing Services in ${city.cityName}`,
+      name: interpolate(T.offerCatalogName, v),
       itemListElement: servicePages.map((s) => ({
         "@type": "Offer",
         itemOffered: { "@type": "Service", name: s.title },
@@ -91,32 +111,14 @@ export default async function LocationPage({ params }: Props) {
   const faqLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: `Do you offer roofing services in ${city.cityName}, CA?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `Yes. Merced Roofing Pros serves ${city.cityName} (ZIP ${city.zipCodes.join(", ")}) for roof replacement, repair, emergency leak response, and gutter services. Mon–Sat, 7am–8pm.`,
-        },
+    mainEntity: T.faqs.map((f) => ({
+      "@type": "Question",
+      name: interpolate(f.q, v),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: interpolate(f.a, v),
       },
-      {
-        "@type": "Question",
-        name: `How quickly can you respond to a roof emergency in ${city.cityName}?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `For active leaks in ${city.cityName}, we target same-day response during business hours (Mon–Sat, 7am–8pm). ${city.cityName} is approximately ${city.driveFromHub} from our Merced base.`,
-        },
-      },
-      {
-        "@type": "Question",
-        name: `What roofing materials do you recommend for ${city.cityName}'s climate?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `${city.uniqueNote} We recommend Class A fire-rated, cool-roof-certified materials that meet California Title 24 energy standards for Central Valley homes.`,
-        },
-      },
-    ],
+    })),
   };
 
   const nearbyOtherCities = getNearestCities(city.citySlug, 3);
@@ -144,19 +146,18 @@ export default async function LocationPage({ params }: Props) {
               className="text-white mb-3"
               style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "0.02em" }}
             >
-              Professional Roofing Contractor in{" "}
+              {T.heroTitlePrefix}{" "}
               <span style={{ color: "var(--ember)" }}>{city.cityName}, CA</span>
             </h1>
             <p className="text-gray-300 mb-6 max-w-2xl text-base leading-relaxed">
-              Serving {city.cityName} (ZIP: {city.zipCodes.join(", ")}) and {city.county}. Licensed C-39
-              roofing contractor. Free estimates — same-day emergency response, Mon–Sat 7am–8pm.
+              {interpolate(T.heroBlurb, v)}
             </p>
             <a
               href={siteConfig.phoneHref}
               className="inline-block rounded-lg px-6 py-3 font-bold text-white text-base"
               style={{ backgroundColor: "var(--ember)" }}
             >
-              Call (209) 259-0978 — Free Estimate
+              Call {siteConfig.phone} — Free Estimate
             </a>
           </div>
         </div>
@@ -165,13 +166,11 @@ export default async function LocationPage({ params }: Props) {
           {/* Climate + local context */}
           <div className="rounded-xl border border-gray-100 bg-gray-50 p-6 mb-10">
             <h2 className="text-lg font-bold text-gray-900 mb-3">
-              Roofing in {city.cityName} — What You Need to Know
+              {interpolate(T.climateHeading, v)}
             </h2>
             <p className="text-gray-600 text-sm leading-relaxed mb-3">{city.uniqueNote}</p>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Summer highs in {city.cityName} regularly reach {city.weatherMaxTemp}°F — accelerating
-              shingle blistering, granule loss, and underlayment degradation. We specify materials that
-              meet California Title 24 energy efficiency standards and carry Class A fire ratings.
+              {interpolate(T.climateSentence, v)}
             </p>
           </div>
 
@@ -198,7 +197,7 @@ export default async function LocationPage({ params }: Props) {
           {/* Services grid */}
           <div className="mb-12">
             <h2 className="text-xl font-bold text-gray-900 mb-6">
-              Roofing Services in {city.cityName}
+              {interpolate(T.servicesHeading, v)}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {servicePages.map((s, i) => (
@@ -228,7 +227,7 @@ export default async function LocationPage({ params }: Props) {
           {/* FAQ */}
           <div className="mb-12">
             <h2 className="text-xl font-bold text-gray-900 mb-6">
-              Frequently Asked — {city.cityName} Roofing
+              {interpolate(T.faqHeading, v)}
             </h2>
             <div className="space-y-4">
               {faqLd.mainEntity.map((item) => (
@@ -270,8 +269,7 @@ export default async function LocationPage({ params }: Props) {
               Get a Free Estimate in {city.cityName}
             </h2>
             <p className="text-sm text-gray-500 mb-5">
-              A licensed roofing specialist will call you back within 30 minutes during business hours
-              (Mon–Sat, 7am–8pm).
+              {interpolate(siteConfig.templates.callbackSub, v)}
             </p>
             <LeadForm source={`location-${city.citySlug}`} city={city.citySlug} />
           </div>

@@ -89,7 +89,7 @@ export default function AreaPage({ params }: { params: { area: string } }) {
           <div className="mt-10 bg-gray-50 rounded-2xl p-8">
             <h2 className="text-lg font-bold text-gray-900 mb-1">{L.formHeading}</h2>
             <p className="text-sm text-gray-500 mb-5">{L.formSub}</p>
-            <LeadForm source="merced-location" />
+            <LeadForm source={L.leadSource} />
           </div>
         </div>
       </section>

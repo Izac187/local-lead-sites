@@ -84,9 +84,9 @@ export default function Calculator() {
       <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
         <h3 className="font-bold text-gray-900 mb-1">Get an Accurate Quote</h3>
         <p className="text-sm text-gray-500 mb-4">
-          Estimates vary by roof pitch and access. A local roofer will give you an exact number.
+          {siteConfig.pages.calculator.leadNote}
         </p>
-        <LeadForm source="calculator" prefillService="Roof Replacement" />
+        <LeadForm source="calculator" prefillService={siteConfig.services[0].title} />
       </div>
     </div>
   );

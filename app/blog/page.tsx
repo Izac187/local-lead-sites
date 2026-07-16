@@ -3,14 +3,14 @@ import Link from "next/link";
 import { blogPosts } from "@/lib/blogPosts";
 import { siteConfig } from "@/lib/config";
 
+const B = siteConfig.templates.blogIndex;
+
 export const metadata: Metadata = {
-  title: { absolute: `Roofing Tips & Guides for Merced, CA | ${siteConfig.siteName}` },
-  description:
-    "Roofing cost guides, material recommendations, and maintenance tips for Central Valley homeowners. Written by licensed C-39 contractors serving Merced County.",
+  title: { absolute: B.metaTitle },
+  description: B.metaDescription,
   openGraph: {
-    title: "Merced Roofing Blog — Tips, Costs & Guides",
-    description:
-      "Expert roofing advice for Merced County homeowners. Cost breakdowns, material guides, and maintenance tips from licensed local contractors.",
+    title: B.ogTitle,
+    description: B.ogDescription,
   },
 };
 
@@ -34,8 +34,8 @@ export default function BlogPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: `${siteConfig.siteName} — Roofing Tips & Guides`,
-    description: "Expert roofing advice for Merced County homeowners.",
+    name: B.jsonLdName,
+    description: B.jsonLdDescription,
     url: `https://${siteConfig.domain}/blog`,
     publisher: {
       "@type": "Organization",
@@ -63,19 +63,18 @@ export default function BlogPage() {
               <ol className="flex items-center gap-2 flex-wrap">
                 <li><Link href="/" className="hover:text-gray-300 text-gray-400">Home</Link></li>
                 <li aria-hidden className="text-gray-600">/</li>
-                <li className="text-gray-200">Roofing Blog</li>
+                <li className="text-gray-200">{B.breadcrumbLabel}</li>
               </ol>
             </nav>
             <h1
               className="text-white mb-3"
               style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "0.02em" }}
             >
-              Roofing Tips &amp; Guides for{" "}
-              <span style={{ color: "var(--ember)" }}>Merced County</span>
+              {B.headingPrefix}{" "}
+              <span style={{ color: "var(--ember)" }}>{B.headingHighlight}</span>
             </h1>
             <p className="text-gray-300 max-w-2xl text-base leading-relaxed">
-              Cost breakdowns, material guides, and maintenance advice from the licensed C-39
-              contractors who work these roofs every week.
+              {B.blurb}
             </p>
           </div>
         </div>
@@ -115,10 +114,10 @@ export default function BlogPage() {
               className="text-white mb-2"
               style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "1.5rem", letterSpacing: "0.02em" }}
             >
-              Ready to talk to a real roofer?
+              {B.ctaHeading}
             </p>
             <p className="text-gray-400 text-sm mb-5">
-              Free estimates, same-day emergency response. Licensed C-39, insured.
+              {B.ctaSub}
             </p>
             <a
               href={siteConfig.phoneHref}

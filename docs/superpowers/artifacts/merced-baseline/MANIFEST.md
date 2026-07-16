@@ -35,3 +35,5 @@ Build log: `build.log` (BUILD: PASS).
   25 pages. No re-baseline needed.
 
 - Phase 3 (copy extraction + app/[area]) parity: PASS — 25 DOM pages identical (2026-07-16)
+
+- Phase 4 dynamic-template extraction: Merced parity PASS (25 identical); Hanford build ZERO roofing/Merced leakage (2026-07-16)

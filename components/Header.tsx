@@ -14,7 +14,9 @@ export default function Header() {
       <div className="container-site flex items-center justify-between h-16">
         {/* Logo */}
         <a href="#form" className="font-display text-2xl text-white leading-none">
-          MERCED <span style={{ color: "var(--ember)" }}>ROOFING</span> PROS
+          {siteConfig.footer.brandLead}{" "}
+          <span style={{ color: "var(--ember)" }}>{siteConfig.footer.brandEmphasis}</span>
+          {" " + siteConfig.footer.brandTail}
         </a>
 
         {/* Nav — hidden on mobile */}

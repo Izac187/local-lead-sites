@@ -205,6 +205,77 @@ export const siteConfig = {
   metaSuffix: "Licensed Roofing Contractor",
   googleVerification: "fecb06293829c33b",
 
+  nicheLower: "roofing",
+  licenseClass: "C-39",
+
+  templates: {
+    callbackSub:
+      "A licensed roofing specialist will call you back within 30 minutes during business hours (Mon–Sat, 7am–8pm).",
+    locationsHub: {
+      metaTitle: "Roofing Service Areas — Merced County & Central Valley | Merced Roofing Pros",
+      metaDescription:
+        "Merced Roofing Pros serves Merced, Atwater, Los Banos, Livingston, Chowchilla, and surrounding Central Valley communities. Licensed C-39 contractor. Free estimates.",
+      heading: "Roofing Service Areas — Merced County",
+      blurb:
+        "Licensed and insured roofing crews serving Merced and surrounding Central Valley communities. Same-day response for leak emergencies. Free estimates — Mon–Sat, 7am–8pm.",
+      ctaHeading: "Need roofing in your area?",
+    },
+    blogIndex: {
+      metaTitle: "Roofing Tips & Guides for Merced, CA | Merced Roofing Pros",
+      metaDescription:
+        "Roofing cost guides, material recommendations, and maintenance tips for Central Valley homeowners. Written by licensed C-39 contractors serving Merced County.",
+      ogTitle: "Merced Roofing Blog — Tips, Costs & Guides",
+      ogDescription:
+        "Expert roofing advice for Merced County homeowners. Cost breakdowns, material guides, and maintenance tips from licensed local contractors.",
+      jsonLdName: "Merced Roofing Pros — Roofing Tips & Guides",
+      jsonLdDescription: "Expert roofing advice for Merced County homeowners.",
+      breadcrumbLabel: "Roofing Blog",
+      headingPrefix: "Roofing Tips & Guides for",
+      headingHighlight: "Merced County",
+      blurb:
+        "Cost breakdowns, material guides, and maintenance advice from the licensed C-39 contractors who work these roofs every week.",
+      ctaHeading: "Ready to talk to a real roofer?",
+      ctaSub: "Free estimates, same-day emergency response. Licensed C-39, insured.",
+    },
+    blogPost: {
+      formHeading: "Get a Free Estimate — No Pressure",
+    },
+    servicePage: {
+      coverageNoteSuffix: "surrounding Merced County communities. Mon–Sat, 7am–8pm.",
+    },
+    locationPage: {
+      metaTitle: "Roofing Contractor {city}, CA | Free Estimates | Merced Roofing Pros",
+      metaDescription:
+        "Licensed roofing contractor in {city}, CA. Roof replacement, repair, and emergency leak response. Serving {zips}. Call (209) 259-0978.",
+      ogTitle: "Roofing Contractor in {city}, CA",
+      ogDescription:
+        "Expert roof repair and replacement in {city}, CA. Same-day emergency response. Licensed & insured. Free estimates.",
+      offerCatalogName: "Roofing Services in {city}",
+      heroTitlePrefix: "Professional Roofing Contractor in",
+      heroBlurb:
+        "Serving {city} (ZIP: {zips}) and {county}. Licensed C-39 roofing contractor. Free estimates — same-day emergency response, Mon–Sat 7am–8pm.",
+      climateHeading: "Roofing in {city} — What You Need to Know",
+      climateSentence:
+        "Summer highs in {city} regularly reach {temp}°F — accelerating shingle blistering, granule loss, and underlayment degradation. We specify materials that meet California Title 24 energy efficiency standards and carry Class A fire ratings.",
+      servicesHeading: "Roofing Services in {city}",
+      faqHeading: "Frequently Asked — {city} Roofing",
+      faqs: [
+        {
+          q: "Do you offer roofing services in {city}, CA?",
+          a: "Yes. Merced Roofing Pros serves {city} (ZIP {zips}) for roof replacement, repair, emergency leak response, and gutter services. Mon–Sat, 7am–8pm.",
+        },
+        {
+          q: "How quickly can you respond to a roof emergency in {city}?",
+          a: "For active leaks in {city}, we target same-day response during business hours (Mon–Sat, 7am–8pm). {city} is approximately {drive} from our {hub} base.",
+        },
+        {
+          q: "What roofing materials do you recommend for {city}'s climate?",
+          a: "{note} We recommend Class A fire-rated, cool-roof-certified materials that meet California Title 24 energy standards for Central Valley homes.",
+        },
+      ],
+    },
+  },
+
   // Per-page niche/geo copy. Generic UI labels stay hardcoded in components.
   pages: {
     home: {
@@ -264,12 +335,14 @@ export const siteConfig = {
         "Get a localized roofing cost estimate for Merced, CA. Prices reflect Merced County labor rates.",
       heading: "Roofing Cost Estimator — Merced, CA",
       subcopy: "Estimates based on local Merced County labor and material prices. Results update instantly.",
+      leadNote: "Estimates vary by roof pitch and access. A local roofer will give you an exact number.",
     },
   },
 
   // Config-driven location landing page, served at /<slug> via app/[area].
   locationLanding: {
     slug: "merced-roofing",
+    leadSource: "merced-location",
     metaTitle: "Roofing Contractor Merced CA | Merced Roofing Pros",
     metaDescription:
       "Local roofing contractor serving Merced, CA. Roof repair, replacement, and inspection. Free estimates, same-day response. Licensed & insured.",

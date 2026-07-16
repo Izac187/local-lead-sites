@@ -91,6 +91,57 @@ export interface SiteConfig {
   metaSuffix: string;
   googleVerification: string;
 
+  // General niche words for template interpolation across dynamic route pages.
+  nicheLower: string; // e.g. "roofing" / "HVAC" (mid-sentence)
+  licenseClass: string; // e.g. "C-39" / "C-20"
+
+  // Per-site copy for the dynamic route templates (locations, blog, service detail).
+  // Strings may contain {city},{zips},{county},{temp},{drive},{hub},{note},{phone},{siteName} tokens.
+  templates: {
+    callbackSub: string;
+    locationsHub: {
+      metaTitle: string;
+      metaDescription: string;
+      heading: string;
+      blurb: string;
+      ctaHeading: string;
+    };
+    blogIndex: {
+      metaTitle: string;
+      metaDescription: string;
+      ogTitle: string;
+      ogDescription: string;
+      jsonLdName: string;
+      jsonLdDescription: string;
+      breadcrumbLabel: string;
+      headingPrefix: string;
+      headingHighlight: string;
+      blurb: string;
+      ctaHeading: string;
+      ctaSub: string;
+    };
+    blogPost: {
+      formHeading: string;
+    };
+    servicePage: {
+      coverageNoteSuffix: string; // "surrounding {county} communities. Mon–Sat, 7am–8pm."
+    };
+    locationPage: {
+      metaTitle: string;
+      metaDescription: string;
+      ogTitle: string;
+      ogDescription: string;
+      offerCatalogName: string;
+      heroTitlePrefix: string;
+      heroBlurb: string;
+      climateHeading: string;
+      climateSentence: string;
+      servicesHeading: string;
+      faqHeading: string;
+      faqs: QA[];
+    };
+  };
+
   pages: {
     home: {
       metaTitle: string;
@@ -123,11 +174,13 @@ export interface SiteConfig {
       metaDescription: string;
       heading: string;
       subcopy: string;
+      leadNote: string;
     };
   };
 
   locationLanding: {
     slug: string;
+    leadSource: string;
     metaTitle: string;
     metaDescription: string;
     canonicalPath: string;

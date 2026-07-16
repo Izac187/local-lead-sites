@@ -44,7 +44,7 @@ export default async function ServicePage({ params }: Props) {
     name: page.title,
     description: page.summary,
     provider: {
-      "@type": "RoofingContractor",
+      "@type": siteConfig.schema.type,
       name: siteConfig.siteName,
       telephone: siteConfig.phone,
       url: `https://${siteConfig.domain}`,
@@ -95,7 +95,7 @@ export default async function ServicePage({ params }: Props) {
           <div className="text-center py-2 text-sm font-semibold text-white" style={{ backgroundColor: "var(--ember)" }}>
             Emergency Response Available — Call{" "}
             <a href={siteConfig.phoneHref} className="underline">
-              (209) 259-0978
+              {siteConfig.phone}
             </a>{" "}
             · Mon–Sat, 7am–8pm
           </div>
@@ -126,7 +126,7 @@ export default async function ServicePage({ params }: Props) {
                 className="inline-block rounded-lg px-6 py-3 font-bold text-white text-base"
                 style={{ backgroundColor: "var(--ember)" }}
               >
-                Call (209) 259-0978
+                Call {siteConfig.phone}
               </a>
               <a
                 href="#estimate"
@@ -171,8 +171,8 @@ export default async function ServicePage({ params }: Props) {
               {page.title} — Service Coverage
             </h2>
             <p className="text-sm text-gray-600 mb-3">
-              We provide {page.title.toLowerCase()} across {siteConfig.serviceArea.join(", ")} and
-              surrounding Merced County communities. Mon–Sat, 7am–8pm.
+              We provide {page.title.toLowerCase()} across {siteConfig.serviceArea.join(", ")} and{" "}
+              {siteConfig.templates.servicePage.coverageNoteSuffix}
             </p>
             <div className="flex flex-wrap gap-2">
               {siteConfig.serviceArea.map((city) => (

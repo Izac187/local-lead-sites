@@ -191,11 +191,10 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Lead form */}
           <div className="bg-gray-50 rounded-2xl p-8 max-w-lg mx-auto">
             <h2 className="text-lg font-bold text-gray-900 mb-1">
-              Get a Free Estimate — No Pressure
+              {siteConfig.templates.blogPost.formHeading}
             </h2>
             <p className="text-sm text-gray-500 mb-5">
-              A licensed roofing specialist will call you back within 30 minutes during business
-              hours (Mon–Sat, 7am–8pm).
+              {siteConfig.templates.callbackSub}
             </p>
             <LeadForm source={`blog-${post.slug}`} />
           </div>
