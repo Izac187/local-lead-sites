@@ -1,3 +1,5 @@
+import type { SiteConfig } from "@/lib/siteConfig.types";
+
 export const siteConfig = {
   niche: "Roofing",
   city: "Merced",
@@ -304,8 +306,8 @@ export const siteConfig = {
     formHeading: "Get a Free Estimate in Merced",
     formSub: "We call back within 2 hours.",
   },
-} as const;
+} satisfies SiteConfig;
 
-export type SiteConfig = typeof siteConfig;
+export type { SiteConfig } from "@/lib/siteConfig.types";
 
 export default siteConfig;
