@@ -85,6 +85,25 @@ export const siteConfig = {
     },
   ],
 
+  geo: {
+    latitude: 37.30216,
+    longitude: -120.48297,
+  },
+
+  footer: {
+    brandLead: "MERCED",
+    brandEmphasis: "ROOFING",
+    brandTail: "PROS",
+    blurb: "Licensed and insured roofing in Merced County. Free estimates, fast callbacks.",
+    licensingLines: [
+      "CA CSLB C-39 Roofing License",
+      "General Liability + Workers' Comp",
+      "Cool Roof Rating Council (CRRC) compliant",
+      "California Title 24, Part 6 materials",
+    ],
+    bottomTagline: "Services fulfilled by licensed C-39 partner contractors · Serving Merced County",
+  },
+
   colors: {
     base: "oklch(32% 0.09 38)",
     primary: "oklch(58% 0.15 38)",

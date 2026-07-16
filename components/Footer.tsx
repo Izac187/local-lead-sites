@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 import { servicePages } from "@/lib/servicePages";
@@ -27,8 +28,9 @@ export default function Footer() {
               className="font-display"
               style={{ fontSize: "1.5rem", color: "#FFFFFF", marginBottom: 12 }}
             >
-              MERCED{" "}
-              <span style={{ color: "var(--ember)" }}>ROOFING</span> PROS
+              {siteConfig.footer.brandLead}{" "}
+              <span style={{ color: "var(--ember)" }}>{siteConfig.footer.brandEmphasis}</span>
+              {" " + siteConfig.footer.brandTail}
             </p>
             <p
               style={{
@@ -39,8 +41,7 @@ export default function Footer() {
                 marginBottom: 12,
               }}
             >
-              Licensed and insured roofing in Merced County.
-              Free estimates, fast callbacks.
+              {siteConfig.footer.blurb}
             </p>
             <a
               href={siteConfig.phoneHref}
@@ -242,13 +243,12 @@ export default function Footer() {
                 lineHeight: 1.7,
               }}
             >
-              CA CSLB C-39 Roofing License
-              <br />
-              General Liability + Workers&apos; Comp
-              <br />
-              Cool Roof Rating Council (CRRC) compliant
-              <br />
-              California Title 24, Part 6 materials
+              {siteConfig.footer.licensingLines.map((line, i) => (
+                <Fragment key={line}>
+                  {i > 0 && <br />}
+                  {line}
+                </Fragment>
+              ))}
             </p>
           </div>
         </div>
@@ -284,7 +284,7 @@ export default function Footer() {
             fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
           }}
         >
-          Services fulfilled by licensed C-39 partner contractors &middot; Serving Merced County
+          {siteConfig.footer.bottomTagline}
         </p>
       </div>
     </footer>

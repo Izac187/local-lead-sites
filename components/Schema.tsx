@@ -11,8 +11,8 @@ export default function Schema() {
     url: `https://${siteConfig.domain}`,
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 37.30216,
-      longitude: -120.48297,
+      latitude: siteConfig.geo.latitude,
+      longitude: siteConfig.geo.longitude,
     },
     areaServed: siteConfig.serviceArea.map((name) => ({
       "@type": "City",
