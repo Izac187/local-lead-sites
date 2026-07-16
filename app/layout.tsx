@@ -22,7 +22,7 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.siteName} | Licensed Roofing Contractor`,
+    default: `${siteConfig.siteName} | ${siteConfig.metaSuffix}`,
     template: `%s | ${siteConfig.siteName}`,
   },
   description: siteConfig.description,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   verification: {
-    google: "fecb06293829c33b",
+    google: siteConfig.googleVerification,
   },
 };
 

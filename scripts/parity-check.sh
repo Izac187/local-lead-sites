@@ -13,7 +13,8 @@ norm() {
     -e 's#/_next/static/[^"]*#/_next/static/X#g' \
     -e 's#<script src="/_next/static/X"[^>]*></script>##g' \
     -e 's#__variable_[A-Za-z0-9]+#__variable_X#g' \
-    -e 's#nonce="[^"]*"#nonce="X"#g'
+    -e 's#nonce="[^"]*"#nonce="X"#g' \
+    -e 's#<!-- -->##g'
 }
 
 diffs=0

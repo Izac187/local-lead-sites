@@ -3,8 +3,8 @@ import LeadForm from "@/components/LeadForm";
 import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: `Contact Merced Roofing Pros | Free Roofing Estimate Merced CA`,
-  description: `Get a free roofing estimate in Merced, CA. Call (209) 259-0978 or submit our quick form — a licensed contractor calls back within 30 minutes, Mon–Sat 7am–8pm.`,
+  title: siteConfig.pages.contact.metaTitle,
+  description: siteConfig.pages.contact.metaDescription,
 };
 
 export default function ContactPage() {

@@ -5,8 +5,8 @@ import { siteConfig } from "@/lib/config";
 import { servicePages } from "@/lib/servicePages";
 
 export const metadata: Metadata = {
-  title: { absolute: `Roofing Services Merced CA | Repair, Replacement & More | ${siteConfig.siteName}` },
-  description: `Complete roofing services in Merced, CA: emergency repair, roof replacement, metal roofing, flat TPO, storm damage, and more. Licensed C-39 contractor. Free estimates.`,
+  title: { absolute: siteConfig.pages.services.metaTitle },
+  description: siteConfig.pages.services.metaDescription,
 };
 
 export default function ServicesPage() {
@@ -25,10 +25,10 @@ export default function ServicesPage() {
           className="text-gray-900 mb-2"
           style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "0.02em" }}
         >
-          Roofing Services in {siteConfig.city}, CA
+          {siteConfig.pages.services.heading}
         </h1>
         <p className="text-gray-600 mb-10">
-          Licensed C-39 contractor. Serving {siteConfig.city} and {siteConfig.serviceArea.slice(1).join(", ")}.
+          {siteConfig.pages.services.subheadPrefix} Serving {siteConfig.city} and {siteConfig.serviceArea.slice(1).join(", ")}.
           Mon–Sat, 7am–8pm.
         </p>
 
@@ -63,7 +63,7 @@ export default function ServicesPage() {
         <div className="rounded-xl border border-gray-100 bg-gray-50 p-6 mb-10">
           <h2 className="text-base font-bold text-gray-900 mb-3">Service Coverage</h2>
           <p className="text-sm text-gray-600 mb-4">
-            All services available across Merced County and surrounding communities.
+            {siteConfig.pages.services.coverageNote}
           </p>
           <div className="flex flex-wrap gap-2">
             {siteConfig.serviceArea.map((city) => (

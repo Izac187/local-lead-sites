@@ -198,6 +198,72 @@ export const siteConfig = {
       "roofing company Merced California",
     ],
   },
+
+  // Title suffix for the layout default title + Google Search Console token.
+  metaSuffix: "Licensed Roofing Contractor",
+  googleVerification: "fecb06293829c33b",
+
+  // Per-page niche/geo copy. Generic UI labels stay hardcoded in components.
+  pages: {
+    home: {
+      metaTitle: "Merced Roofing Pros | Roofing Contractor Merced CA",
+      trustBar: [
+        { label: "Licensed & Insured", sub: "CA CSLB certified" },
+        { label: "30-Min Callback", sub: "Mon–Sat, 7am–8pm" },
+        { label: "Free Estimates", sub: "No obligation" },
+        { label: "4.9 Stars", sub: "87 Google reviews" },
+        { label: "Local & Family-Owned", sub: "Merced County" },
+      ],
+      servicesHeading: "Roofing Services in Merced County",
+      estimatorHeading: "What Will Your Roof Cost in Merced?",
+      estimatorSubcopy:
+        "Merced County labor rates run about 10% below Bay Area averages. Get a realistic range in 30 seconds — before you talk to anyone.",
+      estimatorSteps: ["Pick your roof size", "Choose your material", "See your estimate"],
+      reviewsRating: "4.9",
+      reviewsCount: "87",
+      reviewsHeading: "Trusted by Merced Homeowners",
+      testimonials: [
+        { stars: 5, text: "Called at 8am after last night's storm. They were on my roof by noon. No drama, no upsell. Leak fixed, showed me photos of the repair. Will use again.", name: "Maria R.", city: "Merced", date: "March 2026" },
+        { stars: 5, text: "Got three quotes. These guys were mid-range on price but the most professional. Showed up on time, cleaned up completely. My neighbor hired them the next week.", name: "James T.", city: "Atwater", date: "January 2026" },
+        { stars: 5, text: "I was nervous about being ripped off — I know nothing about roofs. They gave me a written estimate and walked me through every line. No surprises at the end.", name: "Sandra K.", city: "Los Banos", date: "February 2026" },
+      ],
+    },
+    about: {
+      metaTitle: "About Merced Roofing Pros | Licensed C-39 Contractor Merced CA",
+      metaDescription:
+        "Merced Roofing Pros is a licensed, insured C-39 roofing contractor serving Merced County, CA. Roof repair, replacement & gutters. Free estimates — (209) 259-0978.",
+      paragraphs: [
+        "We're a roofing contractor based in Merced, California. We serve homeowners and property managers across Merced County with roof repair, replacement, and inspection.",
+        "The Central Valley has specific roofing demands: 110°F+ summers, dense tule fog in winter, and concentrated rain from November through March. We work exclusively in this region — no national franchise, no crews flown in from elsewhere.",
+        "Every job comes with a written estimate, clear timeline, and direct line to the contractor. No bait-and-switch pricing, no subcontracted crew surprises.",
+      ],
+      badges: [
+        { label: "Licensed", detail: "CSLB Licensed, California" },
+        { label: "Insured", detail: "General Liability + Workers' Comp" },
+        { label: "Free Estimates", detail: "Written quote, no obligation" },
+      ],
+    },
+    services: {
+      metaTitle: "Roofing Services Merced CA | Repair, Replacement & More | Merced Roofing Pros",
+      metaDescription:
+        "Complete roofing services in Merced, CA: emergency repair, roof replacement, metal roofing, flat TPO, storm damage, and more. Licensed C-39 contractor. Free estimates.",
+      heading: "Roofing Services in Merced, CA",
+      subheadPrefix: "Licensed C-39 contractor.",
+      coverageNote: "All services available across Merced County and surrounding communities.",
+    },
+    contact: {
+      metaTitle: "Contact Merced Roofing Pros | Free Roofing Estimate Merced CA",
+      metaDescription:
+        "Get a free roofing estimate in Merced, CA. Call (209) 259-0978 or submit our quick form — a licensed contractor calls back within 30 minutes, Mon–Sat 7am–8pm.",
+    },
+    calculator: {
+      metaTitle: "Roofing Cost Calculator — Merced, CA",
+      metaDescription:
+        "Get a localized roofing cost estimate for Merced, CA. Prices reflect Merced County labor rates.",
+      heading: "Roofing Cost Estimator — Merced, CA",
+      subcopy: "Estimates based on local Merced County labor and material prices. Results update instantly.",
+    },
+  },
 } as const;
 
 export type SiteConfig = typeof siteConfig;

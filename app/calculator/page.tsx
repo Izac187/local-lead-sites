@@ -3,8 +3,8 @@ import Calculator from "@/components/Calculator";
 import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: `Roofing Cost Calculator — ${siteConfig.city}, CA`,
-  description: `Get a localized roofing cost estimate for ${siteConfig.city}, CA. Prices reflect Merced County labor rates.`,
+  title: siteConfig.pages.calculator.metaTitle,
+  description: siteConfig.pages.calculator.metaDescription,
 };
 
 export default function CalculatorPage() {
@@ -13,10 +13,10 @@ export default function CalculatorPage() {
       <div className="max-w-2xl mx-auto">
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-extrabold text-gray-900 mb-2" style={{ fontFamily: "var(--font-barlow-condensed), sans-serif" }}>
-            Roofing Cost Estimator — {siteConfig.city}, CA
+            {siteConfig.pages.calculator.heading}
           </h1>
           <p className="text-gray-600 text-sm">
-            Estimates based on local Merced County labor and material prices. Results update instantly.
+            {siteConfig.pages.calculator.subcopy}
           </p>
         </div>
         <Calculator />

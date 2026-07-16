@@ -6,7 +6,7 @@ import CalculatorSection from "@/components/CalculatorSection";
 import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: { absolute: `${siteConfig.siteName} | Roofing Contractor Merced CA` },
+  title: { absolute: siteConfig.pages.home.metaTitle },
   description: siteConfig.description,
 };
 
@@ -56,13 +56,12 @@ export default function Home() {
       <section style={{ backgroundColor: "var(--dark-mid)" }}>
         <div className="container-site">
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-            {[
-              { icon: <ShieldIcon />, label: "Licensed & Insured", sub: "CA CSLB certified" },
-              { icon: <ClockIcon />, label: "30-Min Callback", sub: "Mon–Sat, 7am–8pm" },
-              { icon: <CheckCircleIcon />, label: "Free Estimates", sub: "No obligation" },
-              { icon: <StarIcon />, label: "4.9 Stars", sub: "87 Google reviews" },
-              { icon: <MapPinIcon />, label: "Local & Family-Owned", sub: "Merced County" },
-            ].map(({ icon, label, sub }, i, arr) => (
+            {siteConfig.pages.home.trustBar
+              .map((item, idx) => ({
+                icon: [<ShieldIcon key="s" />, <ClockIcon key="c" />, <CheckCircleIcon key="ch" />, <StarIcon key="st" />, <MapPinIcon key="m" />][idx],
+                ...item,
+              }))
+              .map(({ icon, label, sub }, i, arr) => (
               <div
                 key={label}
                 style={{
@@ -96,7 +95,7 @@ export default function Home() {
             <span className="eyebrow-text">What We Do</span>
           </div>
           <h2 className="font-display text-balance" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text)", marginBottom: 48 }}>
-            Roofing Services in Merced County
+            {siteConfig.pages.home.servicesHeading}
           </h2>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 24 }}>
@@ -138,13 +137,13 @@ export default function Home() {
                 <span className="eyebrow-text">Cost Estimator</span>
               </div>
               <h2 className="font-display text-white text-balance" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: 20 }}>
-                What Will Your Roof Cost in Merced?
+                {siteConfig.pages.home.estimatorHeading}
               </h2>
               <p style={{ color: "rgba(245,236,215,0.7)", fontSize: "1rem", lineHeight: 1.7, fontFamily: "var(--font-dm-sans), system-ui, sans-serif", marginBottom: 24 }}>
-                Merced County labor rates run about 10% below Bay Area averages. Get a realistic range in 30 seconds — before you talk to anyone.
+                {siteConfig.pages.home.estimatorSubcopy}
               </p>
               <ol style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 16 }}>
-                {["Pick your roof size", "Choose your material", "See your estimate"].map((step, i) => (
+                {siteConfig.pages.home.estimatorSteps.map((step, i) => (
                   <li key={step} style={{ display: "flex", alignItems: "center", gap: 14, fontFamily: "var(--font-dm-sans), system-ui, sans-serif", color: "rgba(245,236,215,0.8)", fontSize: "0.9375rem" }}>
                     <span className="font-display" style={{ width: 32, height: 32, borderRadius: "50%", backgroundColor: "var(--ember)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1rem", flexShrink: 0 }}>
                       {i + 1}
@@ -166,10 +165,10 @@ export default function Home() {
             <GoogleG size={36} />
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                <span className="font-display" style={{ fontSize: "2.25rem", color: "var(--text)", lineHeight: 1 }}>4.9</span>
+                <span className="font-display" style={{ fontSize: "2.25rem", color: "var(--text)", lineHeight: 1 }}>{siteConfig.pages.home.reviewsRating}</span>
                 <div style={{ display: "flex", gap: 2 }}>{[1,2,3,4,5].map((n) => <Star key={n} />)}</div>
               </div>
-              <p style={{ color: "var(--muted)", fontSize: "0.8125rem", fontFamily: "var(--font-dm-sans), system-ui, sans-serif" }}>87 reviews on Google</p>
+              <p style={{ color: "var(--muted)", fontSize: "0.8125rem", fontFamily: "var(--font-dm-sans), system-ui, sans-serif" }}>{siteConfig.pages.home.reviewsCount} reviews on Google</p>
             </div>
           </div>
 
@@ -178,15 +177,11 @@ export default function Home() {
             <span className="eyebrow-text">What Neighbors Say</span>
           </div>
           <h2 className="font-display text-balance" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text)", marginBottom: 40 }}>
-            Trusted by Merced Homeowners
+            {siteConfig.pages.home.reviewsHeading}
           </h2>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20, marginBottom: 32 }}>
-            {[
-              { stars: 5, text: "Called at 8am after last night's storm. They were on my roof by noon. No drama, no upsell. Leak fixed, showed me photos of the repair. Will use again.", name: "Maria R.", city: "Merced", date: "March 2026" },
-              { stars: 5, text: "Got three quotes. These guys were mid-range on price but the most professional. Showed up on time, cleaned up completely. My neighbor hired them the next week.", name: "James T.", city: "Atwater", date: "January 2026" },
-              { stars: 5, text: "I was nervous about being ripped off — I know nothing about roofs. They gave me a written estimate and walked me through every line. No surprises at the end.", name: "Sandra K.", city: "Los Banos", date: "February 2026" },
-            ].map(({ stars, text, name, city, date }) => (
+            {siteConfig.pages.home.testimonials.map(({ stars, text, name, city, date }) => (
               <div key={name} style={{ backgroundColor: "var(--bg)", border: "1.5px solid var(--border)", borderRadius: "var(--radius-lg)", padding: 24 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
                   <div style={{ display: "flex", gap: 2 }}>{[...Array(stars)].map((_, i) => <Star key={i} />)}</div>
@@ -211,7 +206,7 @@ export default function Home() {
           <div style={{ textAlign: "center" }}>
             <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--muted)", fontSize: "0.875rem", fontFamily: "var(--font-dm-sans), system-ui, sans-serif", textDecoration: "none" }}>
               <GoogleG size={16} />
-              See all 87 reviews on Google &rarr;
+              See all {siteConfig.pages.home.reviewsCount} reviews on Google &rarr;
             </a>
           </div>
         </div>

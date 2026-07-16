@@ -28,3 +28,8 @@ Build log: `build.log` (BUILD: PASS).
   placeholder "Select size/condition"->"Select roof size/roof condition", label
   "Condition"->"Roof Condition" (now consistent with /calculator + config). No estimate
   values, styles, or structure changed. index.html baseline updated to new output.
+
+- Phase 3 Task 14 (page copy extraction): parity-check.sh now also strips React
+  hydration comment markers (<!-- -->), which shift when text moves from
+  {interpolation} to per-site literals. Visible DOM verified byte-identical on all
+  25 pages. No re-baseline needed.
