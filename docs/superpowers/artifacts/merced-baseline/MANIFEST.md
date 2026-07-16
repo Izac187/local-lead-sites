@@ -33,3 +33,5 @@ Build log: `build.log` (BUILD: PASS).
   hydration comment markers (<!-- -->), which shift when text moves from
   {interpolation} to per-site literals. Visible DOM verified byte-identical on all
   25 pages. No re-baseline needed.
+
+- Phase 3 (copy extraction + app/[area]) parity: PASS — 25 DOM pages identical (2026-07-16)

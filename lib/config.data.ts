@@ -264,6 +264,46 @@ export const siteConfig = {
       subcopy: "Estimates based on local Merced County labor and material prices. Results update instantly.",
     },
   },
+
+  // Config-driven location landing page, served at /<slug> via app/[area].
+  locationLanding: {
+    slug: "merced-roofing",
+    metaTitle: "Roofing Contractor Merced CA | Merced Roofing Pros",
+    metaDescription:
+      "Local roofing contractor serving Merced, CA. Roof repair, replacement, and inspection. Free estimates, same-day response. Licensed & insured.",
+    canonicalPath: "/locations/merced",
+    h1: "Roofing Contractor — Merced, CA",
+    heroSub:
+      "Local roofing repair and replacement in Merced, Atwater, Livingston, and surrounding Central Valley communities. Free estimates. Licensed & insured.",
+    ctaEstimateLabel: "Get a Cost Estimate",
+    sectionHeading: "Why Merced Roofs Need Local Expertise",
+    bodyParagraphs: [
+      "Merced sits in California's San Joaquin Valley, where summer temperatures regularly exceed 100°F. That thermal stress cycles roofing materials far harder than coastal climates — asphalt shingles crack, flashing expands and contracts, and UV degradation is accelerated. A roof designed for San Jose may fail 5 years early in Merced.",
+      "Winter brings the opposite challenge. Merced County averages 12–14 inches of rain annually, concentrated in November through March. Low-slope areas around Atwater and Livingston see pooling water if gutters and drainage aren't maintained. Tule fog in the valley floor adds persistent moisture exposure.",
+      "We work exclusively in the Central Valley. We know which materials hold up, which suppliers stock for the local market, and which neighborhoods (near Yosemite Lake, the UC Merced campus corridor, and older homes near downtown) have recurring issues specific to their construction era.",
+    ],
+    serviceAreaHeading: "Service Area",
+    mapTitle: "Merced CA map",
+    mapEmbedSrc:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50870.72!2d-120.512!3d37.302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8090922cd038e6a7%3A0x16f89e45e697d17f!2sMerced%2C%20CA!5e0!3m2!1sen!2sus!4v1",
+    faqHeading: "Frequently Asked Questions — Merced Roofing",
+    faqs: [
+      {
+        q: "How much does roof replacement cost in Merced CA?",
+        a: "Most Merced homeowners pay $7,000–$15,000 for a full asphalt shingle replacement on a 1,500–2,500 sq ft home. Metal roofs run $14,000–$24,000. Prices are about 10% lower than Bay Area rates. Use our calculator for a personalized range.",
+      },
+      {
+        q: "What roofing materials work best in Merced's climate?",
+        a: "30-year architectural asphalt shingles rated for Class 3 hail and 110°F heat are the most cost-effective choice. Metal standing seam is the long-term winner — 50+ year lifespan, reflects UV, handles thermal cycling better than any shingle.",
+      },
+      {
+        q: "How long does roof repair take in Merced?",
+        a: "Minor repairs (1–3 areas, flashing, shingles) are usually same or next day. Full replacements take 1–2 days for most Merced homes. We schedule around valley weather — no open roofs overnight in the rainy season.",
+      },
+    ],
+    formHeading: "Get a Free Estimate in Merced",
+    formSub: "We call back within 2 hours.",
+  },
 } as const;
 
 export type SiteConfig = typeof siteConfig;
