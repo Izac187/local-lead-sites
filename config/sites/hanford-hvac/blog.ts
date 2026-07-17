@@ -12,6 +12,12 @@ const hvacBlog: BlogPost[] = [
     excerpt:
       "Most Hanford homeowners pay $6,000–$12,000 for a central AC replacement and more for a heat pump. Here's what actually drives the price in Kings County.",
     readingMinutes: 6,
+    keyTakeaways: [
+      "Central AC replacement in Hanford: $6,000–$12,000 for most homes.",
+      "Heat pumps run $9,000–$16,000 but replace both heating and cooling.",
+      "Ductwork condition and SEER2 rating are the biggest cost drivers.",
+      "Correct Manual J sizing matters more than chasing the highest efficiency.",
+    ],
     body: `
 <p>A new central AC system in Hanford runs <strong>$6,000–$12,000</strong> for a typical 1,500–2,500 sq ft home. Heat pumps run <strong>$9,000–$16,000</strong>. The spread comes down to system type, size, efficiency, and the condition of your existing ductwork and electrical.</p>
 
@@ -59,6 +65,12 @@ const hvacBlog: BlogPost[] = [
     excerpt:
       "Higher SEER2 means lower bills but higher up-front cost. In the Central Valley's long cooling season, here's where the payback actually lands.",
     readingMinutes: 5,
+    keyTakeaways: [
+      "14.3 SEER2 is California's minimum; 15–17 SEER2 is the value sweet spot.",
+      "Kings County's long cooling season makes higher SEER2 pay back faster.",
+      "SEER2 tests are tougher than old SEER — numbers run ~4–5% lower.",
+      "Efficiency is wasted on leaky ducts or a wrong-sized system.",
+    ],
     body: `
 <p><strong>SEER2</strong> (Seasonal Energy Efficiency Ratio 2) is the current federal measure of how efficiently an air conditioner turns electricity into cooling. Higher is more efficient. Since 2023 it replaced the old SEER rating with a tougher, more realistic test.</p>
 
@@ -100,6 +112,12 @@ const hvacBlog: BlogPost[] = [
     excerpt:
       "A failing AC almost always warns you first. Catch these seven signs in spring and you avoid a no-cooling call in July.",
     readingMinutes: 5,
+    keyTakeaways: [
+      "Weak airflow, warm air, and short cycling are the earliest warning signs.",
+      "Rising summer bills with steady usage mean lost efficiency.",
+      "A 12+ year-old system on its second repair is near the end.",
+      "Catch it in spring — a July heat-wave failure is an emergency call.",
+    ],
     body: `
 <p>An air conditioner rarely dies without warning. In Kings County, the smart move is to catch the signs in spring — before a July heat wave turns a small repair into an emergency replacement.</p>
 
@@ -142,6 +160,12 @@ const hvacBlog: BlogPost[] = [
     excerpt:
       "Valley heat and ag dust are hard on HVAC systems. This season-by-season checklist keeps yours efficient and prevents peak-season breakdowns.",
     readingMinutes: 5,
+    keyTakeaways: [
+      "Change filters every 30–60 days in cooling season — valley dust clogs fast.",
+      "Spring AC tune-up and fall furnace tune-up: service twice a year here.",
+      "Rinse the outdoor condenser to clear packed ag dust.",
+      "A dirty coil and low refrigerant can cut efficiency 10–20%.",
+    ],
     body: `
 <p>Central Valley HVAC systems work harder than most — months of 100°F+ cooling, ag dust on every coil, and fog-season heating. A little seasonal maintenance keeps efficiency up and prevents the failures that always seem to hit during a heat wave.</p>
 

@@ -22,13 +22,7 @@ const categoryLabels: Record<string, string> = {
   maintenance: "Maintenance",
 };
 
-const categoryColors: Record<string, string> = {
-  "how-to": "#E8521A",
-  local: "#2563eb",
-  cost: "#16a34a",
-  materials: "#7c3aed",
-  maintenance: "#b45309",
-};
+// All categories use ember on tar black per DESIGN.md — no rainbow.
 
 export default function BlogPage() {
   const jsonLd = {
@@ -90,8 +84,11 @@ export default function BlogPage() {
               >
                 <div className="flex items-center gap-3 mb-3">
                   <span
-                    className="text-xs font-semibold px-2 py-0.5 rounded-full text-white"
-                    style={{ backgroundColor: categoryColors[post.category] ?? "#666" }}
+                    className="text-[10px] font-bold uppercase tracking-[0.12em] px-2.5 py-1 rounded-md"
+                    style={{
+                      backgroundColor: "var(--dark)",
+                      color: "var(--ember)",
+                    }}
                   >
                     {categoryLabels[post.category] ?? post.category}
                   </span>
