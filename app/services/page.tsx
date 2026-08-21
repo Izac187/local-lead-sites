@@ -7,6 +7,7 @@ import { servicePages } from "@/lib/servicePages";
 export const metadata: Metadata = {
   title: { absolute: siteConfig.pages.services.metaTitle },
   description: siteConfig.pages.services.metaDescription,
+  alternates: { canonical: `https://${siteConfig.domain}/services` },
 };
 
 export default function ServicesPage() {

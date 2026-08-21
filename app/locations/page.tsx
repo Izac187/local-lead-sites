@@ -7,6 +7,7 @@ import LeadForm from "@/components/LeadForm";
 export const metadata: Metadata = {
   title: { absolute: siteConfig.templates.locationsHub.metaTitle },
   description: siteConfig.templates.locationsHub.metaDescription,
+  alternates: { canonical: `https://${siteConfig.domain}/locations` },
 };
 
 export default function LocationsPage() {

@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/config";
 export const metadata: Metadata = {
   title: siteConfig.pages.calculator.metaTitle,
   description: siteConfig.pages.calculator.metaDescription,
+  alternates: { canonical: `https://${siteConfig.domain}/calculator` },
 };
 
 export default function CalculatorPage() {

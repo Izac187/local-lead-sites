@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/config";
 export const metadata: Metadata = {
   title: siteConfig.pages.contact.metaTitle,
   description: siteConfig.pages.contact.metaDescription,
+  alternates: { canonical: `https://${siteConfig.domain}/contact` },
 };
 
 export default function ContactPage() {
@@ -15,7 +16,7 @@ export default function ContactPage() {
           Contact Us
         </h1>
         <p className="text-gray-600 mb-8 text-sm">
-          Free estimates. We call back within 2 hours during business hours (Mon–Sat 7am–7pm).
+          Free estimates. We call back within 2 hours during business hours ({siteConfig.hours}).
         </p>
 
         <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm mb-6">

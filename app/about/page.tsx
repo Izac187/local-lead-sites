@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/config";
 export const metadata: Metadata = {
   title: siteConfig.pages.about.metaTitle,
   description: siteConfig.pages.about.metaDescription,
+  alternates: { canonical: `https://${siteConfig.domain}/about` },
 };
 
 export default function AboutPage() {

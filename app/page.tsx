@@ -8,6 +8,7 @@ import { siteConfig } from "@/lib/config";
 export const metadata: Metadata = {
   title: { absolute: siteConfig.pages.home.metaTitle },
   description: siteConfig.description,
+  alternates: { canonical: `https://${siteConfig.domain}` },
 };
 
 /* ─── Google G SVG ─────────────────────────────────────────────── */

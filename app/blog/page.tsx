@@ -8,6 +8,7 @@ const B = siteConfig.templates.blogIndex;
 export const metadata: Metadata = {
   title: { absolute: B.metaTitle },
   description: B.metaDescription,
+  alternates: { canonical: `https://${siteConfig.domain}/blog` },
   openGraph: {
     title: B.ogTitle,
     description: B.ogDescription,
