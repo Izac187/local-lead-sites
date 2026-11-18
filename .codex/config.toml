@@ -1,0 +1,6 @@
+[mcp_servers.gsc-mcp]
+args = ["mcp-search-console"]
+command = "/opt/homebrew/bin/uvx"
+
+[mcp_servers.gsc-mcp.env]
+GSC_OAUTH_CLIENT_SECRETS_FILE = "/Users/ias/Documents/gsc_client_secrets.json"
