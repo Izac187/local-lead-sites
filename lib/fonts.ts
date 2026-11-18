@@ -20,7 +20,7 @@ export function themeCssVars(t: SiteTheme): Record<string, string> {
     "--bg": c.bg, "--surface": c.surface, "--dark": c.dark, "--dark-mid": c.darkMid,
     "--ember": c.accent, "--ember-hover": c.accentHover,
     "--accent-on-dark": c.accentOnDark, "--accent-on-dark-hover": c.accentOnDarkHover, "--on-accent-on-dark": c.onAccentOnDark,
-    "--gold": c.gold, "--text": c.text, "--muted": c.muted, "--muted-light": c.mutedLight, "--border": c.border,
+    "--gold": c.gold, "--heat": c.heat ?? c.gold, "--figure-on-dark": c.figureOnDark ?? "#FFFFFF", "--heat-ink": c.heatInk ?? "#1A1208", "--text": c.text, "--muted": c.muted, "--muted-light": c.mutedLight, "--border": c.border,
     "--on-dark-rgb": c.onDarkRgb, "--accent-rgb": c.accentRgb,
     "--radius-sm": t.radius.sm, "--radius-md": t.radius.md, "--radius-lg": t.radius.lg, "--radius-xl": t.radius.xl,
     "--display-weight": String(t.display.weight), "--display-tracking": t.display.tracking,

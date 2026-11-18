@@ -28,6 +28,10 @@ export interface SiteTheme {
     accent: string; accentHover: string;
     accentOnDark: string; accentOnDarkHover: string; onAccentOnDark: string;
     gold: string; text: string; muted: string; mutedLight: string; border: string;
+    /** Warm "outside" color for the alert strip; optional, falls back to gold. */
+    heat?: string; heatInk?: string;
+    /** Calculator readout figure on the dark panel. Defaults to white. */
+    figureOnDark?: string;
     /** "r,g,b" for text on dark surfaces, used as rgba(var(--on-dark-rgb), a). */
     onDarkRgb: string;
     /** "r,g,b" of accent, used for tinted boxes. */
@@ -57,7 +61,7 @@ export interface SiteConfig {
 
   address: { city: string; state: string; zip: string };
   serviceArea: string[];
-  services: { title: string; description: string }[];
+  services: { title: string; description: string; /** One-line response promise shown on the card (Hanford). */ responseFact?: string }[];
 
   hero: {
     eyebrow: string;
@@ -159,6 +163,8 @@ export interface SiteConfig {
   pages: {
     home: {
       metaTitle: string;
+      /** Optional single-line band under the hero (e.g. heat-wave notice). Uses theme.colors.heat. */
+      alertStrip?: { text: string; linkLabel: string };
       trustBar: { label: string; sub: string }[];
       servicesHeading: string;
       estimatorHeading: string;

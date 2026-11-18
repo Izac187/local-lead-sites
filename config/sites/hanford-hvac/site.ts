@@ -35,21 +35,25 @@ const hanfordHvacConfig = {
       title: "AC Installation",
       description:
         "High-efficiency central AC and heat pump installs sized for Kings County's 100°F+ summers. SEER2-compliant systems, Title 24 documentation included.",
+      responseFact: "Written estimate within 48 hours",
     },
     {
       title: "AC Repair",
       description:
         "Same-day diagnosis and repair for weak cooling, no cooling, frozen coils, and failed capacitors. Most repairs done in a single visit.",
+      responseFact: "Same-day in Hanford, Mon–Sat",
     },
     {
       title: "Furnace & Heating",
       description:
         "Gas furnace and heat pump repair, replacement, and tune-ups for Central Valley tule-fog winters. Safety inspections on every visit.",
+      responseFact: "Next-day in winter",
     },
     {
       title: "Ductwork & Maintenance",
       description:
         "Duct sealing, replacement, and seasonal maintenance plans. Sealed ducts cut cooling bills in valley heat where attic runs bake all summer.",
+      responseFact: "Scheduled within a week",
     },
   ],
 
@@ -118,7 +122,7 @@ const hanfordHvacConfig = {
       bg: "#EEF4F2", surface: "#FAFCFB", dark: "#0F3338", darkMid: "#15474D",
       accent: "#0B7F8C", accentHover: "#09646F",
       accentOnDark: "#9EEBD8", accentOnDarkHover: "#7FE0CA", onAccentOnDark: "#0B2226",
-      gold: "#F2A33A", text: "#0B2226", muted: "#4F6B6E", mutedLight: "#7F9598", border: "#CFDEDB",
+      gold: "#F2A33A", heat: "#F2A33A", heatInk: "#3A2500", figureOnDark: "#9EEBD8", text: "#0B2226", muted: "#4F6B6E", mutedLight: "#7F9598", border: "#CFDEDB",
       onDarkRgb: "238,244,242", accentRgb: "158,235,216",
     },
     radius: { sm: "6px", md: "12px", lg: "20px", xl: "20px" },
@@ -277,6 +281,7 @@ const hanfordHvacConfig = {
   pages: {
     home: {
       metaTitle: "Hanford HVAC Pros | HVAC Contractor Hanford CA",
+      alertStrip: { text: "Heat wave? Same-day AC repair in Hanford, Lemoore and Corcoran.", linkLabel: "Call" },
       trustBar: [
         { label: "Licensed & Insured", sub: "CA CSLB C-20" },
         { label: "30-Min Callback", sub: "Mon–Sat, 7am–8pm" },

@@ -53,6 +53,20 @@ export default function Home() {
     <>
       <SplitHero />
 
+      {/* Alert strip (optional per site): one warm line under the hero */}
+      {siteConfig.pages.home.alertStrip && (
+        <div style={{ backgroundColor: "var(--heat)", color: "var(--heat-ink)" }}>
+          <div className="container-site" style={{ display: "flex", alignItems: "center", gap: 16, minHeight: 48, flexWrap: "wrap", padding: "8px 20px" }}>
+            <span style={{ fontWeight: 600, fontSize: "0.9375rem", fontFamily: "var(--font-body), system-ui, sans-serif" }}>
+              {siteConfig.pages.home.alertStrip.text}
+            </span>
+            <a href={siteConfig.phoneHref} style={{ marginLeft: "auto", color: "inherit", fontWeight: 600, fontSize: "0.9375rem", fontFamily: "var(--font-body), system-ui, sans-serif" }}>
+              {siteConfig.pages.home.alertStrip.linkLabel} {siteConfig.phone}
+            </a>
+          </div>
+        </div>
+      )}
+
       {/* Trust bar */}
       <section className="on-dark" style={{ backgroundColor: "var(--dark-mid)" }}>
         <div className="container-site">
@@ -121,6 +135,11 @@ export default function Home() {
                 <p style={{ color: "var(--muted)", fontSize: "0.875rem", lineHeight: 1.65, fontFamily: "var(--font-body), system-ui, sans-serif", marginBottom: 16 }}>
                   {s.description}
                 </p>
+                {s.responseFact && (
+                  <p style={{ color: "var(--ember)", fontSize: "0.875rem", fontWeight: 600, fontFamily: "var(--font-body), system-ui, sans-serif", borderTop: "1px solid var(--border)", paddingTop: 12, marginBottom: 12 }}>
+                    {s.responseFact}
+                  </p>
+                )}
                 <a href="#form" style={{ color: "var(--ember)", fontSize: "0.875rem", fontWeight: 600, fontFamily: "var(--font-body), system-ui, sans-serif", textDecoration: "none" }}>
                   Get a quote &rarr;
                 </a>

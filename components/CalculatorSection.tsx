@@ -92,7 +92,7 @@ export default function CalculatorSection() {
             <p style={{ color: "rgba(var(--on-dark-rgb),0.7)", fontSize: "0.8125rem", fontFamily: "var(--font-body), system-ui, sans-serif", marginBottom: 6 }}>
               Estimated range ({siteConfig.county})
             </p>
-            <p className="font-display" style={{ fontSize: "2.25rem", color: "#FFFFFF", lineHeight: 1, marginBottom: 6 }}>
+            <p className="font-display" style={{ fontSize: "2.25rem", color: "var(--figure-on-dark)", lineHeight: 1, marginBottom: 6, fontFamily: "var(--font-mono, var(--font-display)), Impact, sans-serif", fontVariantNumeric: "tabular-nums" }}>
               {fmt(estimate[0])} &ndash; {fmt(estimate[1])}
             </p>
             <p style={{ color: "rgba(var(--on-dark-rgb),0.5)", fontSize: "0.75rem", fontFamily: "var(--font-body), system-ui, sans-serif", marginBottom: 16 }}>
