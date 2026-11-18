@@ -94,4 +94,5 @@ Update this file at the end of each session alongside `/context-save`.
 | 2026-05-15 | Phase 3 complete — Resend verified, lead flow confirmed end-to-end |
 | 2026-05-16 | Phase 5 complete — mercedroofingpro.com live, GSC sitemap submitted, BrightLocal set up (Phase 5.5) |
 | 2026-07-14 → 08-21 | Multi-site monorepo refactor (config/sites), Hanford HVAC content authored, SEO quick wins |
+| 2026-11-18 | Hanford design system (Pool at Dusk) + per-site theme tokens wired; Merced visually unchanged. `config/sites/hanford-hvac/DESIGN.md` |
 | 2026-11-17 | GSC diagnosis: 1/23 pages indexed, vercel.app duplicate ranking Jun–Oct. Sitemap resubmitted, *.vercel.app 308 → custom domain live, Hanford Vercel project created. Plan: docs/plans/2026-11-17-merced-indexing-and-hanford-launch.md |

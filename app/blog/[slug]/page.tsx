@@ -123,7 +123,7 @@ export default async function BlogPostPage({ params }: Props) {
             </nav>
             <h1
               className="text-white mb-4 leading-tight"
-              style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", letterSpacing: "0.02em" }}
+              style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", letterSpacing: "0.02em" }}
             >
               {post.title}
             </h1>
@@ -173,7 +173,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="mb-12">
               <h2
                 className="text-xl font-bold text-gray-900 mb-5"
-                style={{ fontFamily: "var(--font-bebas-neue), sans-serif", letterSpacing: "0.02em", fontSize: "1.5rem" }}
+                style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: "0.02em", fontSize: "1.5rem" }}
               >
                 Frequently Asked Questions
               </h2>
@@ -199,12 +199,12 @@ export default async function BlogPostPage({ params }: Props) {
                   <Link
                     key={related.slug}
                     href={`/blog/${related.slug}`}
-                    className="rounded-xl border border-gray-100 p-4 hover:border-orange-200 hover:shadow-sm transition-all group"
+                    className="rounded-xl border border-gray-100 p-4 hover:border-accent-soft hover:shadow-sm transition-all group"
                   >
-                    <p className="font-semibold text-sm text-gray-900 group-hover:text-orange-600 transition-colors leading-snug">
+                    <p className="font-semibold text-sm text-gray-900 group-hover:text-accent-hover transition-colors leading-snug">
                       {related.title}
                     </p>
-                    <span className="inline-block mt-2 text-xs font-semibold text-orange-500">Read →</span>
+                    <span className="inline-block mt-2 text-xs font-semibold text-accent">Read →</span>
                   </Link>
                 ))}
               </div>
@@ -224,7 +224,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Back to blog */}
           <div className="mt-8 text-center">
-            <Link href="/blog" className="text-sm text-gray-500 hover:text-orange-600 transition-colors">
+            <Link href="/blog" className="text-sm text-gray-500 hover:text-accent-hover transition-colors">
               ← Back to all articles
             </Link>
           </div>

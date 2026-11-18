@@ -106,18 +106,20 @@ export const siteConfig = {
     bottomTagline: "Services fulfilled by licensed C-39 partner contractors · Serving Merced County",
   },
 
-  colors: {
-    base: "oklch(32% 0.09 38)",
-    primary: "oklch(58% 0.15 38)",
-    cta: "oklch(72% 0.18 65)",
-    ctaHover: "oklch(65% 0.18 65)",
-    text: "oklch(96% 0.02 38)",
-    muted: "oklch(75% 0.04 38)",
-  },
-
-  fonts: {
-    heading: "Barlow Condensed",
-    body: "Inter",
+  theme: {
+    fonts: "merced",
+    colors: {
+      bg: "#F5ECD7", surface: "#FFFFFF", dark: "#1A1208", darkMid: "#2C1A0E",
+      accent: "#E8521A", accentHover: "#C94210",
+      accentOnDark: "#E8521A", accentOnDarkHover: "#C94210", onAccentOnDark: "#FFFFFF",
+      gold: "#FF8C00", text: "#1A1208", muted: "#6B5F54", mutedLight: "#9E8E82", border: "#DDD0BF",
+      onDarkRgb: "245,236,215", accentRgb: "232,82,26",
+    },
+    radius: { sm: "4px", md: "8px", lg: "12px", xl: "16px" },
+    display: { weight: 400, tracking: "0", xl: "clamp(3.5rem, 7vw, 5.5rem)", lg: "clamp(2rem, 4vw, 3rem)" },
+    eyebrow: { transform: "uppercase", tracking: "0.16em" },
+    hero: "dark-split",
+    serviceNumerals: true,
   },
 
   pricing: {

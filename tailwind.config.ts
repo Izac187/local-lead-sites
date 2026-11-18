@@ -11,6 +11,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        // Site accent (per-site CSS vars from app/layout.tsx). Replaces hardcoded orange-* utilities.
+        accent: "var(--ember)",
+        "accent-hover": "var(--ember-hover)",
+        "accent-soft": "rgb(var(--accent-rgb) / 0.3)",
       },
     },
   },

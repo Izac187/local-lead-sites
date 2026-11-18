@@ -24,7 +24,7 @@ export default function ServicesPage() {
 
         <h1
           className="text-gray-900 mb-2"
-          style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "0.02em" }}
+          style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "0.02em" }}
         >
           {siteConfig.pages.services.heading}
         </h1>
@@ -38,10 +38,10 @@ export default function ServicesPage() {
             <Link
               key={s.slug}
               href={`/services/${s.slug}`}
-              className="group rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md hover:border-orange-200 transition-all"
+              className="group rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md hover:border-accent-soft transition-all"
             >
               <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2 mb-2">
-                <span style={{ color: "var(--ember)", fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "1.5rem" }}>
+                <span style={{ color: "var(--ember)", fontFamily: "var(--font-display), sans-serif", fontSize: "1.5rem" }}>
                   0{i + 1}
                 </span>{" "}
                 {s.title}
@@ -53,7 +53,7 @@ export default function ServicesPage() {
               </h2>
               <p className="text-gray-600 text-sm leading-relaxed mb-2">{s.summary.substring(0, 120)}…</p>
               <p className="text-xs text-gray-400 mb-3">Est. cost: {s.estimateRange}</p>
-              <span className="text-sm font-semibold text-orange-500 group-hover:underline">
+              <span className="text-sm font-semibold text-accent group-hover:underline">
                 Learn more →
               </span>
             </Link>
@@ -71,7 +71,7 @@ export default function ServicesPage() {
               <Link
                 key={city}
                 href={`/locations/${city.toLowerCase().replace(/\s+/g, "-")}`}
-                className="rounded-full border border-gray-200 px-3 py-1 text-xs text-gray-600 hover:border-orange-300 hover:text-orange-600 transition-colors"
+                className="rounded-full border border-gray-200 px-3 py-1 text-xs text-gray-600 hover:border-accent hover:text-accent-hover transition-colors"
               >
                 {city}, CA
               </Link>

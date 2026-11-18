@@ -115,7 +115,7 @@ export default async function ServicePage({ params }: Props) {
             </nav>
             <h1
               className="text-white mb-3"
-              style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "0.02em" }}
+              style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "0.02em" }}
             >
               {page.h1}
             </h1>
@@ -123,8 +123,8 @@ export default async function ServicePage({ params }: Props) {
             <div className="flex flex-wrap gap-4">
               <a
                 href={siteConfig.phoneHref}
-                className="inline-block rounded-lg px-6 py-3 font-bold text-white text-base"
-                style={{ backgroundColor: "var(--ember)" }}
+                className="inline-block rounded-lg px-6 py-3 font-bold text-base"
+                style={{ backgroundColor: "var(--accent-on-dark)", color: "var(--on-accent-on-dark)" }}
               >
                 Call {siteConfig.phone}
               </a>
@@ -210,7 +210,7 @@ export default async function ServicePage({ params }: Props) {
                   <Link
                     key={s.slug}
                     href={`/services/${s.slug}`}
-                    className="rounded-full border border-gray-200 px-4 py-1.5 text-sm text-gray-700 hover:border-orange-300 hover:text-orange-600 transition-colors"
+                    className="rounded-full border border-gray-200 px-4 py-1.5 text-sm text-gray-700 hover:border-accent hover:text-accent-hover transition-colors"
                   >
                     {s.title} →
                   </Link>

@@ -24,7 +24,7 @@ export default function LocationsPage() {
 
         <h1
           className="text-3xl font-extrabold text-gray-900 mb-3"
-          style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "2.5rem", letterSpacing: "0.02em" }}
+          style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "2.5rem", letterSpacing: "0.02em" }}
         >
           {siteConfig.templates.locationsHub.heading}
         </h1>
@@ -37,19 +37,19 @@ export default function LocationsPage() {
             <Link
               key={city.citySlug}
               href={`/locations/${city.citySlug}`}
-              className="group rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md hover:border-orange-200 transition-all"
+              className="group rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md hover:border-accent-soft transition-all"
             >
-              <p className="text-xs font-bold uppercase tracking-wider text-orange-500 mb-1">
+              <p className="text-xs font-bold uppercase tracking-wider text-accent mb-1">
                 {city.county}
               </p>
-              <h2 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+              <h2 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-accent-hover transition-colors">
                 {city.cityName}, CA
               </h2>
               <p className="text-sm text-gray-500 mb-3">
                 ZIP: {city.zipCodes.join(", ")} · ~{city.driveFromHub} from {siteConfig.city}
               </p>
               <p className="text-sm text-gray-600 line-clamp-2">{city.uniqueNote}</p>
-              <span className="inline-block mt-4 text-sm font-semibold text-orange-500">
+              <span className="inline-block mt-4 text-sm font-semibold text-accent">
                 View service details →
               </span>
             </Link>

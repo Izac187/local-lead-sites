@@ -144,18 +144,18 @@ export default async function LocationPage({ params }: Props) {
             </nav>
             <h1
               className="text-white mb-3"
-              style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "0.02em" }}
+              style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "0.02em" }}
             >
               {T.heroTitlePrefix}{" "}
-              <span style={{ color: "var(--ember)" }}>{city.cityName}, CA</span>
+              <span style={{ color: "var(--accent-on-dark)" }}>{city.cityName}, CA</span>
             </h1>
             <p className="text-gray-300 mb-6 max-w-2xl text-base leading-relaxed">
               {interpolate(T.heroBlurb, v)}
             </p>
             <a
               href={siteConfig.phoneHref}
-              className="inline-block rounded-lg px-6 py-3 font-bold text-white text-base"
-              style={{ backgroundColor: "var(--ember)" }}
+              className="inline-block rounded-lg px-6 py-3 font-bold text-base"
+              style={{ backgroundColor: "var(--accent-on-dark)", color: "var(--on-accent-on-dark)" }}
             >
               Call {siteConfig.phone} — Free Estimate
             </a>
@@ -204,19 +204,21 @@ export default async function LocationPage({ params }: Props) {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="group rounded-xl border border-gray-100 p-5 shadow-sm hover:shadow-md hover:border-orange-200 transition-all"
+                  className="group rounded-xl border border-gray-100 p-5 shadow-sm hover:shadow-md hover:border-accent-soft transition-all"
                 >
-                  <span
-                    className="block text-2xl font-extrabold mb-1"
-                    style={{ fontFamily: "var(--font-bebas-neue), sans-serif", color: "var(--ember)" }}
-                  >
-                    0{i + 1}
-                  </span>
-                  <h3 className="font-bold text-gray-900 mb-1 group-hover:text-orange-600 transition-colors">
+                  {siteConfig.theme.serviceNumerals && (
+                    <span
+                      className="block text-2xl font-extrabold mb-1"
+                      style={{ fontFamily: "var(--font-display), sans-serif", color: "var(--ember)" }}
+                    >
+                      0{i + 1}
+                    </span>
+                  )}
+                  <h3 className="font-bold text-gray-900 mb-1 group-hover:text-accent-hover transition-colors">
                     {s.title}
                   </h3>
                   <p className="text-sm text-gray-500">{s.summary.substring(0, 100)}…</p>
-                  <span className="inline-block mt-3 text-xs font-semibold text-orange-500">
+                  <span className="inline-block mt-3 text-xs font-semibold text-accent">
                     Learn more →
                   </span>
                 </Link>
@@ -248,14 +250,14 @@ export default async function LocationPage({ params }: Props) {
                   <Link
                     key={c.citySlug}
                     href={`/locations/${c.citySlug}`}
-                    className="rounded-full border border-gray-200 px-4 py-1.5 text-sm text-gray-700 hover:border-orange-300 hover:text-orange-600 transition-colors"
+                    className="rounded-full border border-gray-200 px-4 py-1.5 text-sm text-gray-700 hover:border-accent hover:text-accent-hover transition-colors"
                   >
                     {c.cityName}, CA →
                   </Link>
                 ))}
                 <Link
                   href="/locations"
-                  className="rounded-full border border-gray-200 px-4 py-1.5 text-sm text-gray-700 hover:border-orange-300 hover:text-orange-600 transition-colors"
+                  className="rounded-full border border-gray-200 px-4 py-1.5 text-sm text-gray-700 hover:border-accent hover:text-accent-hover transition-colors"
                 >
                   All service areas →
                 </Link>

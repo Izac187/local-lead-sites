@@ -29,15 +29,15 @@ export default function Footer() {
               style={{ fontSize: "1.5rem", color: "#FFFFFF", marginBottom: 12 }}
             >
               {siteConfig.footer.brandLead}{" "}
-              <span style={{ color: "var(--ember)" }}>{siteConfig.footer.brandEmphasis}</span>
+              <span style={{ color: "var(--accent-on-dark)" }}>{siteConfig.footer.brandEmphasis}</span>
               {" " + siteConfig.footer.brandTail}
             </p>
             <p
               style={{
-                color: "rgba(245,236,215,0.5)",
+                color: "rgba(var(--on-dark-rgb),0.5)",
                 fontSize: "0.875rem",
                 lineHeight: 1.6,
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                fontFamily: "var(--font-body), system-ui, sans-serif",
                 marginBottom: 12,
               }}
             >
@@ -59,9 +59,9 @@ export default function Footer() {
             </a>
             <p
               style={{
-                color: "rgba(245,236,215,0.4)",
+                color: "rgba(var(--on-dark-rgb),0.4)",
                 fontSize: "0.8125rem",
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                fontFamily: "var(--font-body), system-ui, sans-serif",
               }}
             >
               {siteConfig.address.city}, {siteConfig.address.state}{" "}
@@ -76,9 +76,9 @@ export default function Footer() {
                 color: "#FFFFFF",
                 fontWeight: 700,
                 fontSize: "0.8125rem",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                letterSpacing: "var(--footer-heading-tracking, 0.1em)",
+                textTransform: "var(--eyebrow-transform)" as const,
+                fontFamily: "var(--font-body), system-ui, sans-serif",
                 marginBottom: 16,
               }}
             >
@@ -97,14 +97,14 @@ export default function Footer() {
                   <Link
                     href={href}
                     style={{
-                      color: "rgba(245,236,215,0.6)",
+                      color: "rgba(var(--on-dark-rgb),0.6)",
                       fontSize: "0.875rem",
-                      fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                      fontFamily: "var(--font-body), system-ui, sans-serif",
                       textDecoration: "none",
                       transition: "color 150ms ease",
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = "#F5ECD7")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,236,215,0.6)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(var(--on-dark-rgb),0.6)")}
                   >
                     {label}
                   </Link>
@@ -120,9 +120,9 @@ export default function Footer() {
                 color: "#FFFFFF",
                 fontWeight: 700,
                 fontSize: "0.8125rem",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                letterSpacing: "var(--footer-heading-tracking, 0.1em)",
+                textTransform: "var(--eyebrow-transform)" as const,
+                fontFamily: "var(--font-body), system-ui, sans-serif",
                 marginBottom: 16,
               }}
             >
@@ -134,14 +134,14 @@ export default function Footer() {
                   <Link
                     href={`/services/${s.slug}`}
                     style={{
-                      color: "rgba(245,236,215,0.6)",
+                      color: "rgba(var(--on-dark-rgb),0.6)",
                       fontSize: "0.875rem",
-                      fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                      fontFamily: "var(--font-body), system-ui, sans-serif",
                       textDecoration: "none",
                       transition: "color 150ms ease",
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = "#F5ECD7")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,236,215,0.6)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(var(--on-dark-rgb),0.6)")}
                   >
                     {s.title}
                   </Link>
@@ -157,9 +157,9 @@ export default function Footer() {
                 color: "#FFFFFF",
                 fontWeight: 700,
                 fontSize: "0.8125rem",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                letterSpacing: "var(--footer-heading-tracking, 0.1em)",
+                textTransform: "var(--eyebrow-transform)" as const,
+                fontFamily: "var(--font-body), system-ui, sans-serif",
                 marginBottom: 16,
               }}
             >
@@ -171,14 +171,14 @@ export default function Footer() {
                   <Link
                     href={`/locations/${city.citySlug}`}
                     style={{
-                      color: "rgba(245,236,215,0.6)",
+                      color: "rgba(var(--on-dark-rgb),0.6)",
                       fontSize: "0.875rem",
-                      fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                      fontFamily: "var(--font-body), system-ui, sans-serif",
                       textDecoration: "none",
                       transition: "color 150ms ease",
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = "#F5ECD7")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,236,215,0.6)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(var(--on-dark-rgb),0.6)")}
                   >
                     {city.cityName}, CA
                   </Link>
@@ -194,9 +194,9 @@ export default function Footer() {
                 color: "#FFFFFF",
                 fontWeight: 700,
                 fontSize: "0.8125rem",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                letterSpacing: "var(--footer-heading-tracking, 0.1em)",
+                textTransform: "var(--eyebrow-transform)" as const,
+                fontFamily: "var(--font-body), system-ui, sans-serif",
                 marginBottom: 16,
               }}
             >
@@ -204,9 +204,9 @@ export default function Footer() {
             </p>
             <p
               style={{
-                color: "rgba(245,236,215,0.6)",
+                color: "rgba(var(--on-dark-rgb),0.6)",
                 fontSize: "0.875rem",
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                fontFamily: "var(--font-body), system-ui, sans-serif",
                 marginBottom: 4,
               }}
             >
@@ -214,9 +214,9 @@ export default function Footer() {
             </p>
             <p
               style={{
-                color: "rgba(245,236,215,0.4)",
+                color: "rgba(var(--on-dark-rgb),0.4)",
                 fontSize: "0.8125rem",
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                fontFamily: "var(--font-body), system-ui, sans-serif",
                 marginBottom: 24,
               }}
             >
@@ -227,9 +227,9 @@ export default function Footer() {
                 color: "#FFFFFF",
                 fontWeight: 700,
                 fontSize: "0.8125rem",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                letterSpacing: "var(--footer-heading-tracking, 0.1em)",
+                textTransform: "var(--eyebrow-transform)" as const,
+                fontFamily: "var(--font-body), system-ui, sans-serif",
                 marginBottom: 10,
               }}
             >
@@ -237,9 +237,9 @@ export default function Footer() {
             </p>
             <p
               style={{
-                color: "rgba(245,236,215,0.5)",
+                color: "rgba(var(--on-dark-rgb),0.5)",
                 fontSize: "0.8125rem",
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                fontFamily: "var(--font-body), system-ui, sans-serif",
                 lineHeight: 1.7,
               }}
             >
@@ -269,9 +269,9 @@ export default function Footer() {
       >
         <p
           style={{
-            color: "rgba(245,236,215,0.35)",
+            color: "rgba(var(--on-dark-rgb),0.35)",
             fontSize: "0.75rem",
-            fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+            fontFamily: "var(--font-body), system-ui, sans-serif",
           }}
         >
           &copy; {year} {siteConfig.siteName}. Licensed &amp; Insured &middot;{" "}
@@ -279,9 +279,9 @@ export default function Footer() {
         </p>
         <p
           style={{
-            color: "rgba(245,236,215,0.35)",
+            color: "rgba(var(--on-dark-rgb),0.35)",
             fontSize: "0.75rem",
-            fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+            fontFamily: "var(--font-body), system-ui, sans-serif",
           }}
         >
           {siteConfig.footer.bottomTagline}

@@ -5,10 +5,17 @@ import LeadForm from "@/components/LeadForm";
 import { siteConfig } from "@/lib/config";
 
 export default function SplitHero() {
+  // "dark-split" (Merced): dark section, light form card. "light-panel" (Hanford): light section, dark form panel.
+  const light = siteConfig.theme.hero === "light-panel";
+  const copyText = light ? "var(--text)" : "#FFFFFF";
+  const copyMuted = light ? "var(--muted)" : "rgba(var(--on-dark-rgb),0.8)";
+  const copyFaint = light ? "var(--muted-light)" : "rgba(var(--on-dark-rgb),0.6)";
+  const bullet = light ? "var(--ember)" : "var(--accent-on-dark)";
   return (
     <section
       id="form"
-      style={{ backgroundColor: "var(--dark)", paddingTop: 80, paddingBottom: 96 }}
+      className={light ? undefined : "on-dark"}
+      style={{ backgroundColor: light ? "var(--bg)" : "var(--dark)", paddingTop: light ? 72 : 80, paddingBottom: light ? 72 : 96 }}
     >
       <div
         className="container-site"
@@ -37,7 +44,7 @@ export default function SplitHero() {
           }}
         >
           {/* Left on desktop, below form on mobile */}
-          <div className="hero-copy text-white" style={{ order: 2 }}>
+          <div className="hero-copy" style={{ order: 2, color: copyText }}>
             {/* Eyebrow */}
             <div className="eyebrow" style={{ marginBottom: 20 }}>
               <span className="eyebrow-line" />
@@ -47,8 +54,8 @@ export default function SplitHero() {
             <h1
               className="font-display text-balance"
               style={{
-                fontSize: "clamp(3.5rem, 7vw, 5.5rem)",
-                color: "#FFFFFF",
+                fontSize: "var(--display-xl)",
+                color: copyText,
                 lineHeight: 1,
                 marginBottom: 24,
               }}
@@ -65,9 +72,9 @@ export default function SplitHero() {
             <p
               style={{
                 fontSize: "1.125rem",
-                color: "rgba(245,236,215,0.8)",
+                color: copyMuted,
                 lineHeight: 1.7,
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                fontFamily: "var(--font-body), system-ui, sans-serif",
                 marginBottom: 32,
                 maxWidth: "52ch",
               }}
@@ -84,8 +91,8 @@ export default function SplitHero() {
                     display: "flex",
                     alignItems: "center",
                     gap: 12,
-                    color: "rgba(245,236,215,0.8)",
-                    fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                    color: copyMuted,
+                    fontFamily: "var(--font-body), system-ui, sans-serif",
                     fontSize: "0.9375rem",
                   }}
                 >
@@ -94,7 +101,7 @@ export default function SplitHero() {
                       width: 8,
                       height: 8,
                       borderRadius: "50%",
-                      backgroundColor: "var(--ember)",
+                      backgroundColor: bullet,
                       flexShrink: 0,
                     }}
                   />
@@ -110,8 +117,8 @@ export default function SplitHero() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 10,
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
-                color: "rgba(245,236,215,0.6)",
+                fontFamily: "var(--font-body), system-ui, sans-serif",
+                color: copyFaint,
                 fontSize: "0.875rem",
                 textDecoration: "none",
               }}
@@ -119,7 +126,7 @@ export default function SplitHero() {
               Or call directly:&nbsp;
               <span
                 className="font-display"
-                style={{ color: "#FFFFFF", fontSize: "1.5rem", letterSpacing: "0.01em" }}
+                style={{ color: copyText, fontSize: "1.5rem", letterSpacing: "0.01em" }}
               >
                 {siteConfig.phone}
               </span>
@@ -128,11 +135,11 @@ export default function SplitHero() {
 
           {/* Top on mobile, right on desktop */}
           <div
-            className="hero-form"
+            className={light ? "hero-form on-dark hero-panel-enter" : "hero-form"}
             style={{
-              backgroundColor: "var(--surface)",
+              backgroundColor: light ? "var(--dark)" : "var(--surface)",
               borderRadius: "var(--radius-xl)",
-              boxShadow: "0 24px 64px rgba(0,0,0,0.35), 0 4px 16px rgba(0,0,0,0.15)",
+              boxShadow: light ? "none" : "0 24px 64px rgba(0,0,0,0.35), 0 4px 16px rgba(0,0,0,0.15)",
               padding: 32,
               order: 1,
             }}
@@ -144,22 +151,22 @@ export default function SplitHero() {
 
             <h2
               className="font-display"
-              style={{ fontSize: "1.75rem", color: "var(--text)", marginBottom: 4 }}
+              style={{ fontSize: "1.75rem", color: light ? "rgb(var(--on-dark-rgb))" : "var(--text)", marginBottom: 4 }}
             >
               {siteConfig.hero.formHeading}
             </h2>
             <p
               style={{
-                color: "var(--muted)",
+                color: light ? "rgba(var(--on-dark-rgb),0.72)" : "var(--muted)",
                 fontSize: "0.875rem",
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+                fontFamily: "var(--font-body), system-ui, sans-serif",
                 marginBottom: 20,
               }}
             >
               {siteConfig.hero.formSubcopy}
             </p>
 
-            <LeadForm source="hero" />
+            <LeadForm source="hero" onDark={light} />
           </div>
         </div>
       </div>

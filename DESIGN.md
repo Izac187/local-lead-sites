@@ -1,5 +1,7 @@
 # Design System — Merced Roofing Pros
 
+> Site-specific. This file governs Merced only. Other sites keep their own system at `config/sites/<slug>/DESIGN.md` (Hanford: `config/sites/hanford-hvac/DESIGN.md`). Tokens live in each site's `theme` config and are injected as CSS variables by `app/layout.tsx`.
+
 ## Product Context
 - **What this is:** Rank-and-rent lead generation site for roofing in Merced, CA
 - **Who it's for:** Middle-income homeowners (35–65) searching for a roofer after storm damage, a leak, or an annual inspection. Mobile-first, often stressed, comparing 2–3 options before calling.

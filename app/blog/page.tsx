@@ -63,7 +63,7 @@ export default function BlogPage() {
             </nav>
             <h1
               className="text-white mb-3"
-              style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "0.02em" }}
+              style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "0.02em" }}
             >
               {B.headingPrefix}{" "}
               <span style={{ color: "var(--ember)" }}>{B.headingHighlight}</span>
@@ -81,7 +81,7 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md hover:border-orange-200 transition-all flex flex-col"
+                className="group rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md hover:border-accent-soft transition-all flex flex-col"
               >
                 <div className="flex items-center gap-3 mb-3">
                   <span
@@ -95,11 +95,11 @@ export default function BlogPage() {
                   </span>
                   <span className="text-xs text-gray-400">{post.readingMinutes} min read</span>
                 </div>
-                <h2 className="font-bold text-gray-900 mb-2 leading-snug group-hover:text-orange-600 transition-colors">
+                <h2 className="font-bold text-gray-900 mb-2 leading-snug group-hover:text-accent-hover transition-colors">
                   {post.title}
                 </h2>
                 <p className="text-sm text-gray-500 leading-relaxed flex-1">{post.excerpt}</p>
-                <span className="inline-block mt-4 text-xs font-semibold text-orange-500">
+                <span className="inline-block mt-4 text-xs font-semibold text-accent">
                   Read article →
                 </span>
               </Link>
@@ -110,7 +110,7 @@ export default function BlogPage() {
           <div className="mt-12 rounded-2xl p-8 text-center" style={{ backgroundColor: "var(--dark)" }}>
             <p
               className="text-white mb-2"
-              style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "1.5rem", letterSpacing: "0.02em" }}
+              style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "1.5rem", letterSpacing: "0.02em" }}
             >
               {B.ctaHeading}
             </p>

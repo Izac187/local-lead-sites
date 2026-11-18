@@ -18,6 +18,28 @@ export interface Testimonial {
  * string/number) so any site — Merced roofing, Hanford HVAC, etc. — can implement it.
  * A missing or mistyped field fails `tsc`, not production.
  */
+export type HeroVariant = "dark-split" | "light-panel";
+
+export interface SiteTheme {
+  /** Key into lib/fonts.ts; each site loads its own next/font families. */
+  fonts: "merced" | "hanford-hvac";
+  colors: {
+    bg: string; surface: string; dark: string; darkMid: string;
+    accent: string; accentHover: string;
+    accentOnDark: string; accentOnDarkHover: string; onAccentOnDark: string;
+    gold: string; text: string; muted: string; mutedLight: string; border: string;
+    /** "r,g,b" for text on dark surfaces, used as rgba(var(--on-dark-rgb), a). */
+    onDarkRgb: string;
+    /** "r,g,b" of accent, used for tinted boxes. */
+    accentRgb: string;
+  };
+  radius: { sm: string; md: string; lg: string; xl: string };
+  display: { weight: number; tracking: string; xl: string; lg: string };
+  eyebrow: { transform: "uppercase" | "none"; tracking: string };
+  hero: HeroVariant;
+  serviceNumerals: boolean;
+}
+
 export interface SiteConfig {
   niche: string;
   city: string;
@@ -61,16 +83,8 @@ export interface SiteConfig {
     bottomTagline: string;
   };
 
-  colors: {
-    base: string;
-    primary: string;
-    cta: string;
-    ctaHover: string;
-    text: string;
-    muted: string;
-  };
-
-  fonts: { heading: string; body: string };
+  /** Per-site visual tokens. Injected as CSS custom properties by app/layout.tsx. */
+  theme: SiteTheme;
 
   pricing: {
     flatFeePerMonth: number;

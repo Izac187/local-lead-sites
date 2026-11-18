@@ -3,7 +3,7 @@
 - Status: in-progress
 - Owner: Isaac Salinas
 - Created: 2026-11-17
-- Updated: 2026-11-17 (evening)
+- Updated: 2026-11-18
 
 ## Goal
 
@@ -22,6 +22,11 @@
 - Follow DESIGN.md for any UI change.
 
 ## File-level tasks
+
+- [x] `config/sites/hanford-hvac/DESIGN.md`: Hanford design system ("Pool at Dusk"), spec format. Root DESIGN.md stays Merced.
+- [x] `lib/siteConfig.types.ts` + `lib/config.data.ts` + `config/sites/hanford-hvac/site.ts`: replace unused `colors`/`fonts` with `theme` (palette, radius, display scale, eyebrow style, hero variant, serviceNumerals).
+- [x] `config/sites/{merced,hanford-hvac}/fonts.ts` + `lib/fonts.ts` + `app/layout.tsx`: per-site next/font loaders exposed as `--font-display/--font-body/--font-mono`; theme → CSS vars on `<html>`.
+- [x] `app/globals.css` + components: read `--font-body/--font-display`, `rgba(var(--on-dark-rgb),a)`, `--accent-on-dark`, `--display-xl/lg`, eyebrow vars; `.on-dark` sections; hero `light-panel` variant; `LeadForm onDark`; numerals gated; Tailwind `orange-*` → `accent` tokens.
 
 - [x] `next.config.mjs`: 301 `*.vercel.app` → `SITE_DOMAIN` (default mercedroofingpro.com), production only.
 - [x] `AGENTS.md`, `CLAUDE.md`, `.codex/config.toml`, `docs/plans/0000-template.md`: commit cross-agent memory structure.
@@ -60,6 +65,14 @@
 - 2026-11-17: vercel.app redirect lives in `next.config.mjs` (not Vercel dashboard) so every site project inherits it via `SITE_DOMAIN`.
 
 ## Handoff
+
+### 2026-11-18 — Claude Code (Hanford design)
+
+- Completed: /design-consultation for Hanford → "Pool at Dusk" (light ice ground, pool-dark form panel, Archivo 700 sentence case + Source Sans 3 + JetBrains Mono, mint CTA on dark / deep teal on light, amber only on heat strip). Per-site DESIGN.md written; CLAUDE.md design rule now points to the active site's file. Theme tokens wired end to end; Hanford renders in the new system on home, service and city pages.
+- Validation: tsc, lint, build (both sites), vitest 8/8. Merced screenshots byte-identical on / and /services/roof-repair; /blog and /locations/atwater differ only by link color (Tailwind orange-500 → ember token, a DESIGN.md compliance fix). gstack-design-md check: spec.
+- Skipped: AI mockups (no image API key; HTML preview used instead). Codex outside voice (CLI too old for configured model). Heat-wave strip, service-card "response fact" line, and JetBrains Mono in the calculator are in DESIGN.md but not yet built (calculator still uses display font for the figure).
+- Surprises or risks: next/font/google build flake (vercel/next.js#99114, extensionless font URLs) hit once; retry passed. More font families = more exposure; consider self-hosting via next/font/local if Vercel builds start failing. Both sites' font modules execute at build so both sets of @font-face CSS are emitted; only the active site's are applied.
+- Next step: push → Vercel deploys both projects; visually QA hanford-hvac-pros.vercel.app on a phone; then build the heat strip + response-fact card line + mono calculator figure; then owner inputs.
 
 ### 2026-11-17 (later) — Claude Code
 

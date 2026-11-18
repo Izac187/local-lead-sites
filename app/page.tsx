@@ -33,19 +33,19 @@ function Star() {
 
 /* ─── Trust bar icons ───────────────────────────────────────────── */
 function ShieldIcon() {
-  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>;
+  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-on-dark)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>;
 }
 function ClockIcon() {
-  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>;
+  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-on-dark)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>;
 }
 function CheckCircleIcon() {
-  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>;
+  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-on-dark)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>;
 }
 function StarIcon() {
-  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>;
+  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-on-dark)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>;
 }
 function MapPinIcon() {
-  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>;
+  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-on-dark)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>;
 }
 
 export default function Home() {
@@ -54,7 +54,7 @@ export default function Home() {
       <SplitHero />
 
       {/* Trust bar */}
-      <section style={{ backgroundColor: "var(--dark-mid)" }}>
+      <section className="on-dark" style={{ backgroundColor: "var(--dark-mid)" }}>
         <div className="container-site">
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
             {siteConfig.pages.home.trustBar
@@ -79,8 +79,8 @@ export default function Home() {
                   {icon}
                 </div>
                 <div style={{ textAlign: "center" }}>
-                  <p style={{ color: "#FFFFFF", fontWeight: 600, fontSize: "0.875rem", fontFamily: "var(--font-dm-sans), system-ui, sans-serif" }}>{label}</p>
-                  <p style={{ color: "rgba(245,236,215,0.5)", fontSize: "0.75rem", fontFamily: "var(--font-dm-sans), system-ui, sans-serif" }}>{sub}</p>
+                  <p style={{ color: "#FFFFFF", fontWeight: 600, fontSize: "0.875rem", fontFamily: "var(--font-body), system-ui, sans-serif" }}>{label}</p>
+                  <p style={{ color: "rgba(var(--on-dark-rgb),0.5)", fontSize: "0.75rem", fontFamily: "var(--font-body), system-ui, sans-serif" }}>{sub}</p>
                 </div>
               </div>
             ))}
@@ -95,7 +95,7 @@ export default function Home() {
             <span className="eyebrow-line" />
             <span className="eyebrow-text">What We Do</span>
           </div>
-          <h2 className="font-display text-balance" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text)", marginBottom: 48 }}>
+          <h2 className="font-display text-balance" style={{ fontSize: "var(--display-lg)", color: "var(--text)", marginBottom: 48 }}>
             {siteConfig.pages.home.servicesHeading}
           </h2>
 
@@ -110,16 +110,18 @@ export default function Home() {
                   padding: 28,
                 }}
               >
-                <p className="font-display" style={{ fontSize: "3rem", color: "var(--ember)", lineHeight: 1, marginBottom: 12 }}>
-                  0{i + 1}
-                </p>
+                {siteConfig.theme.serviceNumerals && (
+                  <p className="font-display" style={{ fontSize: "3rem", color: "var(--ember)", lineHeight: 1, marginBottom: 12 }}>
+                    0{i + 1}
+                  </p>
+                )}
                 <h3 className="font-display" style={{ fontSize: "1.4rem", color: "var(--text)", marginBottom: 10 }}>
                   {s.title}
                 </h3>
-                <p style={{ color: "var(--muted)", fontSize: "0.875rem", lineHeight: 1.65, fontFamily: "var(--font-dm-sans), system-ui, sans-serif", marginBottom: 16 }}>
+                <p style={{ color: "var(--muted)", fontSize: "0.875rem", lineHeight: 1.65, fontFamily: "var(--font-body), system-ui, sans-serif", marginBottom: 16 }}>
                   {s.description}
                 </p>
-                <a href="#form" style={{ color: "var(--ember)", fontSize: "0.875rem", fontWeight: 600, fontFamily: "var(--font-dm-sans), system-ui, sans-serif", textDecoration: "none" }}>
+                <a href="#form" style={{ color: "var(--ember)", fontSize: "0.875rem", fontWeight: 600, fontFamily: "var(--font-body), system-ui, sans-serif", textDecoration: "none" }}>
                   Get a quote &rarr;
                 </a>
               </div>
@@ -129,7 +131,7 @@ export default function Home() {
       </section>
 
       {/* Calculator */}
-      <section id="estimate" style={{ backgroundColor: "var(--dark)", paddingTop: 80, paddingBottom: 80 }}>
+      <section id="estimate" className="on-dark" style={{ backgroundColor: "var(--dark)", paddingTop: 80, paddingBottom: 80 }}>
         <div className="container-site">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 48, alignItems: "center" }}>
             <div>
@@ -137,16 +139,16 @@ export default function Home() {
                 <span className="eyebrow-line" />
                 <span className="eyebrow-text">Cost Estimator</span>
               </div>
-              <h2 className="font-display text-white text-balance" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: 20 }}>
+              <h2 className="font-display text-white text-balance" style={{ fontSize: "var(--display-lg)", marginBottom: 20 }}>
                 {siteConfig.pages.home.estimatorHeading}
               </h2>
-              <p style={{ color: "rgba(245,236,215,0.7)", fontSize: "1rem", lineHeight: 1.7, fontFamily: "var(--font-dm-sans), system-ui, sans-serif", marginBottom: 24 }}>
+              <p style={{ color: "rgba(var(--on-dark-rgb),0.7)", fontSize: "1rem", lineHeight: 1.7, fontFamily: "var(--font-body), system-ui, sans-serif", marginBottom: 24 }}>
                 {siteConfig.pages.home.estimatorSubcopy}
               </p>
               <ol style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 16 }}>
                 {siteConfig.pages.home.estimatorSteps.map((step, i) => (
-                  <li key={step} style={{ display: "flex", alignItems: "center", gap: 14, fontFamily: "var(--font-dm-sans), system-ui, sans-serif", color: "rgba(245,236,215,0.8)", fontSize: "0.9375rem" }}>
-                    <span className="font-display" style={{ width: 32, height: 32, borderRadius: "50%", backgroundColor: "var(--ember)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1rem", flexShrink: 0 }}>
+                  <li key={step} style={{ display: "flex", alignItems: "center", gap: 14, fontFamily: "var(--font-body), system-ui, sans-serif", color: "rgba(var(--on-dark-rgb),0.8)", fontSize: "0.9375rem" }}>
+                    <span className="font-display" style={{ width: 32, height: 32, borderRadius: "50%", backgroundColor: "var(--accent-on-dark)", color: "var(--on-accent-on-dark)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1rem", flexShrink: 0 }}>
                       {i + 1}
                     </span>
                     {step}
@@ -160,7 +162,7 @@ export default function Home() {
       </section>
 
       {/* Reviews */}
-      <section id="reviews" style={{ backgroundColor: "#FFFFFF", paddingTop: 80, paddingBottom: 80 }}>
+      <section id="reviews" style={{ backgroundColor: "var(--surface)", paddingTop: 80, paddingBottom: 80 }}>
         <div className="container-site">
           <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 12 }}>
             <GoogleG size={36} />
@@ -169,7 +171,7 @@ export default function Home() {
                 <span className="font-display" style={{ fontSize: "2.25rem", color: "var(--text)", lineHeight: 1 }}>{siteConfig.pages.home.reviewsRating}</span>
                 <div style={{ display: "flex", gap: 2 }}>{[1,2,3,4,5].map((n) => <Star key={n} />)}</div>
               </div>
-              <p style={{ color: "var(--muted)", fontSize: "0.8125rem", fontFamily: "var(--font-dm-sans), system-ui, sans-serif" }}>{siteConfig.pages.home.reviewsCount} reviews on Google</p>
+              <p style={{ color: "var(--muted)", fontSize: "0.8125rem", fontFamily: "var(--font-body), system-ui, sans-serif" }}>{siteConfig.pages.home.reviewsCount} reviews on Google</p>
             </div>
           </div>
 
@@ -177,7 +179,7 @@ export default function Home() {
             <span className="eyebrow-line" />
             <span className="eyebrow-text">What Neighbors Say</span>
           </div>
-          <h2 className="font-display text-balance" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text)", marginBottom: 40 }}>
+          <h2 className="font-display text-balance" style={{ fontSize: "var(--display-lg)", color: "var(--text)", marginBottom: 40 }}>
             {siteConfig.pages.home.reviewsHeading}
           </h2>
 
@@ -186,18 +188,18 @@ export default function Home() {
               <div key={name} style={{ backgroundColor: "var(--bg)", border: "1.5px solid var(--border)", borderRadius: "var(--radius-lg)", padding: 24 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
                   <div style={{ display: "flex", gap: 2 }}>{[...Array(stars)].map((_, i) => <Star key={i} />)}</div>
-                  <span style={{ color: "var(--muted-light)", fontSize: "0.75rem", fontFamily: "var(--font-dm-sans), system-ui, sans-serif" }}>{date}</span>
+                  <span style={{ color: "var(--muted-light)", fontSize: "0.75rem", fontFamily: "var(--font-body), system-ui, sans-serif" }}>{date}</span>
                 </div>
-                <p style={{ color: "var(--text)", fontSize: "0.9375rem", lineHeight: 1.65, fontFamily: "var(--font-dm-sans), system-ui, sans-serif", marginBottom: 16 }}>
+                <p style={{ color: "var(--text)", fontSize: "0.9375rem", lineHeight: 1.65, fontFamily: "var(--font-body), system-ui, sans-serif", marginBottom: 16 }}>
                   &ldquo;{text}&rdquo;
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <div style={{ width: 32, height: 32, borderRadius: "50%", backgroundColor: "var(--dark)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: "0.75rem", fontWeight: 700, fontFamily: "var(--font-dm-sans), system-ui, sans-serif", flexShrink: 0 }}>
+                  <div style={{ width: 32, height: 32, borderRadius: "50%", backgroundColor: "var(--dark)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: "0.75rem", fontWeight: 700, fontFamily: "var(--font-body), system-ui, sans-serif", flexShrink: 0 }}>
                     {name.split(" ").map((n) => n[0]).join("")}
                   </div>
                   <div>
-                    <p style={{ color: "var(--text)", fontSize: "0.875rem", fontWeight: 600, fontFamily: "var(--font-dm-sans), system-ui, sans-serif" }}>{name}</p>
-                    <p style={{ color: "var(--muted-light)", fontSize: "0.75rem", fontFamily: "var(--font-dm-sans), system-ui, sans-serif" }}>{city}</p>
+                    <p style={{ color: "var(--text)", fontSize: "0.875rem", fontWeight: 600, fontFamily: "var(--font-body), system-ui, sans-serif" }}>{name}</p>
+                    <p style={{ color: "var(--muted-light)", fontSize: "0.75rem", fontFamily: "var(--font-body), system-ui, sans-serif" }}>{city}</p>
                   </div>
                 </div>
               </div>
@@ -205,7 +207,7 @@ export default function Home() {
           </div>
 
           <div style={{ textAlign: "center" }}>
-            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--muted)", fontSize: "0.875rem", fontFamily: "var(--font-dm-sans), system-ui, sans-serif", textDecoration: "none" }}>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--muted)", fontSize: "0.875rem", fontFamily: "var(--font-body), system-ui, sans-serif", textDecoration: "none" }}>
               <GoogleG size={16} />
               See all {siteConfig.pages.home.reviewsCount} reviews on Google &rarr;
             </a>
@@ -220,7 +222,7 @@ export default function Home() {
             <span className="eyebrow-line" />
             <span className="eyebrow-text">Common Questions</span>
           </div>
-          <h2 className="font-display text-balance" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text)", marginBottom: 40 }}>
+          <h2 className="font-display text-balance" style={{ fontSize: "var(--display-lg)", color: "var(--text)", marginBottom: 40 }}>
             What Homeowners Ask
           </h2>
           <FAQSection />
@@ -230,10 +232,10 @@ export default function Home() {
       {/* CTA banner */}
       <section style={{ backgroundColor: "var(--ember)", paddingTop: 64, paddingBottom: 64, textAlign: "center" }}>
         <div className="container-site">
-          <h2 className="font-display text-white text-balance" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: 16 }}>
+          <h2 className="font-display text-white text-balance" style={{ fontSize: "var(--display-lg)", marginBottom: 16 }}>
             Ready for a Free Estimate?
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "1.0625rem", fontFamily: "var(--font-dm-sans), system-ui, sans-serif", marginBottom: 28 }}>
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "1.0625rem", fontFamily: "var(--font-body), system-ui, sans-serif", marginBottom: 28 }}>
             30-minute callback, no obligation. Mon&ndash;Sat, 7am&ndash;8pm.
           </p>
           <a
@@ -242,7 +244,7 @@ export default function Home() {
               display: "inline-block",
               backgroundColor: "#FFFFFF",
               color: "var(--ember)",
-              fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+              fontFamily: "var(--font-body), system-ui, sans-serif",
               fontWeight: 700,
               fontSize: "1rem",
               padding: "14px 32px",

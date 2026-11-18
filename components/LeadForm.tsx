@@ -22,9 +22,11 @@ interface LeadFormProps {
   prefillService?: string;
   source?: string;
   city?: string; // city slug for lead routing e.g. "atwater"
+  /** Render on a dark panel (hero "light-panel" variant): on-dark inputs, on-dark accent button. */
+  onDark?: boolean;
 }
 
-const inputStyle = {
+const baseInputStyle = {
   width: "100%",
   backgroundColor: "var(--bg)",
   border: "1.5px solid var(--border)",
@@ -32,22 +34,31 @@ const inputStyle = {
   padding: "10px 12px",
   fontSize: "0.9375rem",
   color: "var(--text)",
-  fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+  fontFamily: "var(--font-body), system-ui, sans-serif",
   outline: "none",
   transition: "border-color 150ms ease",
 };
 
-const labelStyle = {
+const baseLabelStyle = {
   display: "block",
   fontSize: "0.8125rem",
   fontWeight: 600,
   color: "var(--text)",
   marginBottom: 4,
-  fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+  fontFamily: "var(--font-body), system-ui, sans-serif",
 };
 
-export default function LeadForm({ compact = false, prefillService, source, city }: LeadFormProps) {
+export default function LeadForm({ compact = false, prefillService, source, city, onDark = false }: LeadFormProps) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  const inputStyle = onDark
+    ? { ...baseInputStyle, backgroundColor: "var(--dark-mid)", border: "1.5px solid rgba(var(--on-dark-rgb),0.22)", color: "rgb(var(--on-dark-rgb))" }
+    : baseInputStyle;
+  const labelStyle = onDark ? { ...baseLabelStyle, color: "rgb(var(--on-dark-rgb))" } : baseLabelStyle;
+  const idleBorder = onDark ? "rgba(var(--on-dark-rgb),0.22)" : "var(--border)";
+  const accent = onDark ? "var(--accent-on-dark)" : "var(--ember)";
+  const accentHover = onDark ? "var(--accent-on-dark-hover)" : "var(--ember-hover)";
+  const onAccent = onDark ? "var(--on-accent-on-dark)" : "#FFFFFF";
 
   const {
     register,
@@ -90,7 +101,7 @@ export default function LeadForm({ compact = false, prefillService, source, city
             color: "var(--success)",
             fontWeight: 700,
             fontSize: "1.0625rem",
-            fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+            fontFamily: "var(--font-body), system-ui, sans-serif",
             marginBottom: 6,
           }}
         >
@@ -100,7 +111,7 @@ export default function LeadForm({ compact = false, prefillService, source, city
           style={{
             color: "var(--success)",
             fontSize: "0.8125rem",
-            fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+            fontFamily: "var(--font-body), system-ui, sans-serif",
           }}
         >
           Mon–Sat, 7am–8pm. Submitted after hours? We&apos;ll call first thing
@@ -115,7 +126,7 @@ export default function LeadForm({ compact = false, prefillService, source, city
       {/* Name */}
       <div>
         <label htmlFor="lead-name" style={labelStyle}>
-          Your Name <span style={{ color: "var(--ember)" }}>*</span>
+          Your Name <span style={{ color: accent }}>*</span>
         </label>
         <input
           id="lead-name"
@@ -127,8 +138,8 @@ export default function LeadForm({ compact = false, prefillService, source, city
           disabled={status === "sending"}
           {...register("name")}
           style={{ ...inputStyle, opacity: status === "sending" ? 0.6 : 1 }}
-          onFocus={(e) => (e.currentTarget.style.borderColor = "var(--ember)")}
-          onBlur={(e) => (e.currentTarget.style.borderColor = errors.name ? "var(--error)" : "var(--border)")}
+          onFocus={(e) => (e.currentTarget.style.borderColor = accent)}
+          onBlur={(e) => (e.currentTarget.style.borderColor = errors.name ? "var(--error)" : idleBorder)}
         />
         {errors.name && (
           <p
@@ -138,7 +149,7 @@ export default function LeadForm({ compact = false, prefillService, source, city
               color: "var(--error)",
               fontSize: "0.75rem",
               marginTop: 4,
-              fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+              fontFamily: "var(--font-body), system-ui, sans-serif",
             }}
           >
             {errors.name.message}
@@ -149,7 +160,7 @@ export default function LeadForm({ compact = false, prefillService, source, city
       {/* Phone */}
       <div>
         <label htmlFor="lead-phone" style={labelStyle}>
-          Phone Number <span style={{ color: "var(--ember)" }}>*</span>
+          Phone Number <span style={{ color: accent }}>*</span>
         </label>
         <input
           id="lead-phone"
@@ -161,8 +172,8 @@ export default function LeadForm({ compact = false, prefillService, source, city
           disabled={status === "sending"}
           {...register("phone")}
           style={{ ...inputStyle, opacity: status === "sending" ? 0.6 : 1 }}
-          onFocus={(e) => (e.currentTarget.style.borderColor = "var(--ember)")}
-          onBlur={(e) => (e.currentTarget.style.borderColor = errors.phone ? "var(--error)" : "var(--border)")}
+          onFocus={(e) => (e.currentTarget.style.borderColor = accent)}
+          onBlur={(e) => (e.currentTarget.style.borderColor = errors.phone ? "var(--error)" : idleBorder)}
         />
         {errors.phone && (
           <p
@@ -172,7 +183,7 @@ export default function LeadForm({ compact = false, prefillService, source, city
               color: "var(--error)",
               fontSize: "0.75rem",
               marginTop: 4,
-              fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+              fontFamily: "var(--font-body), system-ui, sans-serif",
             }}
           >
             {errors.phone.message}
@@ -191,8 +202,8 @@ export default function LeadForm({ compact = false, prefillService, source, city
             disabled={status === "sending"}
             {...register("service")}
             style={{ ...inputStyle, cursor: status === "sending" ? "not-allowed" : "pointer", opacity: status === "sending" ? 0.6 : 1 }}
-            onFocus={(e) => (e.currentTarget.style.borderColor = "var(--ember)")}
-            onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+            onFocus={(e) => (e.currentTarget.style.borderColor = accent)}
+            onBlur={(e) => (e.currentTarget.style.borderColor = idleBorder)}
           >
             <option value="">Select a service (optional)</option>
             {siteConfig.services.map((s) => (
@@ -210,14 +221,14 @@ export default function LeadForm({ compact = false, prefillService, source, city
         disabled={status === "sending"}
         style={{
           width: "100%",
-          backgroundColor: status === "sending" ? "var(--ember-hover)" : "var(--ember)",
-          color: "#FFFFFF",
+          backgroundColor: status === "sending" ? accentHover : accent,
+          color: onAccent,
           border: "none",
           borderRadius: "var(--radius-md)",
           padding: "13px 16px",
           fontSize: "0.9375rem",
           fontWeight: 700,
-          fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+          fontFamily: "var(--font-body), system-ui, sans-serif",
           cursor: status === "sending" ? "not-allowed" : "pointer",
           transition: "background-color 150ms ease, transform 100ms ease",
           opacity: status === "sending" ? 0.7 : 1,
@@ -225,11 +236,11 @@ export default function LeadForm({ compact = false, prefillService, source, city
         }}
         onMouseEnter={(e) => {
           if (status !== "sending")
-            e.currentTarget.style.backgroundColor = "var(--ember-hover)";
+            e.currentTarget.style.backgroundColor = accentHover;
         }}
         onMouseLeave={(e) => {
           if (status !== "sending")
-            e.currentTarget.style.backgroundColor = "var(--ember)";
+            e.currentTarget.style.backgroundColor = accent;
         }}
         onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.98)")}
         onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
@@ -245,7 +256,7 @@ export default function LeadForm({ compact = false, prefillService, source, city
             color: "var(--error)",
             fontSize: "0.8125rem",
             textAlign: "center",
-            fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+            fontFamily: "var(--font-body), system-ui, sans-serif",
           }}
         >
           Something went wrong. Call us:{" "}
@@ -262,9 +273,9 @@ export default function LeadForm({ compact = false, prefillService, source, city
       <p
         style={{
           textAlign: "center",
-          color: "var(--muted-light)",
+          color: onDark ? "rgba(var(--on-dark-rgb),0.6)" : "var(--muted-light)",
           fontSize: "0.75rem",
-          fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+          fontFamily: "var(--font-body), system-ui, sans-serif",
           marginTop: 2,
         }}
       >

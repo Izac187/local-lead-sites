@@ -15,7 +15,7 @@ export default function Header() {
         {/* Logo */}
         <a href="#form" className="font-display text-2xl text-white leading-none">
           {siteConfig.footer.brandLead}{" "}
-          <span style={{ color: "var(--ember)" }}>{siteConfig.footer.brandEmphasis}</span>
+          <span style={{ color: "var(--accent-on-dark)" }}>{siteConfig.footer.brandEmphasis}</span>
           {" " + siteConfig.footer.brandTail}
         </a>
 
@@ -32,12 +32,12 @@ export default function Header() {
               href={href}
               className="text-sm font-medium transition-colors duration-150"
               style={{
-                fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
-                color: "rgba(245,236,215,0.75)",
+                fontFamily: "var(--font-body), system-ui, sans-serif",
+                color: "rgba(var(--on-dark-rgb),0.75)",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#F5ECD7")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "rgb(var(--on-dark-rgb))")}
               onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "rgba(245,236,215,0.75)")
+                (e.currentTarget.style.color = "rgba(var(--on-dark-rgb),0.75)")
               }
             >
               {label}
@@ -56,16 +56,17 @@ export default function Header() {
           </a>
           <a
             href="#form"
-            className="font-body font-bold text-sm text-white px-4 py-2 rounded-md transition-colors duration-150"
+            className="font-body font-bold text-sm px-4 py-2 rounded-md transition-colors duration-150"
             style={{
-              backgroundColor: "var(--ember)",
-              fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+              backgroundColor: "var(--accent-on-dark)",
+              color: "var(--on-accent-on-dark)",
+              fontFamily: "var(--font-body), system-ui, sans-serif",
             }}
             onMouseEnter={(e) =>
-              (e.currentTarget.style.backgroundColor = "var(--ember-hover)")
+              (e.currentTarget.style.backgroundColor = "var(--accent-on-dark-hover)")
             }
             onMouseLeave={(e) =>
-              (e.currentTarget.style.backgroundColor = "var(--ember)")
+              (e.currentTarget.style.backgroundColor = "var(--accent-on-dark)")
             }
           >
             Free Quote

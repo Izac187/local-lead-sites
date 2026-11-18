@@ -37,6 +37,19 @@
 
   /* Layout */
   --max-w:        1120px;
+
+  /* Per-site theme defaults (overridden on <html> by app/layout.tsx from siteConfig.theme) */
+  --accent-on-dark:        var(--ember);
+  --accent-on-dark-hover:  var(--ember-hover);
+  --on-accent-on-dark:     #FFFFFF;
+  --on-dark-rgb:           245,236,215;
+  --accent-rgb:            232,82,26;
+  --display-weight:        400;
+  --display-tracking:      0;
+  --display-xl:            clamp(3.5rem, 7vw, 5.5rem);
+  --display-lg:            clamp(2rem, 4vw, 3rem);
+  --eyebrow-transform:     uppercase;
+  --eyebrow-tracking:      0.16em;
 }
 
 @layer base {
@@ -51,7 +64,7 @@
   body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: var(--font-dm-sans), system-ui, sans-serif;
+    font-family: var(--font-body), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -71,11 +84,13 @@
 
   /* Font families */
   .font-display {
-    font-family: var(--font-bebas-neue), Impact, sans-serif;
+    font-family: var(--font-display), Impact, sans-serif;
+    font-weight: var(--display-weight);
+    letter-spacing: var(--display-tracking);
   }
 
   .font-body {
-    font-family: var(--font-dm-sans), system-ui, sans-serif;
+    font-family: var(--font-body), system-ui, sans-serif;
   }
 
   /* Container */
@@ -104,15 +119,19 @@
   .eyebrow-text {
     font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+    letter-spacing: var(--eyebrow-tracking);
+    text-transform: var(--eyebrow-transform);
     color: var(--ember);
   }
+
+  /* Dark sections use the on-dark accent (same as --ember on Merced) */
+  .on-dark .eyebrow-line { background-color: var(--accent-on-dark); }
+  .on-dark .eyebrow-text { color: var(--accent-on-dark); }
 }
 
 /* ── Blog body rendering ── */
 .blog-body {
-  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.75;
   color: var(--text);
@@ -123,7 +142,7 @@
 }
 
 .blog-body h2 {
-  font-family: var(--font-bebas-neue), Impact, sans-serif;
+  font-family: var(--font-display), Impact, sans-serif;
   font-size: clamp(1.6rem, 2.6vw, 2rem);
   letter-spacing: 0.02em;
   line-height: 1.15;
@@ -140,7 +159,7 @@
 }
 
 .blog-body h3 {
-  font-family: var(--font-bebas-neue), Impact, sans-serif;
+  font-family: var(--font-display), Impact, sans-serif;
   font-size: 1.35rem;
   letter-spacing: 0.02em;
   color: var(--text);
@@ -244,7 +263,7 @@
 }
 
 .blog-takeaways-label {
-  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -256,7 +275,7 @@
 .blog-takeaways ul {
   margin: 0;
   padding-left: 1.25rem;
-  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
   color: var(--text);
 }
 
@@ -289,7 +308,7 @@
   padding: 1rem 1.25rem;
   font-weight: 600;
   color: var(--text);
-  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -302,7 +321,7 @@
 
 .faq-item > summary::after {
   content: "+";
-  font-family: var(--font-bebas-neue), Impact, sans-serif;
+  font-family: var(--font-display), Impact, sans-serif;
   color: var(--ember);
   font-size: 1.6rem;
   line-height: 1;
@@ -319,4 +338,14 @@
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.65;
+}
+
+/* Hero panel entrance (light-panel hero variant only) */
+@keyframes hero-panel-settle {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-panel-enter { animation: hero-panel-settle 300ms ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-panel-enter { animation: none; }
 }

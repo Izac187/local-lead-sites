@@ -1,8 +1,7 @@
 import type { SiteConfig } from "@/lib/siteConfig.types";
 
-// NOTE: colors/fonts are not yet wired to globals.css (CSS vars are shared across
-// sites). Hanford currently renders with the shared palette; per-site theming is a
-// documented follow-up. Values below are future-ready.
+// Design system: config/sites/hanford-hvac/DESIGN.md ("Pool at Dusk").
+// theme tokens below are injected as CSS custom properties by app/layout.tsx.
 //
 // TODO(owner-input): domain, phone, phoneHref, email, googleVerification are
 // PLACEHOLDERS. Confirm real values with the owner before launch (see Task 23).
@@ -56,8 +55,8 @@ const hanfordHvacConfig = {
 
   hero: {
     eyebrow: "Kings County HVAC",
-    headlineLines: ["COMFORT YOU", "CAN COUNT ON."],
-    emberLine: "FREE ESTIMATE.",
+    headlineLines: ["Cool relief,"],
+    emberLine: "fast.",
     subcopy:
       "Licensed and insured heating and air in Kings County. Call back in 30 minutes or less — Mon–Sat, 7am–8pm. Know what your system costs before you commit to anyone.",
     bullets: [
@@ -67,8 +66,8 @@ const hanfordHvacConfig = {
       "Serving Hanford, Lemoore, Corcoran & more",
     ],
     formEyebrow: "Mon–Sat, 7am–8pm",
-    formHeading: "Get a Free Estimate",
-    formSubcopy: "We call back in 30 minutes or less.",
+    formHeading: "Get a free estimate",
+    formSubcopy: "We call back in 30 minutes or less, Mon–Sat 7am–8pm.",
   },
 
   faqs: [
@@ -100,9 +99,9 @@ const hanfordHvacConfig = {
   },
 
   footer: {
-    brandLead: "HANFORD",
+    brandLead: "Hanford",
     brandEmphasis: "HVAC",
-    brandTail: "PROS",
+    brandTail: "Pros",
     blurb: "Licensed and insured heating and air in Kings County. Free estimates, fast callbacks.",
     licensingLines: [
       "CA CSLB C-20 HVAC License",
@@ -113,18 +112,20 @@ const hanfordHvacConfig = {
     bottomTagline: "Services fulfilled by licensed C-20 partner contractors · Serving Kings County",
   },
 
-  colors: {
-    base: "oklch(30% 0.05 240)",
-    primary: "oklch(55% 0.13 240)",
-    cta: "oklch(68% 0.15 235)",
-    ctaHover: "oklch(61% 0.15 235)",
-    text: "oklch(96% 0.02 240)",
-    muted: "oklch(75% 0.03 240)",
-  },
-
-  fonts: {
-    heading: "Bebas Neue",
-    body: "DM Sans",
+  theme: {
+    fonts: "hanford-hvac",
+    colors: {
+      bg: "#EEF4F2", surface: "#FAFCFB", dark: "#0F3338", darkMid: "#15474D",
+      accent: "#0B7F8C", accentHover: "#09646F",
+      accentOnDark: "#9EEBD8", accentOnDarkHover: "#7FE0CA", onAccentOnDark: "#0B2226",
+      gold: "#F2A33A", text: "#0B2226", muted: "#4F6B6E", mutedLight: "#7F9598", border: "#CFDEDB",
+      onDarkRgb: "238,244,242", accentRgb: "158,235,216",
+    },
+    radius: { sm: "6px", md: "12px", lg: "20px", xl: "20px" },
+    display: { weight: 700, tracking: "-0.02em", xl: "clamp(2.6rem, 6vw, 4.4rem)", lg: "clamp(1.9rem, 3.6vw, 2.6rem)" },
+    eyebrow: { transform: "none", tracking: "0" },
+    hero: "light-panel",
+    serviceNumerals: false,
   },
 
   pricing: {

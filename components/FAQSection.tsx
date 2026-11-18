@@ -26,7 +26,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
       >
         <span
           style={{
-            fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+            fontFamily: "var(--font-body), system-ui, sans-serif",
             fontWeight: 600,
             fontSize: "1rem",
             color: "var(--text)",
@@ -56,7 +56,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
       {open && (
         <p
           style={{
-            fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
+            fontFamily: "var(--font-body), system-ui, sans-serif",
             fontSize: "0.9375rem",
             color: "var(--muted)",
             lineHeight: 1.7,

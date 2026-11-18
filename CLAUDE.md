@@ -69,7 +69,11 @@ Key routing rules:
 - End of session: update `IMPLEMENTATION.md` (check off completed items, add session log row), then run `/context-save`
 
 ## Design System
-Always read DESIGN.md before making any visual or UI decisions.
+Always read the ACTIVE SITE's design file before making any visual or UI decisions:
+- Merced (default, `NEXT_PUBLIC_SITE` unset or `merced`): root `DESIGN.md`
+- Hanford HVAC: `config/sites/hanford-hvac/DESIGN.md` ("Pool at Dusk")
+- New sites: add `config/sites/<slug>/DESIGN.md` and a `theme` block in that site's config
+Theme tokens are per-site (`siteConfig.theme` → CSS vars in `app/layout.tsx`); components must read `var(--…)`, never hardcode a site's colors or fonts. The Merced rules below apply to Merced only.
 Fonts: Bebas Neue (display/headings) + DM Sans (body). Colors: tar black (#1A1208) dark surfaces, Merced ember (#E8521A) CTAs, bleached concrete (#F5ECD7) page background.
 Service cards use numbered style (01–04) — no icon tiles, no emoji anywhere.
 All nav links must scroll to in-page sections — no standalone About/Contact pages.
