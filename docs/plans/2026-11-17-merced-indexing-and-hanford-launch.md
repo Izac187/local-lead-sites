@@ -66,6 +66,14 @@
 
 ## Handoff
 
+### 2026-11-18 (later) — Claude Code (Hanford design completion + phone QA)
+
+- Completed: alert strip (pages.home.alertStrip + theme.colors.heat/heatInk), services[].responseFact on cards, calculator figure in --font-mono with theme.colors.figureOnDark (64f720a). Phone-width QA at 390px via playwright-cli on /, /services/ac-repair, /locations/lemoore, /blog: no horizontal overflow, header fits, form panel stacks first. Fixed deep-teal-on-dark accents on the blog hub hero, category pills, post meta separators; gated services-hub numerals (aa19f02).
+- Validation: tsc, lint, vitest 8/8, both builds; Merced pixel deltas unchanged from the earlier accepted baseline (355 px home, 1,752 px blog = antialiasing + orange→ember link fix).
+- Skipped: repo/folder rename and worktree pruning (need owner OK; worktree removal is destructive). CLAUDE.md still duplicates AGENTS.md content.
+- Surprises or risks: a plain `npm run build` (e.g. gstack-checks) overwrites .next with the Merced build; always rebuild with NEXT_PUBLIC_SITE before `next start` for Hanford QA. Server components read NEXT_PUBLIC_SITE at runtime while client bundles inline it at build, so a mismatched env at `next start` renders a mixed site locally (not a Vercel concern).
+- Next step: owner inputs (domain/phone/email, Resend env, GBP, call tracking); then Task 23 steps 3–6.
+
 ### 2026-11-18 — Claude Code (Hanford design)
 
 - Completed: /design-consultation for Hanford → "Pool at Dusk" (light ice ground, pool-dark form panel, Archivo 700 sentence case + Source Sans 3 + JetBrains Mono, mint CTA on dark / deep teal on light, amber only on heat strip). Per-site DESIGN.md written; CLAUDE.md design rule now points to the active site's file. Theme tokens wired end to end; Hanford renders in the new system on home, service and city pages.
