@@ -121,7 +121,7 @@ Per-site design system. The root `DESIGN.md` is Merced Roofing Pros and stays au
 
 **JetBrains Mono 500 (numbers).** Calculator readouts and price ranges only, with tabular figures. It makes a dollar range look measured rather than marketed.
 
-**Loading:** all three via `next/font/google` in `config/sites/hanford-hvac/fonts.ts`, exposed as `--font-display`, `--font-body`, `--font-mono`. Verified on Google Fonts 2026-11-18.
+**Loading:** all three self-hosted via `next/font/local` from `config/sites/hanford-hvac/fonts/*.woff2` (latin subsets of the Google Fonts variable files, OFL), exposed as `--font-display`, `--font-body`, `--font-mono`. Self-hosted because next/font/google flakes at build time (vercel/next.js#99114).
 
 ## Layout
 
