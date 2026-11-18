@@ -129,15 +129,15 @@ export default async function BlogPostPage({ params }: Props) {
             </h1>
             <div className="flex items-center gap-x-3 gap-y-1 text-xs sm:text-sm text-gray-400 flex-wrap">
               <span className="font-semibold text-gray-200">{siteConfig.siteName}</span>
-              <span style={{ color: "var(--ember)" }} aria-hidden>•</span>
+              <span style={{ color: "var(--accent-on-dark)" }} aria-hidden>•</span>
               <span>Licensed {siteConfig.licenseClass} Contractor</span>
-              <span style={{ color: "var(--ember)" }} aria-hidden>•</span>
+              <span style={{ color: "var(--accent-on-dark)" }} aria-hidden>•</span>
               {updatedFormatted ? (
                 <time dateTime={post.updatedDate}>Updated {updatedFormatted}</time>
               ) : (
                 <time dateTime={post.publishDate}>{publishFormatted}</time>
               )}
-              <span style={{ color: "var(--ember)" }} aria-hidden>•</span>
+              <span style={{ color: "var(--accent-on-dark)" }} aria-hidden>•</span>
               <span>{post.readingMinutes} min read</span>
             </div>
           </div>

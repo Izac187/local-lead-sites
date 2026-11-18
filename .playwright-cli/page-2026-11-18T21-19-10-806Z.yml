@@ -1,0 +1,331 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "MERCED ROOFING PROS" [ref=e4] [cursor=pointer]:
+        - /url: "#form"
+      - navigation [ref=e5]:
+        - link "Services" [ref=e6] [cursor=pointer]:
+          - /url: "#services"
+        - link "Estimate" [ref=e7] [cursor=pointer]:
+          - /url: "#estimate"
+        - link "Reviews" [ref=e8] [cursor=pointer]:
+          - /url: "#reviews"
+        - link "FAQ" [ref=e9] [cursor=pointer]:
+          - /url: "#faq"
+      - generic [ref=e10]:
+        - link "(209) 259-0978" [ref=e11] [cursor=pointer]:
+          - /url: tel:+12092590978
+        - link "Free Quote" [ref=e12] [cursor=pointer]:
+          - /url: "#form"
+  - main [ref=e13]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e20]: Merced County Roofing
+        - heading "YOUR ROOF, FIXED RIGHT. FREE ESTIMATE." [level=1] [ref=e21]:
+          - text: YOUR ROOF,
+          - text: FIXED RIGHT.
+          - text: FREE ESTIMATE.
+        - paragraph [ref=e22]: Licensed and insured roofing in Merced County. Call back in 30 minutes or less — Mon–Sat, 7am–8pm. Know what your roof costs before you commit to anyone.
+        - list [ref=e23]:
+          - listitem [ref=e24]: Licensed & Insured in California
+          - listitem [ref=e26]: Free written estimate — no obligation
+          - listitem [ref=e28]: Storm damage, leaks, full replacements
+          - listitem [ref=e30]: Serving Merced, Atwater, Livingston & more
+        - 'link "Or call directly: (209) 259-0978" [ref=e32] [cursor=pointer]':
+          - /url: tel:+12092590978
+          - text: "Or call directly:"
+          - generic [ref=e33]: (209) 259-0978
+      - generic [ref=e34]:
+        - generic [ref=e37]: Mon–Sat, 7am–8pm
+        - heading "Get a Free Estimate" [level=2] [ref=e38]
+        - paragraph [ref=e39]: We call back in 30 minutes or less.
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: Your Name *
+            - textbox "Your Name *" [ref=e43]:
+              - /placeholder: John Smith
+          - generic [ref=e44]:
+            - generic [ref=e45]: Phone Number *
+            - textbox "Phone Number *" [ref=e46]:
+              - /placeholder: (209) 555-0100
+          - generic [ref=e47]:
+            - generic [ref=e48]: Service Needed
+            - combobox "Service Needed" [ref=e49] [cursor=pointer]:
+              - option "Select a service (optional)" [selected]
+              - option "Roof Replacement"
+              - option "Roof Repair"
+              - option "Roof Inspection"
+              - option "Gutters & Drainage"
+          - button "Get My Free Estimate" [ref=e50] [cursor=pointer]
+          - paragraph [ref=e51]: No spam · 30-min callback · Free estimate
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - img [ref=e57]
+        - generic [ref=e59]:
+          - paragraph [ref=e60]: Licensed & Insured
+          - paragraph [ref=e61]: CA CSLB certified
+      - generic [ref=e62]:
+        - img [ref=e64]
+        - generic [ref=e67]:
+          - paragraph [ref=e68]: 30-Min Callback
+          - paragraph [ref=e69]: Mon–Sat, 7am–8pm
+      - generic [ref=e70]:
+        - img [ref=e72]
+        - generic [ref=e75]:
+          - paragraph [ref=e76]: Free Estimates
+          - paragraph [ref=e77]: No obligation
+      - generic [ref=e78]:
+        - img [ref=e80]
+        - generic [ref=e82]:
+          - paragraph [ref=e83]: 4.9 Stars
+          - paragraph [ref=e84]: 87 Google reviews
+      - generic [ref=e85]:
+        - img [ref=e87]
+        - generic [ref=e90]:
+          - paragraph [ref=e91]: Local & Family-Owned
+          - paragraph [ref=e92]: Merced County
+    - generic [ref=e94]:
+      - generic [ref=e97]: What We Do
+      - heading "Roofing Services in Merced County" [level=2] [ref=e98]
+      - generic [ref=e99]:
+        - generic [ref=e100]:
+          - paragraph [ref=e101]: "01"
+          - heading "Roof Replacement" [level=3] [ref=e102]
+          - paragraph [ref=e103]: Full tear-off and replacement using asphalt shingles, metal, or tile. Merced's summer heat demands materials rated for 110°F+.
+          - link "Get a quote →" [ref=e104] [cursor=pointer]:
+            - /url: "#form"
+        - generic [ref=e105]:
+          - paragraph [ref=e106]: "02"
+          - heading "Roof Repair" [level=3] [ref=e107]
+          - paragraph [ref=e108]: Leak repair, storm damage, missing shingles, and flashing. Most repairs completed same or next day.
+          - link "Get a quote →" [ref=e109] [cursor=pointer]:
+            - /url: "#form"
+        - generic [ref=e110]:
+          - paragraph [ref=e111]: "03"
+          - heading "Roof Inspection" [level=3] [ref=e112]
+          - paragraph [ref=e113]: Pre-purchase, post-storm, and annual maintenance inspections with written report.
+          - link "Get a quote →" [ref=e114] [cursor=pointer]:
+            - /url: "#form"
+        - generic [ref=e115]:
+          - paragraph [ref=e116]: "04"
+          - heading "Gutters & Drainage" [level=3] [ref=e117]
+          - paragraph [ref=e118]: Gutter installation, cleaning, and downspout repair. Critical in Merced's rainy season.
+          - link "Get a quote →" [ref=e119] [cursor=pointer]:
+            - /url: "#form"
+    - generic [ref=e122]:
+      - generic [ref=e123]:
+        - generic [ref=e126]: Cost Estimator
+        - heading "What Will Your Roof Cost in Merced?" [level=2] [ref=e127]
+        - paragraph [ref=e128]: Merced County labor rates run about 10% below Bay Area averages. Get a realistic range in 30 seconds — before you talk to anyone.
+        - list [ref=e129]:
+          - listitem [ref=e130]:
+            - generic [ref=e131]: "1"
+            - text: Pick your roof size
+          - listitem [ref=e132]:
+            - generic [ref=e133]: "2"
+            - text: Choose your material
+          - listitem [ref=e134]:
+            - generic [ref=e135]: "3"
+            - text: See your estimate
+      - generic [ref=e137]:
+        - generic [ref=e138]:
+          - generic [ref=e139]: Roof Size
+          - combobox "Roof Size" [ref=e140] [cursor=pointer]:
+            - option "Select roof size" [selected]
+            - option "Under 1,500 sq ft"
+            - option "1,500–2,500 sq ft"
+            - option "2,500–3,500 sq ft"
+            - option "Over 3,500 sq ft"
+        - generic [ref=e141]:
+          - generic [ref=e142]: Material
+          - combobox "Material" [ref=e143] [cursor=pointer]:
+            - option "Select material" [selected]
+            - option "Asphalt Shingles"
+            - option "Metal Roofing"
+            - option "Concrete/Clay Tile"
+        - generic [ref=e144]:
+          - generic [ref=e145]: Roof Condition
+          - combobox "Roof Condition" [ref=e146] [cursor=pointer]:
+            - option "Select roof condition" [selected]
+            - option "Needs repair (1–3 areas)"
+            - option "Partial replacement"
+            - option "Full replacement"
+        - paragraph [ref=e147]: Select all three options to see your estimate
+    - generic [ref=e149]:
+      - generic [ref=e150]:
+        - img [ref=e151]
+        - generic [ref=e156]:
+          - generic [ref=e157]:
+            - generic [ref=e158]: "4.9"
+            - generic [ref=e159]:
+              - img [ref=e160]
+              - img [ref=e162]
+              - img [ref=e164]
+              - img [ref=e166]
+              - img [ref=e168]
+          - paragraph [ref=e170]: 87 reviews on Google
+      - generic [ref=e173]: What Neighbors Say
+      - heading "Trusted by Merced Homeowners" [level=2] [ref=e174]
+      - generic [ref=e175]:
+        - generic [ref=e176]:
+          - generic [ref=e177]:
+            - generic [ref=e178]:
+              - img [ref=e179]
+              - img [ref=e181]
+              - img [ref=e183]
+              - img [ref=e185]
+              - img [ref=e187]
+            - generic [ref=e189]: March 2026
+          - paragraph [ref=e190]: “Called at 8am after last night's storm. They were on my roof by noon. No drama, no upsell. Leak fixed, showed me photos of the repair. Will use again.”
+          - generic [ref=e191]:
+            - generic [ref=e192]: MR
+            - generic [ref=e193]:
+              - paragraph [ref=e194]: Maria R.
+              - paragraph [ref=e195]: Merced
+        - generic [ref=e196]:
+          - generic [ref=e197]:
+            - generic [ref=e198]:
+              - img [ref=e199]
+              - img [ref=e201]
+              - img [ref=e203]
+              - img [ref=e205]
+              - img [ref=e207]
+            - generic [ref=e209]: January 2026
+          - paragraph [ref=e210]: “Got three quotes. These guys were mid-range on price but the most professional. Showed up on time, cleaned up completely. My neighbor hired them the next week.”
+          - generic [ref=e211]:
+            - generic [ref=e212]: JT
+            - generic [ref=e213]:
+              - paragraph [ref=e214]: James T.
+              - paragraph [ref=e215]: Atwater
+        - generic [ref=e216]:
+          - generic [ref=e217]:
+            - generic [ref=e218]:
+              - img [ref=e219]
+              - img [ref=e221]
+              - img [ref=e223]
+              - img [ref=e225]
+              - img [ref=e227]
+            - generic [ref=e229]: February 2026
+          - paragraph [ref=e230]: “I was nervous about being ripped off — I know nothing about roofs. They gave me a written estimate and walked me through every line. No surprises at the end.”
+          - generic [ref=e231]:
+            - generic [ref=e232]: SK
+            - generic [ref=e233]:
+              - paragraph [ref=e234]: Sandra K.
+              - paragraph [ref=e235]: Los Banos
+      - link "See all 87 reviews on Google →" [ref=e237] [cursor=pointer]:
+        - /url: https://maps.google.com
+        - img [ref=e238]
+        - text: See all 87 reviews on Google →
+    - generic [ref=e244]:
+      - generic [ref=e247]: Common Questions
+      - heading "What Homeowners Ask" [level=2] [ref=e248]
+      - button "How much does a roof replacement cost in Merced?" [ref=e250] [cursor=pointer]:
+        - generic [ref=e251]: How much does a roof replacement cost in Merced?
+        - img [ref=e252]
+      - button "How long does a roof replacement take?" [ref=e254] [cursor=pointer]:
+        - generic [ref=e255]: How long does a roof replacement take?
+        - img [ref=e256]
+      - button "Do you offer free inspections?" [ref=e258] [cursor=pointer]:
+        - generic [ref=e259]: Do you offer free inspections?
+        - img [ref=e260]
+      - button "Are you licensed and insured in California?" [ref=e262] [cursor=pointer]:
+        - generic [ref=e263]: Are you licensed and insured in California?
+        - img [ref=e264]
+      - button "What happens if I call after business hours?" [ref=e266] [cursor=pointer]:
+        - generic [ref=e267]: What happens if I call after business hours?
+        - img [ref=e268]
+    - generic [ref=e270]:
+      - heading "Ready for a Free Estimate?" [level=2] [ref=e271]
+      - paragraph [ref=e272]: 30-minute callback, no obligation. Mon–Sat, 7am–8pm.
+      - link "Get My Free Estimate →" [ref=e273] [cursor=pointer]:
+        - /url: "#form"
+    - generic [ref=e274]:
+      - link "Call Now" [ref=e275] [cursor=pointer]:
+        - /url: tel:+12092590978
+      - link "Free Quote →" [ref=e276] [cursor=pointer]:
+        - /url: "#form"
+  - contentinfo [ref=e277]:
+    - generic [ref=e279]:
+      - generic [ref=e280]:
+        - paragraph [ref=e281]: MERCED ROOFING PROS
+        - paragraph [ref=e282]: Licensed and insured roofing in Merced County. Free estimates, fast callbacks.
+        - link "(209) 259-0978" [ref=e283] [cursor=pointer]:
+          - /url: tel:+12092590978
+        - paragraph [ref=e284]: Merced, CA 95340
+      - generic [ref=e285]:
+        - paragraph [ref=e286]: Quick Links
+        - list [ref=e287]:
+          - listitem [ref=e288]:
+            - link "Cost Calculator" [ref=e289] [cursor=pointer]:
+              - /url: /calculator
+          - listitem [ref=e290]:
+            - link "All Services" [ref=e291] [cursor=pointer]:
+              - /url: /services
+          - listitem [ref=e292]:
+            - link "Service Areas" [ref=e293] [cursor=pointer]:
+              - /url: /locations
+          - listitem [ref=e294]:
+            - link "Roofing Blog" [ref=e295] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=e296]:
+            - link "About Us" [ref=e297] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e298]:
+            - link "Contact" [ref=e299] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=e300]:
+        - paragraph [ref=e301]: Services
+        - list [ref=e302]:
+          - listitem [ref=e303]:
+            - link "Roof Replacement" [ref=e304] [cursor=pointer]:
+              - /url: /services/roof-replacement
+          - listitem [ref=e305]:
+            - link "Roof Repair" [ref=e306] [cursor=pointer]:
+              - /url: /services/roof-repair
+          - listitem [ref=e307]:
+            - link "Emergency Roof Repair" [ref=e308] [cursor=pointer]:
+              - /url: /services/emergency-roof-repair
+          - listitem [ref=e309]:
+            - link "Metal Roofing" [ref=e310] [cursor=pointer]:
+              - /url: /services/metal-roofing
+          - listitem [ref=e311]:
+            - link "Flat Roofing" [ref=e312] [cursor=pointer]:
+              - /url: /services/flat-roofing
+          - listitem [ref=e313]:
+            - link "Storm Damage Repair" [ref=e314] [cursor=pointer]:
+              - /url: /services/storm-damage
+      - generic [ref=e315]:
+        - paragraph [ref=e316]: Service Areas
+        - list [ref=e317]:
+          - listitem [ref=e318]:
+            - link "Merced, CA" [ref=e319] [cursor=pointer]:
+              - /url: /locations/merced
+          - listitem [ref=e320]:
+            - link "Atwater, CA" [ref=e321] [cursor=pointer]:
+              - /url: /locations/atwater
+          - listitem [ref=e322]:
+            - link "Los Banos, CA" [ref=e323] [cursor=pointer]:
+              - /url: /locations/los-banos
+          - listitem [ref=e324]:
+            - link "Livingston, CA" [ref=e325] [cursor=pointer]:
+              - /url: /locations/livingston
+          - listitem [ref=e326]:
+            - link "Chowchilla, CA" [ref=e327] [cursor=pointer]:
+              - /url: /locations/chowchilla
+          - listitem [ref=e328]:
+            - link "Winton, CA" [ref=e329] [cursor=pointer]:
+              - /url: /locations/winton
+      - generic [ref=e330]:
+        - paragraph [ref=e331]: Hours
+        - paragraph [ref=e332]: Mon–Sat, 7am–8pm
+        - paragraph [ref=e333]: After-hours calls returned next morning
+        - paragraph [ref=e334]: Licensing
+        - paragraph [ref=e335]:
+          - text: CA CSLB C-39 Roofing License
+          - text: General Liability + Workers' Comp
+          - text: Cool Roof Rating Council (CRRC) compliant
+          - text: California Title 24, Part 6 materials
+    - generic [ref=e336]:
+      - paragraph [ref=e337]: © 2026 Merced Roofing Pros. Licensed & Insured · Merced, CA
+      - paragraph [ref=e338]: Services fulfilled by licensed C-39 partner contractors · Serving Merced County
+  - alert [ref=e339]

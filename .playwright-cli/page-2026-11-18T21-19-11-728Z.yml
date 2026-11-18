@@ -1,0 +1,192 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "MERCED ROOFING PROS" [ref=e4] [cursor=pointer]:
+        - /url: "#form"
+      - link "Free Quote" [ref=e6] [cursor=pointer]:
+        - /url: "#form"
+  - main [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e10]:
+        - navigation "Breadcrumb" [ref=e11]:
+          - list [ref=e12]:
+            - listitem [ref=e13]:
+              - link "Home" [ref=e14] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e15]: /
+            - listitem [ref=e16]:
+              - link "Services" [ref=e17] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e18]: /
+            - listitem [ref=e19]: AC Repair
+        - heading "AC Repair in Hanford, CA" [level=1] [ref=e20]
+        - paragraph [ref=e21]: A dead AC in 105°F Kings County heat can't wait. Our repair techs cover Hanford and surrounding communities, responding same day during cooling season for no-cooling calls, weak airflow, frozen coils, refrigerant leaks, and electrical failures.
+        - generic [ref=e22]:
+          - link "Call (559) 585-4000" [ref=e23] [cursor=pointer]:
+            - /url: tel:+15595854000
+          - link "Free Estimate →" [ref=e24] [cursor=pointer]:
+            - /url: "#estimate"
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: Typical Cost Range
+          - generic [ref=e28]: $150 – $1,500
+          - generic [ref=e29]: · Free written estimate
+        - generic [ref=e30]:
+          - heading "What's Included" [level=2] [ref=e31]
+          - list [ref=e32]:
+            - listitem [ref=e33]:
+              - generic [ref=e34]: ✓
+              - text: No-cooling and weak-cooling diagnosis — capacitors, contactors, compressors, fan motors
+            - listitem [ref=e35]:
+              - generic [ref=e36]: ✓
+              - text: Refrigerant leak detection and recharge (R-410A and R-454B systems)
+            - listitem [ref=e37]:
+              - generic [ref=e38]: ✓
+              - text: Frozen evaporator coil and airflow troubleshooting
+            - listitem [ref=e39]:
+              - generic [ref=e40]: ✓
+              - text: Thermostat and control board repair and replacement
+            - listitem [ref=e41]:
+              - generic [ref=e42]: ✓
+              - text: Condenser coil cleaning — critical in Kings County's ag-dust environment
+            - listitem [ref=e43]:
+              - generic [ref=e44]: ✓
+              - text: Up-front repair pricing before any work begins
+        - generic [ref=e45]:
+          - heading "AC Repair — Service Coverage" [level=2] [ref=e46]
+          - paragraph [ref=e47]: We provide ac repair across Hanford, Lemoore, Corcoran, Armona, Stratford, Kettleman City and surrounding Kings County communities. Mon–Sat, 7am–8pm.
+          - generic [ref=e48]:
+            - generic [ref=e49]: Hanford, CA
+            - generic [ref=e50]: Lemoore, CA
+            - generic [ref=e51]: Corcoran, CA
+            - generic [ref=e52]: Armona, CA
+            - generic [ref=e53]: Stratford, CA
+            - generic [ref=e54]: Kettleman City, CA
+        - generic [ref=e55]:
+          - heading "AC Repair — Common Questions" [level=2] [ref=e56]
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - heading "How quickly can you fix a broken AC in Hanford?" [level=3] [ref=e59]
+              - paragraph [ref=e60]: During cooling season we target same-day service for no-cooling calls, Monday through Saturday, 7am–8pm. Most common failures — capacitors, contactors, fan motors — are stocked and repaired in a single visit.
+            - generic [ref=e61]:
+              - heading "How much does AC repair cost in Hanford?" [level=3] [ref=e62]
+              - paragraph [ref=e63]: Minor repairs like a failed capacitor or contactor run $150–$450. Refrigerant recharge, fan motor, or control board repairs range from $400–$1,500. A written estimate is provided before any work begins.
+            - generic [ref=e64]:
+              - heading "Is it worth repairing my old AC or should I replace it?" [level=3] [ref=e65]
+              - paragraph [ref=e66]: If your system is under 10 years old and the repair is a few hundred dollars, repair usually makes sense. For 12+ year-old units facing a compressor or coil failure, replacement often costs less over time given the efficiency gain. We give you both numbers, no pressure.
+        - generic [ref=e67]:
+          - heading "Related Services" [level=2] [ref=e68]
+          - generic [ref=e69]:
+            - link "Emergency HVAC Repair →" [ref=e70] [cursor=pointer]:
+              - /url: /services/emergency-hvac-repair
+            - link "AC Installation →" [ref=e71] [cursor=pointer]:
+              - /url: /services/ac-installation
+            - link "HVAC Maintenance →" [ref=e72] [cursor=pointer]:
+              - /url: /services/hvac-maintenance
+        - generic [ref=e73]:
+          - heading "Free AC Repair Estimate" [level=2] [ref=e74]
+          - paragraph [ref=e75]: A licensed contractor calls you back within 30 minutes, Mon–Sat 7am–8pm.
+          - generic [ref=e76]:
+            - generic [ref=e77]:
+              - generic [ref=e78]: Your Name *
+              - textbox "Your Name *" [ref=e79]:
+                - /placeholder: John Smith
+            - generic [ref=e80]:
+              - generic [ref=e81]: Phone Number *
+              - textbox "Phone Number *" [ref=e82]:
+                - /placeholder: (209) 555-0100
+            - generic [ref=e83]:
+              - generic [ref=e84]: Service Needed
+              - combobox "Service Needed" [ref=e85] [cursor=pointer]:
+                - option "Select a service (optional)" [selected]
+                - option "Roof Replacement"
+                - option "Roof Repair"
+                - option "Roof Inspection"
+                - option "Gutters & Drainage"
+            - button "Get My Free Estimate" [ref=e86] [cursor=pointer]
+            - paragraph [ref=e87]: No spam · 30-min callback · Free estimate
+  - contentinfo [ref=e88]:
+    - generic [ref=e90]:
+      - generic [ref=e91]:
+        - paragraph [ref=e92]: MERCED ROOFING PROS
+        - paragraph [ref=e93]: Licensed and insured roofing in Merced County. Free estimates, fast callbacks.
+        - link "(209) 259-0978" [ref=e94] [cursor=pointer]:
+          - /url: tel:+12092590978
+        - paragraph [ref=e95]: Merced, CA 95340
+      - generic [ref=e96]:
+        - paragraph [ref=e97]: Quick Links
+        - list [ref=e98]:
+          - listitem [ref=e99]:
+            - link "Cost Calculator" [ref=e100] [cursor=pointer]:
+              - /url: /calculator
+          - listitem [ref=e101]:
+            - link "All Services" [ref=e102] [cursor=pointer]:
+              - /url: /services
+          - listitem [ref=e103]:
+            - link "Service Areas" [ref=e104] [cursor=pointer]:
+              - /url: /locations
+          - listitem [ref=e105]:
+            - link "Roofing Blog" [ref=e106] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=e107]:
+            - link "About Us" [ref=e108] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e109]:
+            - link "Contact" [ref=e110] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=e111]:
+        - paragraph [ref=e112]: Services
+        - list [ref=e113]:
+          - listitem [ref=e114]:
+            - link "Roof Replacement" [ref=e115] [cursor=pointer]:
+              - /url: /services/roof-replacement
+          - listitem [ref=e116]:
+            - link "Roof Repair" [ref=e117] [cursor=pointer]:
+              - /url: /services/roof-repair
+          - listitem [ref=e118]:
+            - link "Emergency Roof Repair" [ref=e119] [cursor=pointer]:
+              - /url: /services/emergency-roof-repair
+          - listitem [ref=e120]:
+            - link "Metal Roofing" [ref=e121] [cursor=pointer]:
+              - /url: /services/metal-roofing
+          - listitem [ref=e122]:
+            - link "Flat Roofing" [ref=e123] [cursor=pointer]:
+              - /url: /services/flat-roofing
+          - listitem [ref=e124]:
+            - link "Storm Damage Repair" [ref=e125] [cursor=pointer]:
+              - /url: /services/storm-damage
+      - generic [ref=e126]:
+        - paragraph [ref=e127]: Service Areas
+        - list [ref=e128]:
+          - listitem [ref=e129]:
+            - link "Merced, CA" [ref=e130] [cursor=pointer]:
+              - /url: /locations/merced
+          - listitem [ref=e131]:
+            - link "Atwater, CA" [ref=e132] [cursor=pointer]:
+              - /url: /locations/atwater
+          - listitem [ref=e133]:
+            - link "Los Banos, CA" [ref=e134] [cursor=pointer]:
+              - /url: /locations/los-banos
+          - listitem [ref=e135]:
+            - link "Livingston, CA" [ref=e136] [cursor=pointer]:
+              - /url: /locations/livingston
+          - listitem [ref=e137]:
+            - link "Chowchilla, CA" [ref=e138] [cursor=pointer]:
+              - /url: /locations/chowchilla
+          - listitem [ref=e139]:
+            - link "Winton, CA" [ref=e140] [cursor=pointer]:
+              - /url: /locations/winton
+      - generic [ref=e141]:
+        - paragraph [ref=e142]: Hours
+        - paragraph [ref=e143]: Mon–Sat, 7am–8pm
+        - paragraph [ref=e144]: After-hours calls returned next morning
+        - paragraph [ref=e145]: Licensing
+        - paragraph [ref=e146]:
+          - text: CA CSLB C-39 Roofing License
+          - text: General Liability + Workers' Comp
+          - text: Cool Roof Rating Council (CRRC) compliant
+          - text: California Title 24, Part 6 materials
+    - generic [ref=e147]:
+      - paragraph [ref=e148]: © 2026 Merced Roofing Pros. Licensed & Insured · Merced, CA
+      - paragraph [ref=e149]: Services fulfilled by licensed C-39 partner contractors · Serving Merced County
+  - alert [ref=e150]

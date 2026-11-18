@@ -1,0 +1,37 @@
+[      49ms] Error: Minified React error #425; visit https://react.dev/errors/425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at sq (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:146765)
+    at http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:101023
+    at iu (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:103867)
+    at ia (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:95223)
+    at http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:91088
+    at http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:91095
+    at oZ (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:91200)
+    at MessagePort.M (http://localhost:3056/_next/static/chunks/117-c9564d5205668537.js:1:84770)
+[      49ms] Error: Minified React error #425; visit https://react.dev/errors/425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at sq (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:146765)
+    at http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:101023
+    at iu (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:103867)
+    at ia (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:95223)
+    at http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:91088
+    at http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:91095
+    at oZ (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:91200)
+    at MessagePort.M (http://localhost:3056/_next/static/chunks/117-c9564d5205668537.js:1:84770)
+[      49ms] Error: Minified React error #418; visit https://react.dev/errors/418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at t5 (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:24670)
+    at iZ (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:120535)
+    at ia (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:95162)
+    at http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:91088
+    at http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:91095
+    at oZ (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:91200)
+    at MessagePort.M (http://localhost:3056/_next/static/chunks/117-c9564d5205668537.js:1:84770)
+[      49ms] Error: Minified React error #423; visit https://react.dev/errors/423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at iZ (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:118349)
+    at ia (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:95162)
+    at http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:94984
+    at il (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:94991)
+    at oJ (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:92347)
+    at oZ (http://localhost:3056/_next/static/chunks/fd9d1056-1708847a7b0ce748.js:1:91766)
+    at MessagePort.M (http://localhost:3056/_next/static/chunks/117-c9564d5205668537.js:1:84770)
+[      63ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3056/_vercel/insights/script.js:0
+[      63ms] [ERROR] Refused to execute script from 'http://localhost:3056/_vercel/insights/script.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled. @ http://localhost:3056/services/ac-repair:0
+[      64ms] [LOG] [Vercel Web Analytics] Failed to load script from /_vercel/insights/script.js. Be sure to enable Web Analytics for your project and deploy again. See https://vercel.com/docs/analytics/quickstart for more information. @ http://localhost:3056/_next/static/chunks/app/layout-48cfe0f0d3844de0.js:0

@@ -1,0 +1,143 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "MERCED ROOFING PROS" [ref=e4] [cursor=pointer]:
+        - /url: "#form"
+      - link "Free Quote" [ref=e6] [cursor=pointer]:
+        - /url: "#form"
+  - main [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e10]:
+        - navigation "Breadcrumb" [ref=e11]:
+          - list [ref=e12]:
+            - listitem [ref=e13]:
+              - link "Home" [ref=e14] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e15]: /
+            - listitem [ref=e16]: Roofing Blog
+        - heading "Roofing Tips & Guides for Merced County" [level=1] [ref=e17]
+        - paragraph [ref=e18]: Cost breakdowns, material guides, and maintenance advice from the licensed C-39 contractors who work these roofs every week.
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - link "How-To 5 min read How Long Does a Roof Replacement Take in Merced, CA? Most Merced homeowners are back under a finished roof in one to three days. Here's exactly what determines that timeline and how to plan around it. Read article →" [ref=e21] [cursor=pointer]:
+            - /url: /blog/how-long-does-roof-replacement-take-merced-ca
+            - generic [ref=e22]:
+              - generic [ref=e23]: How-To
+              - generic [ref=e24]: 5 min read
+            - heading "How Long Does a Roof Replacement Take in Merced, CA?" [level=2] [ref=e25]
+            - paragraph [ref=e26]: Most Merced homeowners are back under a finished roof in one to three days. Here's exactly what determines that timeline and how to plan around it.
+            - generic [ref=e27]: Read article →
+          - link "Cost Guide 6 min read Cost of Roof Replacement in Merced, CA (2026 Pricing Guide) A Merced roof replacement runs $8,500–$22,000 for most homes depending on material and size. Here's the 2026 price breakdown and what actually drives cost. Read article →" [ref=e28] [cursor=pointer]:
+            - /url: /blog/cost-of-roof-replacement-merced-ca-2026
+            - generic [ref=e29]:
+              - generic [ref=e30]: Cost Guide
+              - generic [ref=e31]: 6 min read
+            - heading "Cost of Roof Replacement in Merced, CA (2026 Pricing Guide)" [level=2] [ref=e32]
+            - paragraph [ref=e33]: A Merced roof replacement runs $8,500–$22,000 for most homes depending on material and size. Here's the 2026 price breakdown and what actually drives cost.
+            - generic [ref=e34]: Read article →
+          - link "Materials 7 min read Best Roofing Materials for Central Valley Heat (2026 Guide) When your roof sees 110°F summers, material choice determines whether you replace it in 15 years or 50. Here's what we recommend for Central Valley homes and why. Read article →" [ref=e35] [cursor=pointer]:
+            - /url: /blog/best-roofing-materials-central-valley-heat
+            - generic [ref=e36]:
+              - generic [ref=e37]: Materials
+              - generic [ref=e38]: 7 min read
+            - heading "Best Roofing Materials for Central Valley Heat (2026 Guide)" [level=2] [ref=e39]
+            - paragraph [ref=e40]: When your roof sees 110°F summers, material choice determines whether you replace it in 15 years or 50. Here's what we recommend for Central Valley homes and why.
+            - generic [ref=e41]: Read article →
+          - link "Maintenance 5 min read 7 Signs You Need a New Roof in Merced (And What to Do Next) Most Merced homeowners wait too long — and a $500 repair becomes a $15,000 replacement. Here are the 7 signs that mean your roof needs attention now. Read article →" [ref=e42] [cursor=pointer]:
+            - /url: /blog/signs-you-need-a-new-roof-merced
+            - generic [ref=e43]:
+              - generic [ref=e44]: Maintenance
+              - generic [ref=e45]: 5 min read
+            - heading "7 Signs You Need a New Roof in Merced (And What to Do Next)" [level=2] [ref=e46]
+            - paragraph [ref=e47]: Most Merced homeowners wait too long — and a $500 repair becomes a $15,000 replacement. Here are the 7 signs that mean your roof needs attention now.
+            - generic [ref=e48]: Read article →
+        - generic [ref=e49]:
+          - paragraph [ref=e50]: Ready to talk to a real roofer?
+          - paragraph [ref=e51]: Free estimates, same-day emergency response. Licensed C-39, insured.
+          - link "Call (209) 259-0978" [ref=e52] [cursor=pointer]:
+            - /url: tel:+12092590978
+  - contentinfo [ref=e53]:
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - paragraph [ref=e57]: MERCED ROOFING PROS
+        - paragraph [ref=e58]: Licensed and insured roofing in Merced County. Free estimates, fast callbacks.
+        - link "(209) 259-0978" [ref=e59] [cursor=pointer]:
+          - /url: tel:+12092590978
+        - paragraph [ref=e60]: Merced, CA 95340
+      - generic [ref=e61]:
+        - paragraph [ref=e62]: Quick Links
+        - list [ref=e63]:
+          - listitem [ref=e64]:
+            - link "Cost Calculator" [ref=e65] [cursor=pointer]:
+              - /url: /calculator
+          - listitem [ref=e66]:
+            - link "All Services" [ref=e67] [cursor=pointer]:
+              - /url: /services
+          - listitem [ref=e68]:
+            - link "Service Areas" [ref=e69] [cursor=pointer]:
+              - /url: /locations
+          - listitem [ref=e70]:
+            - link "Roofing Blog" [ref=e71] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=e72]:
+            - link "About Us" [ref=e73] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e74]:
+            - link "Contact" [ref=e75] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=e76]:
+        - paragraph [ref=e77]: Services
+        - list [ref=e78]:
+          - listitem [ref=e79]:
+            - link "Roof Replacement" [ref=e80] [cursor=pointer]:
+              - /url: /services/roof-replacement
+          - listitem [ref=e81]:
+            - link "Roof Repair" [ref=e82] [cursor=pointer]:
+              - /url: /services/roof-repair
+          - listitem [ref=e83]:
+            - link "Emergency Roof Repair" [ref=e84] [cursor=pointer]:
+              - /url: /services/emergency-roof-repair
+          - listitem [ref=e85]:
+            - link "Metal Roofing" [ref=e86] [cursor=pointer]:
+              - /url: /services/metal-roofing
+          - listitem [ref=e87]:
+            - link "Flat Roofing" [ref=e88] [cursor=pointer]:
+              - /url: /services/flat-roofing
+          - listitem [ref=e89]:
+            - link "Storm Damage Repair" [ref=e90] [cursor=pointer]:
+              - /url: /services/storm-damage
+      - generic [ref=e91]:
+        - paragraph [ref=e92]: Service Areas
+        - list [ref=e93]:
+          - listitem [ref=e94]:
+            - link "Merced, CA" [ref=e95] [cursor=pointer]:
+              - /url: /locations/merced
+          - listitem [ref=e96]:
+            - link "Atwater, CA" [ref=e97] [cursor=pointer]:
+              - /url: /locations/atwater
+          - listitem [ref=e98]:
+            - link "Los Banos, CA" [ref=e99] [cursor=pointer]:
+              - /url: /locations/los-banos
+          - listitem [ref=e100]:
+            - link "Livingston, CA" [ref=e101] [cursor=pointer]:
+              - /url: /locations/livingston
+          - listitem [ref=e102]:
+            - link "Chowchilla, CA" [ref=e103] [cursor=pointer]:
+              - /url: /locations/chowchilla
+          - listitem [ref=e104]:
+            - link "Winton, CA" [ref=e105] [cursor=pointer]:
+              - /url: /locations/winton
+      - generic [ref=e106]:
+        - paragraph [ref=e107]: Hours
+        - paragraph [ref=e108]: Mon–Sat, 7am–8pm
+        - paragraph [ref=e109]: After-hours calls returned next morning
+        - paragraph [ref=e110]: Licensing
+        - paragraph [ref=e111]:
+          - text: CA CSLB C-39 Roofing License
+          - text: General Liability + Workers' Comp
+          - text: Cool Roof Rating Council (CRRC) compliant
+          - text: California Title 24, Part 6 materials
+    - generic [ref=e112]:
+      - paragraph [ref=e113]: © 2026 Merced Roofing Pros. Licensed & Insured · Merced, CA
+      - paragraph [ref=e114]: Services fulfilled by licensed C-39 partner contractors · Serving Merced County
+  - alert [ref=e115]

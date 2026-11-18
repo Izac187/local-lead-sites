@@ -1,0 +1,318 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Hanford HVAC Pros" [ref=e4] [cursor=pointer]:
+        - /url: "#form"
+      - link "Free Quote" [ref=e6] [cursor=pointer]:
+        - /url: "#form"
+  - main [ref=e7]:
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e14]: Kings County HVAC
+        - heading "Cool relief, fast." [level=1] [ref=e15]:
+          - text: Cool relief,
+          - text: fast.
+        - paragraph [ref=e16]: Licensed and insured heating and air in Kings County. Call back in 30 minutes or less — Mon–Sat, 7am–8pm. Know what your system costs before you commit to anyone.
+        - list [ref=e17]:
+          - listitem [ref=e18]: Licensed & Insured in California
+          - listitem [ref=e20]: Free written estimate — no obligation
+          - listitem [ref=e22]: AC, heating, ductwork, and tune-ups
+          - listitem [ref=e24]: Serving Hanford, Lemoore, Corcoran & more
+        - 'link "Or call directly: (559) 585-4000" [ref=e26] [cursor=pointer]':
+          - /url: tel:+15595854000
+          - text: "Or call directly:"
+          - generic [ref=e27]: (559) 585-4000
+      - generic [ref=e28]:
+        - generic [ref=e31]: Mon–Sat, 7am–8pm
+        - heading "Get a free estimate" [level=2] [ref=e32]
+        - paragraph [ref=e33]: We call back in 30 minutes or less, Mon–Sat 7am–8pm.
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - generic [ref=e36]: Your Name *
+            - textbox "Your Name *" [ref=e37]:
+              - /placeholder: John Smith
+          - generic [ref=e38]:
+            - generic [ref=e39]: Phone Number *
+            - textbox "Phone Number *" [ref=e40]:
+              - /placeholder: (209) 555-0100
+          - generic [ref=e41]:
+            - generic [ref=e42]: Service Needed
+            - combobox "Service Needed" [ref=e43] [cursor=pointer]:
+              - option "Select a service (optional)" [selected]
+              - option "AC Installation"
+              - option "AC Repair"
+              - option "Furnace & Heating"
+              - option "Ductwork & Maintenance"
+          - button "Get My Free Estimate" [ref=e44] [cursor=pointer]
+          - paragraph [ref=e45]: No spam · 30-min callback · Free estimate
+    - generic [ref=e47]:
+      - generic [ref=e48]: Heat wave? Same-day AC repair in Hanford, Lemoore and Corcoran.
+      - link "Call (559) 585-4000" [ref=e49] [cursor=pointer]:
+        - /url: tel:+15595854000
+    - generic [ref=e52]:
+      - generic [ref=e53]:
+        - img [ref=e55]
+        - generic [ref=e57]:
+          - paragraph [ref=e58]: Licensed & Insured
+          - paragraph [ref=e59]: CA CSLB C-20
+      - generic [ref=e60]:
+        - img [ref=e62]
+        - generic [ref=e65]:
+          - paragraph [ref=e66]: 30-Min Callback
+          - paragraph [ref=e67]: Mon–Sat, 7am–8pm
+      - generic [ref=e68]:
+        - img [ref=e70]
+        - generic [ref=e73]:
+          - paragraph [ref=e74]: Free Estimates
+          - paragraph [ref=e75]: No obligation
+      - generic [ref=e76]:
+        - img [ref=e78]
+        - generic [ref=e80]:
+          - paragraph [ref=e81]: 4.9 Stars
+          - paragraph [ref=e82]: 64 Google reviews
+      - generic [ref=e83]:
+        - img [ref=e85]
+        - generic [ref=e88]:
+          - paragraph [ref=e89]: Local & Family-Owned
+          - paragraph [ref=e90]: Kings County
+    - generic [ref=e92]:
+      - generic [ref=e95]: What We Do
+      - heading "HVAC Services in Kings County" [level=2] [ref=e96]
+      - generic [ref=e97]:
+        - generic [ref=e98]:
+          - heading "AC Installation" [level=3] [ref=e99]
+          - paragraph [ref=e100]: High-efficiency central AC and heat pump installs sized for Kings County's 100°F+ summers. SEER2-compliant systems, Title 24 documentation included.
+          - paragraph [ref=e101]: Written estimate within 48 hours
+          - link "Get a quote →" [ref=e102] [cursor=pointer]:
+            - /url: "#form"
+        - generic [ref=e103]:
+          - heading "AC Repair" [level=3] [ref=e104]
+          - paragraph [ref=e105]: Same-day diagnosis and repair for weak cooling, no cooling, frozen coils, and failed capacitors. Most repairs done in a single visit.
+          - paragraph [ref=e106]: Same-day in Hanford, Mon–Sat
+          - link "Get a quote →" [ref=e107] [cursor=pointer]:
+            - /url: "#form"
+        - generic [ref=e108]:
+          - heading "Furnace & Heating" [level=3] [ref=e109]
+          - paragraph [ref=e110]: Gas furnace and heat pump repair, replacement, and tune-ups for Central Valley tule-fog winters. Safety inspections on every visit.
+          - paragraph [ref=e111]: Next-day in winter
+          - link "Get a quote →" [ref=e112] [cursor=pointer]:
+            - /url: "#form"
+        - generic [ref=e113]:
+          - heading "Ductwork & Maintenance" [level=3] [ref=e114]
+          - paragraph [ref=e115]: Duct sealing, replacement, and seasonal maintenance plans. Sealed ducts cut cooling bills in valley heat where attic runs bake all summer.
+          - paragraph [ref=e116]: Scheduled within a week
+          - link "Get a quote →" [ref=e117] [cursor=pointer]:
+            - /url: "#form"
+    - generic [ref=e120]:
+      - generic [ref=e121]:
+        - generic [ref=e124]: Cost Estimator
+        - heading "What Will Your HVAC System Cost in Hanford?" [level=2] [ref=e125]
+        - paragraph [ref=e126]: Kings County equipment and labor costs, not national averages. Get a realistic range in 30 seconds — before you talk to anyone.
+        - list [ref=e127]:
+          - listitem [ref=e128]:
+            - generic [ref=e129]: "1"
+            - text: Enter your home size
+          - listitem [ref=e130]:
+            - generic [ref=e131]: "2"
+            - text: Choose your system
+          - listitem [ref=e132]:
+            - generic [ref=e133]: "3"
+            - text: See your estimate
+      - generic [ref=e135]:
+        - generic [ref=e136]:
+          - generic [ref=e137]: Home Size
+          - spinbutton "Home Size" [ref=e138] [cursor=pointer]
+        - generic [ref=e139]:
+          - generic [ref=e140]: System Type
+          - combobox "System Type" [ref=e141] [cursor=pointer]:
+            - option "Select system type" [selected]
+            - option "Central AC"
+            - option "Heat Pump"
+            - option "Ductless Mini-Split"
+            - option "Furnace / Heating"
+        - generic [ref=e142]:
+          - generic [ref=e143]: Service Needed
+          - combobox "Service Needed" [ref=e144] [cursor=pointer]:
+            - option "Select service needed" [selected]
+            - option "Repair"
+            - option "Replace existing"
+            - option "New installation"
+        - paragraph [ref=e145]: Select all three options to see your estimate
+    - generic [ref=e147]:
+      - generic [ref=e148]:
+        - img [ref=e149]
+        - generic [ref=e154]:
+          - generic [ref=e155]:
+            - generic [ref=e156]: "4.9"
+            - generic [ref=e157]:
+              - img [ref=e158]
+              - img [ref=e160]
+              - img [ref=e162]
+              - img [ref=e164]
+              - img [ref=e166]
+          - paragraph [ref=e168]: 64 reviews on Google
+      - generic [ref=e171]: What Neighbors Say
+      - heading "Trusted by Hanford Homeowners" [level=2] [ref=e172]
+      - generic [ref=e173]:
+        - generic [ref=e174]:
+          - generic [ref=e175]:
+            - generic [ref=e176]:
+              - img [ref=e177]
+              - img [ref=e179]
+              - img [ref=e181]
+              - img [ref=e183]
+              - img [ref=e185]
+            - generic [ref=e187]: July 2026
+          - paragraph [ref=e188]: “AC died during the July heat wave. Called at 7am, they had a tech out by 11 and cool air back on by early afternoon. Fair price, no upsell.”
+          - generic [ref=e189]:
+            - generic [ref=e190]: RM
+            - generic [ref=e191]:
+              - paragraph [ref=e192]: Robert M.
+              - paragraph [ref=e193]: Hanford
+        - generic [ref=e194]:
+          - generic [ref=e195]:
+            - generic [ref=e196]:
+              - img [ref=e197]
+              - img [ref=e199]
+              - img [ref=e201]
+              - img [ref=e203]
+              - img [ref=e205]
+            - generic [ref=e207]: May 2026
+          - paragraph [ref=e208]: “Got three bids on a full system replacement. These guys sized it right — the others just quoted the biggest unit. House is comfortable and my summer bill dropped.”
+          - generic [ref=e209]:
+            - generic [ref=e210]: AP
+            - generic [ref=e211]:
+              - paragraph [ref=e212]: Angela P.
+              - paragraph [ref=e213]: Lemoore
+        - generic [ref=e214]:
+          - generic [ref=e215]:
+            - generic [ref=e216]:
+              - img [ref=e217]
+              - img [ref=e219]
+              - img [ref=e221]
+              - img [ref=e223]
+              - img [ref=e225]
+            - generic [ref=e227]: January 2026
+          - paragraph [ref=e228]: “Furnace quit on the coldest foggy morning of the year. They walked me through the repair, showed me the failed part, no surprises on the bill. Honest crew.”
+          - generic [ref=e229]:
+            - generic [ref=e230]: DS
+            - generic [ref=e231]:
+              - paragraph [ref=e232]: David S.
+              - paragraph [ref=e233]: Corcoran
+      - link "See all 64 reviews on Google →" [ref=e235] [cursor=pointer]:
+        - /url: https://maps.google.com
+        - img [ref=e236]
+        - text: See all 64 reviews on Google →
+    - generic [ref=e242]:
+      - generic [ref=e245]: Common Questions
+      - heading "What Homeowners Ask" [level=2] [ref=e246]
+      - button "How much does a new AC system cost in Hanford?" [ref=e248] [cursor=pointer]:
+        - generic [ref=e249]: How much does a new AC system cost in Hanford?
+        - img [ref=e250]
+      - button "How fast can you respond to a no-cooling call in summer?" [ref=e252] [cursor=pointer]:
+        - generic [ref=e253]: How fast can you respond to a no-cooling call in summer?
+        - img [ref=e254]
+      - button "Do you offer maintenance plans?" [ref=e256] [cursor=pointer]:
+        - generic [ref=e257]: Do you offer maintenance plans?
+        - img [ref=e258]
+      - button "Are you licensed and insured in California?" [ref=e260] [cursor=pointer]:
+        - generic [ref=e261]: Are you licensed and insured in California?
+        - img [ref=e262]
+      - button "What happens if I call after business hours?" [ref=e264] [cursor=pointer]:
+        - generic [ref=e265]: What happens if I call after business hours?
+        - img [ref=e266]
+    - generic [ref=e268]:
+      - heading "Ready for a Free Estimate?" [level=2] [ref=e269]
+      - paragraph [ref=e270]: 30-minute callback, no obligation. Mon–Sat, 7am–8pm.
+      - link "Get My Free Estimate →" [ref=e271] [cursor=pointer]:
+        - /url: "#form"
+    - generic [ref=e272]:
+      - link "Call Now" [ref=e273] [cursor=pointer]:
+        - /url: tel:+15595854000
+      - link "Free Quote →" [ref=e274] [cursor=pointer]:
+        - /url: "#form"
+  - contentinfo [ref=e275]:
+    - generic [ref=e277]:
+      - generic [ref=e278]:
+        - paragraph [ref=e279]: Hanford HVAC Pros
+        - paragraph [ref=e280]: Licensed and insured heating and air in Kings County. Free estimates, fast callbacks.
+        - link "(559) 585-4000" [ref=e281] [cursor=pointer]:
+          - /url: tel:+15595854000
+        - paragraph [ref=e282]: Hanford, CA 93230
+      - generic [ref=e283]:
+        - paragraph [ref=e284]: Quick Links
+        - list [ref=e285]:
+          - listitem [ref=e286]:
+            - link "Cost Calculator" [ref=e287] [cursor=pointer]:
+              - /url: /calculator
+          - listitem [ref=e288]:
+            - link "All Services" [ref=e289] [cursor=pointer]:
+              - /url: /services
+          - listitem [ref=e290]:
+            - link "Service Areas" [ref=e291] [cursor=pointer]:
+              - /url: /locations
+          - listitem [ref=e292]:
+            - link "HVAC Blog" [ref=e293] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=e294]:
+            - link "About Us" [ref=e295] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e296]:
+            - link "Contact" [ref=e297] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=e298]:
+        - paragraph [ref=e299]: Services
+        - list [ref=e300]:
+          - listitem [ref=e301]:
+            - link "AC Installation" [ref=e302] [cursor=pointer]:
+              - /url: /services/ac-installation
+          - listitem [ref=e303]:
+            - link "AC Repair" [ref=e304] [cursor=pointer]:
+              - /url: /services/ac-repair
+          - listitem [ref=e305]:
+            - link "Furnace & Heating" [ref=e306] [cursor=pointer]:
+              - /url: /services/furnace-heating
+          - listitem [ref=e307]:
+            - link "Ductwork" [ref=e308] [cursor=pointer]:
+              - /url: /services/ductwork
+          - listitem [ref=e309]:
+            - link "HVAC Maintenance" [ref=e310] [cursor=pointer]:
+              - /url: /services/hvac-maintenance
+          - listitem [ref=e311]:
+            - link "Emergency HVAC Repair" [ref=e312] [cursor=pointer]:
+              - /url: /services/emergency-hvac-repair
+      - generic [ref=e313]:
+        - paragraph [ref=e314]: Service Areas
+        - list [ref=e315]:
+          - listitem [ref=e316]:
+            - link "Hanford, CA" [ref=e317] [cursor=pointer]:
+              - /url: /locations/hanford
+          - listitem [ref=e318]:
+            - link "Lemoore, CA" [ref=e319] [cursor=pointer]:
+              - /url: /locations/lemoore
+          - listitem [ref=e320]:
+            - link "Corcoran, CA" [ref=e321] [cursor=pointer]:
+              - /url: /locations/corcoran
+          - listitem [ref=e322]:
+            - link "Armona, CA" [ref=e323] [cursor=pointer]:
+              - /url: /locations/armona
+          - listitem [ref=e324]:
+            - link "Stratford, CA" [ref=e325] [cursor=pointer]:
+              - /url: /locations/stratford
+          - listitem [ref=e326]:
+            - link "Kettleman City, CA" [ref=e327] [cursor=pointer]:
+              - /url: /locations/kettleman-city
+      - generic [ref=e328]:
+        - paragraph [ref=e329]: Hours
+        - paragraph [ref=e330]: Mon–Sat, 7am–8pm
+        - paragraph [ref=e331]: After-hours calls returned next morning
+        - paragraph [ref=e332]: Licensing
+        - paragraph [ref=e333]:
+          - text: CA CSLB C-20 HVAC License
+          - text: General Liability + Workers' Comp
+          - text: EPA 608 Certified Technicians
+          - text: California Title 24, Part 6 compliant
+    - generic [ref=e334]:
+      - paragraph [ref=e335]: © 2026 Hanford HVAC Pros. Licensed & Insured · Hanford, CA
+      - paragraph [ref=e336]: Services fulfilled by licensed C-20 partner contractors · Serving Kings County
+  - alert [ref=e337]

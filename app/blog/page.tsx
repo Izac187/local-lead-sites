@@ -66,7 +66,7 @@ export default function BlogPage() {
               style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "0.02em" }}
             >
               {B.headingPrefix}{" "}
-              <span style={{ color: "var(--ember)" }}>{B.headingHighlight}</span>
+              <span style={{ color: "var(--accent-on-dark)" }}>{B.headingHighlight}</span>
             </h1>
             <p className="text-gray-300 max-w-2xl text-base leading-relaxed">
               {B.blurb}
@@ -88,7 +88,7 @@ export default function BlogPage() {
                     className="text-[10px] font-bold uppercase tracking-[0.12em] px-2.5 py-1 rounded-md"
                     style={{
                       backgroundColor: "var(--dark)",
-                      color: "var(--ember)",
+                      color: "var(--accent-on-dark)",
                     }}
                   >
                     {categoryLabels[post.category] ?? post.category}

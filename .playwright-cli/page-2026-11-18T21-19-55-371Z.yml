@@ -1,0 +1,203 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Hanford HVAC Pros" [ref=e4] [cursor=pointer]:
+        - /url: "#form"
+      - link "Free Quote" [ref=e6] [cursor=pointer]:
+        - /url: "#form"
+  - main [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e10]:
+        - navigation "Breadcrumb" [ref=e11]:
+          - list [ref=e12]:
+            - listitem [ref=e13]:
+              - link "Home" [ref=e14] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e15]: /
+            - listitem [ref=e16]:
+              - link "Service Areas" [ref=e17] [cursor=pointer]:
+                - /url: /locations
+            - listitem [ref=e18]: /
+            - listitem [ref=e19]: Lemoore
+        - heading "Professional HVAC Contractor in Lemoore, CA" [level=1] [ref=e20]:
+          - text: Professional HVAC Contractor in
+          - generic [ref=e21]: Lemoore, CA
+        - paragraph [ref=e22]: "Serving Lemoore (ZIP: 93245) and Kings County. Licensed C-20 HVAC contractor. Free estimates — same-day service, Mon–Sat 7am–8pm."
+        - link "Call (559) 585-4000 — Free Estimate" [ref=e23] [cursor=pointer]:
+          - /url: tel:+15595854000
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - heading "HVAC in Lemoore — What You Need to Know" [level=2] [ref=e26]
+          - paragraph [ref=e27]: Lemoore's newer subdivisions near NAS Lemoore have modern systems that benefit most from maintenance and SEER2 upgrades, while older downtown homes often need full changeouts. Heavy summer AC demand and base housing turnover keep replacement and duct work in steady demand.
+          - paragraph [ref=e28]: Summer highs in Lemoore regularly reach 106°F, running air conditioners near-continuously for months. That sustained load wears compressors early and packs condenser coils with valley ag dust. We size and install systems built for Kings County heat, with Title 24-compliant equipment.
+        - generic [ref=e29]:
+          - heading "Areas We Serve in Lemoore" [level=2] [ref=e30]
+          - paragraph [ref=e31]: "Our crews regularly work in and around:"
+          - list [ref=e32]:
+            - listitem [ref=e33]: NAS Lemoore corridor
+            - listitem [ref=e34]: Downtown Lemoore
+            - listitem [ref=e35]: Cinnamon Municipal Complex
+            - listitem [ref=e36]: West Hills College area
+        - generic [ref=e37]:
+          - heading "HVAC Services in Lemoore" [level=2] [ref=e38]
+          - generic [ref=e39]:
+            - link "AC Installation A new AC system is the right call when your unit is 12+ years old, the compressor has failed, or rep… Learn more →" [ref=e40] [cursor=pointer]:
+              - /url: /services/ac-installation
+              - heading "AC Installation" [level=3] [ref=e41]
+              - paragraph [ref=e42]: A new AC system is the right call when your unit is 12+ years old, the compressor has failed, or rep…
+              - generic [ref=e43]: Learn more →
+            - link "AC Repair A dead AC in 105°F Kings County heat can't wait. Our repair techs cover Hanford and surrounding comm… Learn more →" [ref=e44] [cursor=pointer]:
+              - /url: /services/ac-repair
+              - heading "AC Repair" [level=3] [ref=e45]
+              - paragraph [ref=e46]: A dead AC in 105°F Kings County heat can't wait. Our repair techs cover Hanford and surrounding comm…
+              - generic [ref=e47]: Learn more →
+            - link "Furnace & Heating Tule-fog winters and valley cold snaps make reliable heat a real need in Kings County. We repair, re… Learn more →" [ref=e48] [cursor=pointer]:
+              - /url: /services/furnace-heating
+              - heading "Furnace & Heating" [level=3] [ref=e49]
+              - paragraph [ref=e50]: Tule-fog winters and valley cold snaps make reliable heat a real need in Kings County. We repair, re…
+              - generic [ref=e51]: Learn more →
+            - link "Ductwork Leaky ducts waste up to 30% of the air your system produces — a big deal when your AC runs for month… Learn more →" [ref=e52] [cursor=pointer]:
+              - /url: /services/ductwork
+              - heading "Ductwork" [level=3] [ref=e53]
+              - paragraph [ref=e54]: Leaky ducts waste up to 30% of the air your system produces — a big deal when your AC runs for month…
+              - generic [ref=e55]: Learn more →
+            - link "HVAC Maintenance Kings County systems work harder than most — months of 100°F+ cooling, ag dust on every coil, and fo… Learn more →" [ref=e56] [cursor=pointer]:
+              - /url: /services/hvac-maintenance
+              - heading "HVAC Maintenance" [level=3] [ref=e57]
+              - paragraph [ref=e58]: Kings County systems work harder than most — months of 100°F+ cooling, ag dust on every coil, and fo…
+              - generic [ref=e59]: Learn more →
+            - link "Emergency HVAC Repair When your AC quits in a July heat wave or your furnace dies on the coldest foggy morning, you need a… Learn more →" [ref=e60] [cursor=pointer]:
+              - /url: /services/emergency-hvac-repair
+              - heading "Emergency HVAC Repair" [level=3] [ref=e61]
+              - paragraph [ref=e62]: When your AC quits in a July heat wave or your furnace dies on the coldest foggy morning, you need a…
+              - generic [ref=e63]: Learn more →
+        - generic [ref=e64]:
+          - heading "Frequently Asked — Lemoore HVAC" [level=2] [ref=e65]
+          - generic [ref=e66]:
+            - generic [ref=e67]:
+              - heading "Do you offer HVAC services in Lemoore, CA?" [level=3] [ref=e68]
+              - paragraph [ref=e69]: Yes. Hanford HVAC Pros serves Lemoore (ZIP 93245) for AC installation, repair, furnace and heating, ductwork, and maintenance. Mon–Sat, 7am–8pm.
+            - generic [ref=e70]:
+              - heading "How quickly can you respond to a no-cooling call in Lemoore?" [level=3] [ref=e71]
+              - paragraph [ref=e72]: During cooling season we target same-day service in Lemoore for no-cooling calls (Mon–Sat, 7am–8pm). Lemoore is approximately 12 min from our Hanford base.
+            - generic [ref=e73]:
+              - heading "What HVAC system do you recommend for Lemoore's climate?" [level=3] [ref=e74]
+              - paragraph [ref=e75]: Lemoore's newer subdivisions near NAS Lemoore have modern systems that benefit most from maintenance and SEER2 upgrades, while older downtown homes often need full changeouts. Heavy summer AC demand and base housing turnover keep replacement and duct work in steady demand. We recommend right-sized, SEER2-compliant systems that meet California Title 24 energy standards and hold up to sustained Central Valley heat.
+        - generic [ref=e76]:
+          - heading "Also Serving Nearby Cities" [level=2] [ref=e77]
+          - generic [ref=e78]:
+            - link "Armona, CA →" [ref=e79] [cursor=pointer]:
+              - /url: /locations/armona
+            - link "Hanford, CA →" [ref=e80] [cursor=pointer]:
+              - /url: /locations/hanford
+            - link "Stratford, CA →" [ref=e81] [cursor=pointer]:
+              - /url: /locations/stratford
+            - link "All service areas →" [ref=e82] [cursor=pointer]:
+              - /url: /locations
+        - generic [ref=e83]:
+          - heading "Get a Free Estimate in Lemoore" [level=2] [ref=e84]
+          - paragraph [ref=e85]: A licensed HVAC specialist will call you back within 30 minutes during business hours (Mon–Sat, 7am–8pm).
+          - generic [ref=e86]:
+            - generic [ref=e87]:
+              - generic [ref=e88]: Your Name *
+              - textbox "Your Name *" [ref=e89]:
+                - /placeholder: John Smith
+            - generic [ref=e90]:
+              - generic [ref=e91]: Phone Number *
+              - textbox "Phone Number *" [ref=e92]:
+                - /placeholder: (209) 555-0100
+            - generic [ref=e93]:
+              - generic [ref=e94]: Service Needed
+              - combobox "Service Needed" [ref=e95] [cursor=pointer]:
+                - option "Select a service (optional)" [selected]
+                - option "AC Installation"
+                - option "AC Repair"
+                - option "Furnace & Heating"
+                - option "Ductwork & Maintenance"
+            - button "Get My Free Estimate" [ref=e96] [cursor=pointer]
+            - paragraph [ref=e97]: No spam · 30-min callback · Free estimate
+  - contentinfo [ref=e98]:
+    - generic [ref=e100]:
+      - generic [ref=e101]:
+        - paragraph [ref=e102]: Hanford HVAC Pros
+        - paragraph [ref=e103]: Licensed and insured heating and air in Kings County. Free estimates, fast callbacks.
+        - link "(559) 585-4000" [ref=e104] [cursor=pointer]:
+          - /url: tel:+15595854000
+        - paragraph [ref=e105]: Hanford, CA 93230
+      - generic [ref=e106]:
+        - paragraph [ref=e107]: Quick Links
+        - list [ref=e108]:
+          - listitem [ref=e109]:
+            - link "Cost Calculator" [ref=e110] [cursor=pointer]:
+              - /url: /calculator
+          - listitem [ref=e111]:
+            - link "All Services" [ref=e112] [cursor=pointer]:
+              - /url: /services
+          - listitem [ref=e113]:
+            - link "Service Areas" [ref=e114] [cursor=pointer]:
+              - /url: /locations
+          - listitem [ref=e115]:
+            - link "HVAC Blog" [ref=e116] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=e117]:
+            - link "About Us" [ref=e118] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e119]:
+            - link "Contact" [ref=e120] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=e121]:
+        - paragraph [ref=e122]: Services
+        - list [ref=e123]:
+          - listitem [ref=e124]:
+            - link "AC Installation" [ref=e125] [cursor=pointer]:
+              - /url: /services/ac-installation
+          - listitem [ref=e126]:
+            - link "AC Repair" [ref=e127] [cursor=pointer]:
+              - /url: /services/ac-repair
+          - listitem [ref=e128]:
+            - link "Furnace & Heating" [ref=e129] [cursor=pointer]:
+              - /url: /services/furnace-heating
+          - listitem [ref=e130]:
+            - link "Ductwork" [ref=e131] [cursor=pointer]:
+              - /url: /services/ductwork
+          - listitem [ref=e132]:
+            - link "HVAC Maintenance" [ref=e133] [cursor=pointer]:
+              - /url: /services/hvac-maintenance
+          - listitem [ref=e134]:
+            - link "Emergency HVAC Repair" [ref=e135] [cursor=pointer]:
+              - /url: /services/emergency-hvac-repair
+      - generic [ref=e136]:
+        - paragraph [ref=e137]: Service Areas
+        - list [ref=e138]:
+          - listitem [ref=e139]:
+            - link "Hanford, CA" [ref=e140] [cursor=pointer]:
+              - /url: /locations/hanford
+          - listitem [ref=e141]:
+            - link "Lemoore, CA" [ref=e142] [cursor=pointer]:
+              - /url: /locations/lemoore
+          - listitem [ref=e143]:
+            - link "Corcoran, CA" [ref=e144] [cursor=pointer]:
+              - /url: /locations/corcoran
+          - listitem [ref=e145]:
+            - link "Armona, CA" [ref=e146] [cursor=pointer]:
+              - /url: /locations/armona
+          - listitem [ref=e147]:
+            - link "Stratford, CA" [ref=e148] [cursor=pointer]:
+              - /url: /locations/stratford
+          - listitem [ref=e149]:
+            - link "Kettleman City, CA" [ref=e150] [cursor=pointer]:
+              - /url: /locations/kettleman-city
+      - generic [ref=e151]:
+        - paragraph [ref=e152]: Hours
+        - paragraph [ref=e153]: Mon–Sat, 7am–8pm
+        - paragraph [ref=e154]: After-hours calls returned next morning
+        - paragraph [ref=e155]: Licensing
+        - paragraph [ref=e156]:
+          - text: CA CSLB C-20 HVAC License
+          - text: General Liability + Workers' Comp
+          - text: EPA 608 Certified Technicians
+          - text: California Title 24, Part 6 compliant
+    - generic [ref=e157]:
+      - paragraph [ref=e158]: © 2026 Hanford HVAC Pros. Licensed & Insured · Hanford, CA
+      - paragraph [ref=e159]: Services fulfilled by licensed C-20 partner contractors · Serving Kings County
+  - alert [ref=e160]

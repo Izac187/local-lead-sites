@@ -41,9 +41,11 @@ export default function ServicesPage() {
               className="group rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md hover:border-accent-soft transition-all"
             >
               <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2 mb-2">
-                <span style={{ color: "var(--ember)", fontFamily: "var(--font-display), sans-serif", fontSize: "1.5rem" }}>
-                  0{i + 1}
-                </span>{" "}
+                {siteConfig.theme.serviceNumerals && (
+                  <span style={{ color: "var(--ember)", fontFamily: "var(--font-display), sans-serif", fontSize: "1.5rem" }}>
+                    0{i + 1}
+                  </span>
+                )}{" "}
                 {s.title}
                 {s.urgency === "emergency" && (
                   <span className="ml-auto text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: "var(--ember)" }}>
