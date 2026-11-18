@@ -36,7 +36,7 @@
 - [ ] Enter Bing Places postcard PIN if the postcard arrived.
 - [ ] Fix Foursquare listing: remove street address (SAB).
 - [ ] Buy Hanford domain; supply phone (Google Voice) + lead email.
-- [ ] Vercel → hanford-hvac-pros → Settings → Deployment Protection → turn off Vercel Authentication (API call was denied by the agent permission classifier).
+- [x] Hanford public URL: https://hanford-hvac-pros.vercel.app (the project's main alias is exempt from Vercel Authentication; the team-suffixed URL is still gated, which is fine). Owner turned Authentication off on the Merced project by mistake; harmless.
 - [ ] Add RESEND_API_KEY + LEAD_EMAIL to hanford-hvac-pros (copy from Merced or new Resend domain).
 - [ ] Add call tracking (CallRail or Google Voice forwarding) so phone leads are counted.
 

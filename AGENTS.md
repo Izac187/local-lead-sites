@@ -62,7 +62,7 @@ Key routing rules:
 - Env vars set via Vercel CLI: RESEND_API_KEY, LEAD_EMAIL (contact form email delivery)
 - Custom domain: mercedroofingpro.com live (Hostinger nameservers → ns1/ns2.vercel-dns.com, propagated 2026-05-16)
 - Merced env vars: RESEND_API_KEY, LEAD_EMAIL, SITE_DOMAIN=mercedroofingpro.com (drives sitemap host + *.vercel.app 301; added 2026-11-17)
-- Hanford HVAC Vercel project: izac187s-projects/hanford-hvac-pros (prj_rzkItL3TLaPcOHXMUmbdX6gufwq5), same repo, env NEXT_PUBLIC_SITE=hanford-hvac. Created 2026-11-17; no custom domain yet, Vercel Authentication still on. Needs RESEND_API_KEY, LEAD_EMAIL, SITE_DOMAIN once the domain exists.
+- Hanford HVAC Vercel project: izac187s-projects/hanford-hvac-pros (prj_rzkItL3TLaPcOHXMUmbdX6gufwq5), same repo, env NEXT_PUBLIC_SITE=hanford-hvac. Created 2026-11-17; live at https://hanford-hvac-pros.vercel.app, no custom domain yet. Needs RESEND_API_KEY, LEAD_EMAIL, SITE_DOMAIN once the domain exists.
 - Multi-site rule: one repo, one Vercel project per site. New site = config/sites/<slug>/ + registry entry + Vercel project with NEXT_PUBLIC_SITE=<slug>.
 
 <!-- agent-handoff-protocol:v1 -->
