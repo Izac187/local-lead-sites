@@ -11,7 +11,7 @@ Update this file at the end of each session alongside `/context-save`.
 - [x] Lead form with Resend email delivery (`/api/lead`)
 - [x] Services page, sitemap, robots.txt
 - [x] Vercel deploy (manual CLI push → auto-deploy on push to main)
-- [x] GitHub repo live: https://github.com/Izac187/merced-roofing-pros
+- [x] GitHub repo live: https://github.com/Izac187/local-lead-sites (renamed 2026-11-18)
 
 ## Phase 2 — Design System & UI ✅
 - [x] Central Valley Direct design system (Bebas Neue + DM Sans)

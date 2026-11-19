@@ -56,7 +56,7 @@ Key routing rules:
 - Health check: https://mercedroofingpro.com
 
 ### Notes
-- GitHub repo: https://github.com/Izac187/merced-roofing-pros (live, pushing to main)
+- GitHub repo: https://github.com/Izac187/local-lead-sites (renamed from merced-roofing-pros 2026-11-18; old URL redirects)
 - Vercel project: izac187s-projects/merced-roofing-pros (deployed 2026-05-13)
 - GitHub → Vercel auto-deploy: connect manually in Vercel dashboard → Settings → Git (CLI connection failed but direct deploy worked)
 - Env vars set via Vercel CLI: RESEND_API_KEY, LEAD_EMAIL (contact form email delivery)
@@ -75,3 +75,15 @@ Key routing rules:
 - Before transferring work or ending a session, update the active plan's `## Handoff` with completed work, validation, skipped work, surprises, and the exact next step.
 - Review the working tree and the active plan before continuing another agent's work. Do not assume its transcript is available.
 - Keep plan and handoff changes in the same commit as the work they describe when practical. Never claim a commit exists without verifying it.
+
+## Design System
+Always read the ACTIVE SITE's design file before making any visual or UI decisions:
+- Merced (default, `NEXT_PUBLIC_SITE` unset or `merced`): root `DESIGN.md`
+- Hanford HVAC: `config/sites/hanford-hvac/DESIGN.md` ("Pool at Dusk")
+- New sites: add `config/sites/<slug>/DESIGN.md` and a `theme` block in that site's config
+Theme tokens are per-site (`siteConfig.theme` → CSS vars in `app/layout.tsx`); components must read `var(--…)`, never hardcode a site's colors or fonts. The Merced rules below apply to Merced only.
+Fonts: Bebas Neue (display/headings) + DM Sans (body). Colors: tar black (#1A1208) dark surfaces, Merced ember (#E8521A) CTAs, bleached concrete (#F5ECD7) page background.
+Service cards use numbered style (01–04) — no icon tiles, no emoji anywhere.
+All nav links must scroll to in-page sections — no standalone About/Contact pages.
+Business hours (Mon–Sat, 7am–8pm) must appear everywhere the 30-min callback is mentioned.
+Do not deviate from DESIGN.md without explicit user approval. In QA mode, flag any code that doesn't match DESIGN.md.

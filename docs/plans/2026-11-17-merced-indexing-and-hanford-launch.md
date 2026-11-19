@@ -66,6 +66,14 @@
 
 ## Handoff
 
+### 2026-11-18 (housekeeping) — Claude Code
+
+- Completed: GitHub repo renamed merced-roofing-pros → local-lead-sites (`gh repo rename`; old URL redirects; origin remote updated). Removed the 8 stale worktrees under .claude/worktrees/ and their branches; every commit on them was already on main. CLAUDE.md collapsed to `@AGENTS.md` + Session Workflow; Design System rules moved into AGENTS.md so both agents read them.
+- Validation: both Vercel projects READY before the push; this commit's push is the test that the Git integration followed the rename (see next entry or deployment list).
+- Skipped: local folder rename (/Users/ias/Documents/Roofing_Company → local-lead-sites) because the live session's cwd and Claude project memory path point at it; owner runs `mv` after closing sessions, then `cd` and `vercel link` is unaffected (links by project ID). Branch `worktree-seo-blueprint` kept: 8 old commits (May pSEO/blog/Twilio) not literally on main, left for owner review.
+- Surprises or risks: seo-blueprint worktree held an untracked, never-committed GitHub Action `pseo-weekly.yml` (weekly Claude-API city-content regeneration via scripts/generate-content.mjs, which exists on main). Backed up outside the repo; not committed because it needs an ANTHROPIC_API_KEY secret and an owner decision.
+- Next step: unchanged — owner inputs for Hanford, then Task 23 steps 3–6.
+
 ### 2026-11-18 (later) — Claude Code (Hanford design completion + phone QA)
 
 - Completed: alert strip (pages.home.alertStrip + theme.colors.heat/heatInk), services[].responseFact on cards, calculator figure in --font-mono with theme.colors.figureOnDark (64f720a). Phone-width QA at 390px via playwright-cli on /, /services/ac-repair, /locations/lemoore, /blog: no horizontal overflow, header fits, form panel stacks first. Fixed deep-teal-on-dark accents on the blog hub hero, category pills, post meta separators; gated services-hub numerals (aa19f02).
