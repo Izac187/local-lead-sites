@@ -53,14 +53,46 @@ export default function Home() {
     <>
       <SplitHero />
 
-      {/* Alert strip (optional per site): one warm line under the hero */}
+      {/* Alert strip (optional per site): one warm band under the hero */}
       {siteConfig.pages.home.alertStrip && (
         <div style={{ backgroundColor: "var(--heat)", color: "var(--heat-ink)" }}>
-          <div className="container-site" style={{ display: "flex", alignItems: "center", gap: 16, minHeight: 48, flexWrap: "wrap", padding: "8px 20px" }}>
-            <span style={{ fontWeight: 600, fontSize: "0.9375rem", fontFamily: "var(--font-body), system-ui, sans-serif" }}>
+          <div className="container-site" style={{ display: "flex", alignItems: "center", gap: 16, minHeight: 64, flexWrap: "wrap", padding: "12px 20px" }}>
+            {siteConfig.pages.home.alertStrip.label && (
+              <span
+                style={{
+                  backgroundColor: "var(--heat-ink)",
+                  color: "var(--heat)",
+                  fontWeight: 600,
+                  fontSize: "0.8125rem",
+                  lineHeight: 1,
+                  padding: "8px 12px",
+                  borderRadius: "var(--radius-sm)",
+                  fontFamily: "var(--font-body), system-ui, sans-serif",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {siteConfig.pages.home.alertStrip.label}
+              </span>
+            )}
+            <span style={{ fontWeight: 600, fontSize: "1rem", fontFamily: "var(--font-body), system-ui, sans-serif", flex: "1 1 240px" }}>
               {siteConfig.pages.home.alertStrip.text}
             </span>
-            <a href={siteConfig.phoneHref} style={{ marginLeft: "auto", color: "inherit", fontWeight: 600, fontSize: "0.9375rem", fontFamily: "var(--font-body), system-ui, sans-serif" }}>
+            <a
+              href={siteConfig.phoneHref}
+              style={{
+                marginLeft: "auto",
+                backgroundColor: "var(--heat-ink)",
+                color: "rgb(var(--on-dark-rgb))",
+                fontWeight: 600,
+                fontSize: "0.9375rem",
+                lineHeight: 1,
+                padding: "12px 18px",
+                borderRadius: "var(--radius-md)",
+                fontFamily: "var(--font-body), system-ui, sans-serif",
+                whiteSpace: "nowrap",
+                textDecoration: "none",
+              }}
+            >
               {siteConfig.pages.home.alertStrip.linkLabel} {siteConfig.phone}
             </a>
           </div>

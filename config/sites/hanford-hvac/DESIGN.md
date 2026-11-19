@@ -139,7 +139,7 @@ Flat surfaces with 1px `border` edges. The hero panel and calculator readout get
 
 - **Header:** pool dark, wordmark in Archivo 700 with "HVAC" in mint, nav in Source Sans 3 600 at 0.72 on-dark, phone in Archivo 600, CTA mint with dark text.
 - **Hero (variant `light-panel`):** ice ground, headline left in Archivo, accent word in deep teal, lead paragraph, one bold fact line with hours, trust line in muted. Right: pool dark panel, 20px radius, mint submit button, inputs on `dark-mid` with 22% on-dark borders. Panel fades up 300ms ease-out on load.
-- **Heat strip:** amber band, 48px, heat-ink text, one sentence plus a phone link. The only warm element.
+- **Heat strip:** amber band, 64px, three objects: a heat-ink tag ("Heat advisory", Source Sans 600, 6px radius, amber text), one sentence, and a heat-ink pill button ("Call now" plus the number, on-dark text, 12px radius). The only warm element; the tag and button are ink on amber, not a second color.
 - **Service cards:** surface, border, 12px radius, no numerals, no icons. Title in Archivo 600, one-line description in muted, a response fact in deep teal above a hairline. Focus and hover: border darkens to `text-muted`.
 - **Calculator:** dark section; readout panel in pool dark with mint mono figure; outside temperature in amber.
 - **Buttons:** primary on light = deep teal, white text; primary on dark = mint, ink text; ghost = 1.5px border in `border` or 35% on-dark. Hover darkens or lightens one step; active scales to 0.98; focus-visible 2px deep-teal outline offset 2px; disabled 60% opacity.
@@ -171,3 +171,4 @@ Flat surfaces with 1px `border` edges. The hero panel and calculator readout get
 | 2026-11-18 | Pool at Dusk direction: light hero, dark panel, cool palette, Archivo + Source Sans 3 + JetBrains Mono | Owner's memorable thing: "Cool relief, fast." Opposite temperature and posture to Merced. Fonts verified on Google Fonts. Clash Display (subagent suggestion) rejected as a banned face. |
 | 2026-11-18 | Mint CTA on dark, deep teal CTA on light | Mint everywhere fails contrast on the ice ground; teal everywhere loses the "cold air" button. One token each. If first-month form rate lags Merced, swap the panel CTA to teal by changing `accent-on-dark`. |
 | 2026-11-18 | Amber restricted to heat strip and temperature figure | The palette tells one story: hot outside, cool inside. More amber and it becomes a second brand color. |
+| 2026-11-18 | Heat strip gets a tag and a real button instead of one sentence and a text link | Owner review on a phone: the plain band read as filler. Structure comes from ink shapes on the amber, so amber stays the only warm value. |

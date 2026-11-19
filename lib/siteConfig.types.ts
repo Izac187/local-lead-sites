@@ -164,7 +164,7 @@ export interface SiteConfig {
     home: {
       metaTitle: string;
       /** Optional single-line band under the hero (e.g. heat-wave notice). Uses theme.colors.heat. */
-      alertStrip?: { text: string; linkLabel: string };
+      alertStrip?: { label?: string; text: string; linkLabel: string };
       trustBar: { label: string; sub: string }[];
       servicesHeading: string;
       estimatorHeading: string;
