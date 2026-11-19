@@ -41,13 +41,13 @@ const hanfordHvacConfig = {
       title: "AC Repair",
       description:
         "Same-day diagnosis and repair for weak cooling, no cooling, frozen coils, and failed capacitors. Most repairs done in a single visit.",
-      responseFact: "Same-day in Hanford, Mon–Sat",
+      responseFact: "Same-day response in Hanford, Mon–Sat",
     },
     {
       title: "Furnace & Heating",
       description:
         "Gas furnace and heat pump repair, replacement, and tune-ups for Central Valley tule-fog winters. Safety inspections on every visit.",
-      responseFact: "Next-day in winter",
+      responseFact: "Next-day response in winter",
     },
     {
       title: "Ductwork & Maintenance",
@@ -281,6 +281,7 @@ const hanfordHvacConfig = {
   pages: {
     home: {
       metaTitle: "Hanford HVAC Pros | HVAC Contractor Hanford CA",
+      responseFactLabel: "Response time",
       alertStrip: { label: "Heat advisory", text: "Same-day response in Hanford, Lemoore and Corcoran.", linkLabel: "Call now" },
       trustBar: [
         { label: "Licensed & Insured", sub: "CA CSLB C-20" },

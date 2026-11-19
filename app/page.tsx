@@ -168,9 +168,16 @@ export default function Home() {
                   {s.description}
                 </p>
                 {s.responseFact && (
-                  <p style={{ color: "var(--ember)", fontSize: "0.875rem", fontWeight: 600, fontFamily: "var(--font-body), system-ui, sans-serif", borderTop: "1px solid var(--border)", paddingTop: 12, marginBottom: 12 }}>
-                    {s.responseFact}
-                  </p>
+                  <div style={{ borderTop: "1px solid var(--border)", paddingTop: 12, marginBottom: 14 }}>
+                    {siteConfig.pages.home.responseFactLabel && (
+                      <p style={{ color: "var(--muted)", fontSize: "0.8125rem", fontWeight: 600, fontFamily: "var(--font-body), system-ui, sans-serif", marginBottom: 4 }}>
+                        {siteConfig.pages.home.responseFactLabel}
+                      </p>
+                    )}
+                    <p className="font-display" style={{ color: "var(--ember)", fontSize: "1.1rem", fontWeight: 600, lineHeight: 1.3 }}>
+                      {s.responseFact}
+                    </p>
+                  </div>
                 )}
                 <a href="#form" style={{ color: "var(--ember)", fontSize: "0.875rem", fontWeight: 600, fontFamily: "var(--font-body), system-ui, sans-serif", textDecoration: "none" }}>
                   Get a quote &rarr;

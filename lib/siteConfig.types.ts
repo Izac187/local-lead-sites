@@ -165,6 +165,8 @@ export interface SiteConfig {
       metaTitle: string;
       /** Optional single-line band under the hero (e.g. heat-wave notice). Uses theme.colors.heat. */
       alertStrip?: { label?: string; text: string; linkLabel: string };
+      /** Small label shown above each service card's responseFact (Hanford). */
+      responseFactLabel?: string;
       trustBar: { label: string; sub: string }[];
       servicesHeading: string;
       estimatorHeading: string;
