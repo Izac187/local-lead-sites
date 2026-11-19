@@ -281,7 +281,7 @@ const hanfordHvacConfig = {
   pages: {
     home: {
       metaTitle: "Hanford HVAC Pros | HVAC Contractor Hanford CA",
-      alertStrip: { label: "Heat advisory", text: "Same-day AC repair in Hanford, Lemoore and Corcoran.", linkLabel: "Call now" },
+      alertStrip: { label: "Heat advisory", text: "Same-day response in Hanford, Lemoore and Corcoran.", linkLabel: "Call now" },
       trustBar: [
         { label: "Licensed & Insured", sub: "CA CSLB C-20" },
         { label: "30-Min Callback", sub: "Mon–Sat, 7am–8pm" },
