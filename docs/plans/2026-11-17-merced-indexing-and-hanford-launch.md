@@ -36,7 +36,7 @@
 
 ## Owner (manual) steps
 
-- [~] Search Console "Request indexing": 11 of 15 done 2026-11-17 (/services, 6 service pages, /locations, merced, atwater, los-banos). Daily quota hit. Remaining for 2026-11-18: /locations/livingston, /locations/winton, /locations/chowchilla, /blog. (Indexing API disabled in GCP project 760086864657.)
+- [x] Search Console "Request indexing": all 15 done. 11 on 2026-11-17 (/services, 6 service pages, /locations, merced, atwater, los-banos); the last 4 (/locations/livingston, /locations/winton, /locations/chowchilla, /blog) on 2026-11-18 late evening after the daily quota reset. Each returned "Indexing requested". Recheck GSC Pages report ~2026-12-02. (Indexing API disabled in GCP project 760086864657.)
 - [ ] Confirm Google Business Profile phone verification completed (business.google.com).
 - [ ] Enter Bing Places postcard PIN if the postcard arrived.
 - [ ] Fix Foursquare listing: remove street address (SAB).
