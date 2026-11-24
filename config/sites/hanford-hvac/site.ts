@@ -130,6 +130,7 @@ const hanfordHvacConfig = {
     eyebrow: { transform: "none", tracking: "0" },
     hero: "light-panel",
     serviceNumerals: false,
+    trustBarIcons: false,
   },
 
   pricing: {

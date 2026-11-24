@@ -121,9 +121,11 @@ export default function Home() {
                   borderRight: i < arr.length - 1 ? "1px solid rgba(255,255,255,0.1)" : "none",
                 }}
               >
-                <div style={{ width: 40, height: 40, borderRadius: "var(--radius-sm)", backgroundColor: "rgba(255,255,255,0.07)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  {icon}
-                </div>
+                {siteConfig.theme.trustBarIcons && (
+                  <div style={{ width: 40, height: 40, borderRadius: "var(--radius-sm)", backgroundColor: "rgba(255,255,255,0.07)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    {icon}
+                  </div>
+                )}
                 <div style={{ textAlign: "center" }}>
                   <p style={{ color: "#FFFFFF", fontWeight: 600, fontSize: "0.875rem", fontFamily: "var(--font-body), system-ui, sans-serif" }}>{label}</p>
                   <p style={{ color: "rgba(var(--on-dark-rgb),0.5)", fontSize: "0.75rem", fontFamily: "var(--font-body), system-ui, sans-serif" }}>{sub}</p>

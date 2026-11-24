@@ -120,6 +120,7 @@ export const siteConfig = {
     eyebrow: { transform: "uppercase", tracking: "0.16em" },
     hero: "dark-split",
     serviceNumerals: true,
+    trustBarIcons: true,
   },
 
   pricing: {

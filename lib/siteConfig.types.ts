@@ -42,6 +42,8 @@ export interface SiteTheme {
   eyebrow: { transform: "uppercase" | "none"; tracking: string };
   hero: HeroVariant;
   serviceNumerals: boolean;
+  /** Show an icon tile above each trust-bar item (Merced). false = text only. */
+  trustBarIcons: boolean;
 }
 
 export interface SiteConfig {

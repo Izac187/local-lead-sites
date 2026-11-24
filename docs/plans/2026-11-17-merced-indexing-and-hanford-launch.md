@@ -3,7 +3,7 @@
 - Status: in-progress
 - Owner: Isaac Salinas
 - Created: 2026-11-17
-- Updated: 2026-11-18
+- Updated: 2026-11-23
 
 ## Goal
 
@@ -65,6 +65,13 @@
 - 2026-11-17: vercel.app redirect lives in `next.config.mjs` (not Vercel dashboard) so every site project inherits it via `SITE_DOMAIN`.
 
 ## Handoff
+
+### 2026-11-23 — Claude Code (cross-links + trust bar)
+
+- Completed: service pages now link each city pill to its /locations/<slug> page (both sites; pills come from the `cities` list so every city page gets a link from all 6 Merced service pages). Trust bar icon tiles are behind `theme.trustBarIcons`; Hanford sets it false per its DESIGN.md "no icons in tiles". Hanford blog hub already had 4 posts, so no posts were written.
+- Validation: tsc, lint, vitest 8/8, both builds; curl confirms 6 city links on /services/roof-repair; Hanford trust bar checked at 390px.
+- Skipped: nothing in scope. Noted but untouched: both sites' trust bars show a review count ("87 Google reviews" / "64 Google reviews") that is not backed by a real GBP figure; owner should confirm or replace before renting the site.
+- Next step: owner inputs (Hanford domain/phone/email), then Task 23 steps 3–6; ~2026-12-02 GSC Pages re-pull.
 
 ### 2026-11-18 (housekeeping) — Claude Code
 

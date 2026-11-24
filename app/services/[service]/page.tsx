@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getServiceBySlug, getAllServiceSlugs, servicePages } from "@/lib/servicePages";
 import { siteConfig } from "@/lib/config";
+import { cities } from "@/lib/cities";
 import LeadForm from "@/components/LeadForm";
 
 interface Props {
@@ -175,13 +176,14 @@ export default async function ServicePage({ params }: Props) {
               {siteConfig.templates.servicePage.coverageNoteSuffix}
             </p>
             <div className="flex flex-wrap gap-2">
-              {siteConfig.serviceArea.map((city) => (
-                <span
-                  key={city}
-                  className="rounded-full border border-gray-200 px-3 py-1 text-xs text-gray-600"
+              {cities.map((city) => (
+                <Link
+                  key={city.citySlug}
+                  href={`/locations/${city.citySlug}`}
+                  className="rounded-full border border-gray-200 px-3 py-1 text-xs text-gray-600 hover:border-accent hover:text-accent-hover transition-colors"
                 >
-                  {city}, CA
-                </span>
+                  {city.cityName}, CA
+                </Link>
               ))}
             </div>
           </div>
